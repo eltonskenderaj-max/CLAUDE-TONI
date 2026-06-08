@@ -1,0 +1,19 @@
+{
+  "name": "AHRPA – Revenue Management Albania",
+  "short_name": "AHRPA",
+  "description": "Cabinet de Revenue Management spécialisé pour les hôtels en Albanie. Acces Hotels Revenue Performance Array.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1628",
+  "theme_color": "#0a1628",
+  "icons": [
+    {
+      "src": "/assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "lang": "fr",
+  "categories": ["business", "productivity"]
+}

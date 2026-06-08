@@ -15,6 +15,9 @@
 
   <!-- Canonical & hreflang -->
   <link rel="canonical" href="https://www.ahrpa.com/">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#0a1628">
   <link rel="alternate" hreflang="fr" href="https://www.ahrpa.com/">
   <link rel="alternate" hreflang="en" href="https://www.ahrpa.com/en/">
   <link rel="alternate" hreflang="sq" href="https://www.ahrpa.com/sq/">
@@ -50,6 +53,7 @@
 
   <!-- Stylesheet (non-render-blocking via media trick then swap) -->
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="assets/illustrations.css">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230a1628'/><text y='.9em' font-size='75' x='50%' text-anchor='middle' dominant-baseline='hanging' fill='%23c9a84c' font-family='Arial' font-weight='900'>A</text></svg>">
@@ -386,7 +390,64 @@
               <span class="stat-label">Réponse audit</span>
             </div>
           </div>
+        <!-- 3D Illustration Hero -->
+        <div class="hero-3d-wrapper" aria-hidden="true" style="position:relative;width:360px;margin:3rem auto 0;height:280px;">
+
+          <!-- Floating stat cards -->
+          <div class="stat-card-3d" style="top:0;right:0;--rotate:-3deg;--delay:0s;">
+            <span class="val">+23%</span>
+            <span class="lbl">RevPAR</span>
+          </div>
+          <div class="stat-card-3d" style="bottom:20px;left:0;--rotate:2deg;--delay:1.5s;">
+            <span class="val">+18%</span>
+            <span class="lbl">ADR moyen</span>
+          </div>
+          <div class="stat-card-3d" style="top:80px;left:20px;--rotate:-1deg;--delay:0.8s;">
+            <span class="val">92%</span>
+            <span class="lbl">Satisfaction</span>
+          </div>
+
+          <!-- 3D Hotel building -->
+          <div class="hero-3d-scene" style="position:absolute;top:0;left:50%;transform:translateX(-50%);">
+            <div class="hotel-3d" role="img" aria-label="Illustration hôtel 3D">
+              <div class="hotel-face hotel-front">
+                <div class="hotel-window" style="--delay:0s"></div>
+                <div class="hotel-window" style="--delay:0.3s"></div>
+                <div class="hotel-window" style="--delay:0.6s"></div>
+                <div class="hotel-window" style="--delay:0.2s"></div>
+                <div class="hotel-window" style="--delay:0.5s"></div>
+                <div class="hotel-window" style="--delay:0.8s"></div>
+                <div class="hotel-window" style="--delay:0.1s"></div>
+                <div class="hotel-window" style="--delay:0.4s"></div>
+                <div class="hotel-window" style="--delay:0.7s"></div>
+                <div class="hotel-window" style="--delay:1.0s"></div>
+                <div class="hotel-window" style="--delay:0.3s"></div>
+                <div class="hotel-window" style="--delay:0.6s"></div>
+                <div class="hotel-window" style="--delay:0.9s"></div>
+                <div class="hotel-window" style="--delay:0.2s"></div>
+                <div class="hotel-window" style="--delay:0.5s"></div>
+                <div class="hotel-window" style="--delay:0.8s"></div>
+              </div>
+              <div class="hotel-face hotel-side"></div>
+              <div class="hotel-face hotel-top"></div>
+            </div>
+          </div>
+
+          <!-- Revenue chart at bottom -->
+          <div style="position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:260px;" aria-hidden="true">
+            <div class="chart-3d" style="height:60px;">
+              <div class="bar-3d" style="height:30%;--delay:0.1s;"><div class="bar-front"></div></div>
+              <div class="bar-3d" style="height:50%;--delay:0.2s;"><div class="bar-front"></div></div>
+              <div class="bar-3d" style="height:45%;--delay:0.3s;"><div class="bar-front"></div></div>
+              <div class="bar-3d" style="height:70%;--delay:0.4s;"><div class="bar-front"></div></div>
+              <div class="bar-3d" style="height:60%;--delay:0.5s;"><div class="bar-front"></div></div>
+              <div class="bar-3d" style="height:85%;--delay:0.6s;"><div class="bar-front"></div></div>
+              <div class="bar-3d" style="height:100%;--delay:0.7s;"><div class="bar-front" style="background:linear-gradient(180deg,#e5c060,#c9a84c);"></div></div>
+            </div>
+            <p style="text-align:center;font-size:0.65rem;color:rgba(201,168,76,0.6);margin-top:0.3rem;letter-spacing:0.08em;text-transform:uppercase;">Évolution RevPAR avec AHRPA</p>
+          </div>
         </div>
+
       </div>
     </section>
 
@@ -839,6 +900,35 @@
             <p class="result-desc">Revenue Per Available Room, l'indicateur clé de performance hôtelière, optimisé en combinant occupation et tarif.</p>
           </article>
 
+        </div>
+
+        <!-- Globe 3D illustration -->
+        <div aria-hidden="true" style="display:flex;justify-content:center;gap:3rem;align-items:center;flex-wrap:wrap;margin:3rem 0;">
+          <div class="globe-wrapper">
+            <div class="globe">
+              <div class="globe-line globe-line-h"></div>
+              <div class="globe-line globe-line-h2"></div>
+              <div class="globe-line globe-line-h3"></div>
+              <div class="globe-line globe-line-v"></div>
+              <div class="globe-dot globe-dot-albania" style="--delay:0s;"></div>
+              <div class="globe-dot globe-dot-france" style="--delay:0.8s;"></div>
+            </div>
+            <p style="text-align:center;font-size:0.7rem;color:rgba(201,168,76,0.7);margin-top:0.5rem;letter-spacing:0.08em;text-transform:uppercase;">Présence Albanie & France</p>
+          </div>
+
+          <!-- Dashboard 3D card -->
+          <div class="dashboard-3d">
+            <svg width="0" height="0"><defs><linearGradient id="sparkGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c9a84c"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs></svg>
+            <div class="dashboard-metric">
+              <span class="dashboard-metric-label">RevPAR actuel</span>
+              <span class="dashboard-metric-value">+23%</span>
+              <span class="dashboard-metric-change">↑ vs période précédente</span>
+            </div>
+            <svg class="dashboard-sparkline" viewBox="0 0 80 40">
+              <path class="sparkline-fill" d="M0 40 L10 32 L20 28 L30 20 L40 22 L50 12 L60 8 L70 4 L80 0 L80 40 Z"/>
+              <path class="sparkline-path" d="M0 32 L10 28 L20 24 L30 20 L40 22 L50 12 L60 8 L70 4 L80 0"/>
+            </svg>
+          </div>
         </div>
 
         <div class="results-cta">

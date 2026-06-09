@@ -328,14 +328,14 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
     <div class="nbt">AHRPA<span>Revenue Management Albania</span></div>
   </div>
   <ul class="nl">
-    <li><a onclick="showPage('home')" class="an" id="nl-home">Accueil</a></li>
-    <li><a onclick="showPage('services')" id="nl-services">Services</a></li>
-    <li><a onclick="showPage('methode')" id="nl-methode">Méthode</a></li>
-    <li><a onclick="showPage('apropos')" id="nl-apropos">À propos</a></li>
-    <li><a onclick="showPage('resultats')" id="nl-resultats">Résultats</a></li>
-    <li><a onclick="showPage('tarifs')" id="nl-tarifs">Tarifs</a></li>
-    <li><a onclick="showPage('blog')" id="nl-blog">Blog</a></li>
-    <li><a onclick="showPage('contact')" id="nl-contact">Contact</a></li>
+    <li><a onclick="showPage('home')" class="an" id="nl-home" data-t="nav_home">Accueil</a></li>
+    <li><a onclick="showPage('services')" id="nl-services" data-t="nav_services">Services</a></li>
+    <li><a onclick="showPage('methode')" id="nl-methode" data-t="nav_methode">Méthode</a></li>
+    <li><a onclick="showPage('apropos')" id="nl-apropos" data-t="nav_apropos">À propos</a></li>
+    <li><a onclick="showPage('resultats')" id="nl-resultats" data-t="nav_resultats">Résultats</a></li>
+    <li><a onclick="showPage('tarifs')" id="nl-tarifs" data-t="nav_tarifs">Tarifs</a></li>
+    <li><a onclick="showPage('blog')" id="nl-blog" data-t="nav_blog">Blog</a></li>
+    <li><a onclick="showPage('contact')" id="nl-contact" data-t="nav_contact">Contact</a></li>
   </ul>
   <div class="nr">
     <div class="lw">
@@ -343,7 +343,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
       <button class="lb" onclick="setLang('en')">EN</button>
       <button class="lb" onclick="setLang('sq')">SQ</button>
     </div>
-    <button class="nc" onclick="showPage('contact')">Audit Gratuit</button>
+    <button class="nc" onclick="showPage('contact')" data-t="nav_cta">Audit Gratuit</button>
   </div>
   <button class="ham" id="ham" onclick="toggleMob()" aria-label="Menu">
     <span></span><span></span><span></span>
@@ -352,14 +352,14 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
 
 <!-- MOBILE MENU -->
 <div class="mob" id="mob">
-  <a onclick="showPage('home');toggleMob()">Accueil</a>
-  <a onclick="showPage('services');toggleMob()">Services</a>
-  <a onclick="showPage('methode');toggleMob()">Méthode</a>
-  <a onclick="showPage('apropos');toggleMob()">À propos</a>
-  <a onclick="showPage('resultats');toggleMob()">Résultats</a>
-  <a onclick="showPage('tarifs');toggleMob()">Tarifs</a>
-  <a onclick="showPage('blog');toggleMob()">Blog</a>
-  <a onclick="showPage('contact');toggleMob()">Contact</a>
+  <a onclick="showPage('home');toggleMob()" data-t="nav_home">Accueil</a>
+  <a onclick="showPage('services');toggleMob()" data-t="nav_services">Services</a>
+  <a onclick="showPage('methode');toggleMob()" data-t="nav_methode">Méthode</a>
+  <a onclick="showPage('apropos');toggleMob()" data-t="nav_apropos">À propos</a>
+  <a onclick="showPage('resultats');toggleMob()" data-t="nav_resultats">Résultats</a>
+  <a onclick="showPage('tarifs');toggleMob()" data-t="nav_tarifs">Tarifs</a>
+  <a onclick="showPage('blog');toggleMob()" data-t="nav_blog">Blog</a>
+  <a onclick="showPage('contact');toggleMob()" data-t="nav_contact">Contact</a>
 </div>
 
 <!-- ══════════════════════════════════════
@@ -374,17 +374,17 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
     </div>
 
     <div class="hl">
-      <div class="hey">Acces Hotels Revenue Performance Array</div>
-      <h1 id="hero-h1">Revenue Management<em>professionnel</em>pour les hôtels en Albanie</h1>
-      <p class="hd">Nous augmentons vos revenus. Nous optimisons vos prix. Nous maximisons votre rentabilité.<br><strong style="color:var(--gl)">Résultats mesurables dès le premier mois.</strong></p>
+      <div class="hey" data-t="hero_tag">Acces Hotels Revenue Performance Array</div>
+      <h1 id="hero-h1" data-t="hero_h1">Revenue Management<em>professionnel</em>pour les hôtels en Albanie</h1>
+      <p class="hd" data-t="hero_desc">Nous augmentons vos revenus. Nous optimisons vos prix. Nous maximisons votre rentabilité.<br><strong style="color:var(--gl)">Résultats mesurables dès le premier mois.</strong></p>
       <div class="hb">
-        <button class="btn-g" onclick="showPage('contact')">Réserver un audit gratuit</button>
-        <button class="btn-h" onclick="showPage('methode')">Découvrir notre méthode →</button>
+        <button class="btn-g" onclick="showPage('contact')" data-t="hero_btn1">Réserver un audit gratuit</button>
+        <button class="btn-h" onclick="showPage('methode')" data-t="hero_btn2">Découvrir notre méthode →</button>
       </div>
       <div class="hst">
-        <div class="hsb"><div class="hsn">+25%</div><div class="hsl">Revenus max</div></div>
-        <div class="hsb"><div class="hsn">+30%</div><div class="hsl">RevPAR max</div></div>
-        <div class="hsb"><div class="hsn">18 ans</div><div class="hsl">D'expérience</div></div>
+        <div class="hsb"><div class="hsn">+25%</div><div class="hsl" data-t="stat_rev">Revenus max</div></div>
+        <div class="hsb"><div class="hsn">+30%</div><div class="hsl" data-t="stat_revpar">RevPAR max</div></div>
+        <div class="hsb"><div class="hsn">18 ans</div><div class="hsl" data-t="stat_exp">D'expérience</div></div>
       </div>
     </div>
 
@@ -392,12 +392,12 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
       <div class="h3dc" id="card3d">
         <div class="h3di" id="card3di">
           <div class="hgl"></div>
-          <div class="hct">Notre service</div>
-          <h3>Revenue Management<br>complet, chaque jour</h3>
+          <div class="hct" data-t="card_tag">Notre service</div>
+          <h3 data-t="card_h3">Revenue Management<br>complet, chaque jour</h3>
           <ul>
-            <li>Optimisation quotidienne des prix</li>
-            <li>Gestion des OTA &amp; parité tarifaire</li>
-            <li>Stratégies tarifaires dynamiques</li>
+            <li data-t="card_li1">Optimisation quotidienne des prix</li>
+            <li data-t="card_li2">Gestion des OTA &amp; parité tarifaire</li>
+            <li data-t="card_li3">Stratégies tarifaires dynamiques</li>
             <li>Analyse concurrence &amp; demande</li>
             <li>Prévisions mensuelles &amp; saisonnières</li>
             <li>Rapports professionnels réguliers</li>
@@ -450,9 +450,9 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
 
   <!-- CTA accueil -->
   <section class="sec bof fade-in" style="text-align:center">
-    <div class="ey">Prêt à augmenter vos revenus ?</div>
-    <h2 class="tt">Réservez votre <em>audit gratuit</em></h2>
-    <p class="su">45 minutes avec Elton Skenderaj pour analyser votre situation et identifier vos opportunités de revenus. Sans engagement.</p>
+    <div class="ey" data-t="home_ey4">Prêt à augmenter vos revenus ?</div>
+    <h2 class="tt" data-t="home_tt4">Réservez votre <em>audit gratuit</em></h2>
+    <p class="su" data-t="home_su_cta">45 minutes avec Elton Skenderaj pour analyser votre situation et identifier vos opportunités de revenus. Sans engagement.</p>
     <div style="margin-top:2rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
       <button class="btn-g" onclick="showPage('contact')">Réserver maintenant</button>
       <button class="btn-h" onclick="showPage('tarifs')">Voir les tarifs</button>
@@ -467,7 +467,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
   <div class="pgh">
     <div class="pgov"></div>
     <div class="pgc">
-      <div class="pgtg">Services AHRPA</div>
+      <div class="pgtg" data-t="srv_ey">Services AHRPA</div>
       <h1>Notre Service de <em>Revenue Management</em><br>pour Hôtels en Albanie</h1>
       <p class="pgsb">Un accompagnement complet, quotidien, structuré — pour que votre hôtel génère chaque jour le maximum de revenus possible.</p>
     </div>
@@ -530,7 +530,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
   <div class="pgh">
     <div class="pgov"></div>
     <div class="pgc">
-      <div class="pgtg">Notre approche</div>
+      <div class="pgtg" data-t="met_ey">Notre approche</div>
       <h1>Notre Méthode <em>Quotidienne</em></h1>
       <p class="pgsb">Un processus rigoureux, exécuté chaque jour, pour maximiser vos revenus hôteliers en Albanie sur chaque période, chaque segment et chaque canal de vente.</p>
     </div>
@@ -585,7 +585,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
   <div class="pgh">
     <div class="pgov"></div>
     <div class="pgc">
-      <div class="pgtg">Le fondateur</div>
+      <div class="pgtg" data-t="ap_ey">Le fondateur</div>
       <h1>Elton Skenderaj —<br><em>Expert Revenue Management</em></h1>
       <p class="pgsb">18 ans d'expérience dans l'hôtellerie française haut de gamme. Fondateur d'AHRPA — Acces Hotels Revenue Performance Array.</p>
     </div>
@@ -646,7 +646,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
   <div class="pgh">
     <div class="pgov"></div>
     <div class="pgc">
-      <div class="pgtg">Performance</div>
+      <div class="pgtg" data-t="res_ey">Performance</div>
       <h1>Des Résultats <em>Concrets</em><br>et Mesurables</h1>
       <p class="pgsb">Des chiffres réels obtenus par des hôtels ayant adopté une stratégie de Revenue Management professionnelle — en Albanie et en Europe.</p>
     </div>
@@ -701,7 +701,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
   <div class="pgh">
     <div class="pgov"></div>
     <div class="pgc">
-      <div class="pgtg">Investissement</div>
+      <div class="pgtg" data-t="tar_ey">Investissement</div>
       <h1>Une Tarification <em>Transparente</em></h1>
       <p class="pgsb">Un coût fixe et prévisible. Un retour sur investissement mesurable dès le premier mois. Pas de mauvaise surprise.</p>
     </div>
@@ -788,7 +788,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
   <div class="pgh">
     <div class="pgov"></div>
     <div class="pgc">
-      <div class="pgtg">Audit Gratuit</div>
+      <div class="pgtg" data-t="con_ey">Audit Gratuit</div>
       <h1>Réservez votre <em>Audit Gratuit</em></h1>
       <p class="pgsb">45 minutes avec Elton Skenderaj pour analyser votre situation et identifier vos principales opportunités de revenus. Sans engagement.</p>
     </div>
@@ -811,16 +811,16 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
       <div>
         <form class="ctf" id="contact-form" novalidate>
           <div class="frow">
-            <div class="fg"><label class="fl">Prénom *</label><input class="fi" type="text" name="prenom" placeholder="Votre prénom" required></div>
-            <div class="fg"><label class="fl">Nom *</label><input class="fi" type="text" name="nom" placeholder="Votre nom" required></div>
+            <div class="fg"><label class="fl" data-t="form_prenom">Prénom *</label><input class="fi" type="text" name="prenom" placeholder="Votre prénom" required></div>
+            <div class="fg"><label class="fl" data-t="form_nom">Nom *</label><input class="fi" type="text" name="nom" placeholder="Votre nom" required></div>
           </div>
           <div class="frow">
-            <div class="fg"><label class="fl">Email *</label><input class="fi" type="email" name="email" placeholder="votre@email.com" required></div>
-            <div class="fg"><label class="fl">Téléphone</label><input class="fi" type="tel" name="tel" placeholder="+355 ou +33..."></div>
+            <div class="fg"><label class="fl" data-t="form_email">Email *</label><input class="fi" type="email" name="email" placeholder="votre@email.com" required></div>
+            <div class="fg"><label class="fl" data-t="form_phone">Téléphone</label><input class="fi" type="tel" name="tel" placeholder="+355 ou +33..."></div>
           </div>
-          <div class="fg"><label class="fl">Nom de l'hôtel *</label><input class="fi" type="text" name="hotel" placeholder="Nom de votre établissement" required></div>
+          <div class="fg"><label class="fl" data-t="form_hotel">Nom de l'hôtel *</label><input class="fi" type="text" name="hotel" placeholder="Nom de votre établissement" required></div>
           <div class="frow">
-            <div class="fg"><label class="fl">Nombre de chambres *</label>
+            <div class="fg"><label class="fl" data-t="form_rooms">Nombre de chambres *</label>
               <select class="fi" name="chambres" required>
                 <option value="">Sélectionner</option>
                 <option value="10-20">10 à 20 chambres</option>
@@ -841,7 +841,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
           </div>
           <div class="fg"><label class="fl">Message</label><textarea class="fi" name="message" placeholder="Parlez-nous de votre hôtel, de vos défis actuels et de vos objectifs..."></textarea></div>
           <div class="fc"><input type="checkbox" name="rgpd" required id="rgpd"><label for="rgpd">J'accepte que mes données soient utilisées pour traiter ma demande d'audit, conformément à la politique de confidentialité d'AHRPA.</label></div>
-          <button type="submit" class="fsub">Envoyer ma demande →</button>
+          <button type="submit" class="fsub" data-t="form_submit">Envoyer ma demande →</button>
           <div class="fmsg" id="form-msg">✓ Votre demande a bien été reçue. Elton Skenderaj vous contactera personnellement dans les 24 heures.</div>
         </form>
       </div>
@@ -996,9 +996,143 @@ function toggleMob(){document.getElementById('mob').classList.toggle('op');}
 
 // ─── LANGUE ─────────────────────────────────────────────────
 
+const T = {
+  fr: {
+    nav_home: "Accueil",
+    nav_services: "Services",
+    nav_methode: "Méthode",
+    nav_apropos: "À propos",
+    nav_resultats: "Résultats",
+    nav_tarifs: "Tarifs",
+    nav_blog: "Blog",
+    nav_contact: "Contact",
+    nav_cta: "Audit Gratuit",
+    hero_tag: "Acces Hotels Revenue Performance Array",
+    hero_h1: 'Revenue Management<em>professionnel</em>pour les hôtels en Albanie',
+    hero_desc: 'Nous augmentons vos revenus. Nous optimisons vos prix. Nous maximisons votre rentabilité.<br><strong style="color:var(--gl)">Résultats mesurables dès le premier mois.</strong>',
+    hero_btn1: "Réserver un audit gratuit",
+    hero_btn2: "Découvrir notre méthode →",
+    stat_rev: "Revenus max",
+    stat_revpar: "RevPAR max",
+    stat_exp: "D'expérience",
+    card_tag: "Notre service",
+    card_h3: "Revenue Management<br>complet, chaque jour",
+    card_li1: "Optimisation quotidienne des prix",
+    card_li2: "Gestion des OTA &amp; parité tarifaire",
+    card_li3: "Stratégies tarifaires dynamiques",
+    card_li4: "Rapports & tableaux de bord",
+    home_ey4: "Prêt à augmenter vos revenus ?",
+    home_tt4: "Réservez votre <em>audit gratuit</em>",
+    home_su_cta: "45 minutes avec Elton Skenderaj pour analyser votre situation et identifier vos opportunités de revenus. Sans engagement.",
+    srv_ey: "Services AHRPA",
+    met_ey: "Notre approche",
+    ap_ey: "Le fondateur",
+    res_ey: "Performance",
+    tar_ey: "Investissement",
+    con_ey: "Audit Gratuit",
+    form_prenom: "Prénom *",
+    form_nom: "Nom *",
+    form_hotel: "Nom de l'hôtel *",
+    form_rooms: "Nombre de chambres *",
+    form_email: "Email *",
+    form_phone: "Téléphone",
+    form_submit: "Envoyer ma demande d'audit",
+  },
+  en: {
+    nav_home: "Home",
+    nav_services: "Services",
+    nav_methode: "Method",
+    nav_apropos: "About",
+    nav_resultats: "Results",
+    nav_tarifs: "Pricing",
+    nav_blog: "Blog",
+    nav_contact: "Contact",
+    nav_cta: "Free Audit",
+    hero_tag: "Acces Hotels Revenue Performance Array",
+    hero_h1: 'Professional<em>Revenue Management</em>for Albanian Hotels',
+    hero_desc: 'We grow your revenue. We optimize your pricing. We maximize your profitability.<br><strong style="color:var(--gl)">Measurable results from the first month.</strong>',
+    hero_btn1: "Book a free audit",
+    hero_btn2: "Discover our method →",
+    stat_rev: "Max Revenue",
+    stat_revpar: "Max RevPAR",
+    stat_exp: "Years experience",
+    card_tag: "Our service",
+    card_h3: "Complete Revenue Management<br>every day",
+    card_li1: "Daily pricing optimization",
+    card_li2: "OTA management &amp; rate parity",
+    card_li3: "Dynamic pricing strategies",
+    card_li4: "Reports & dashboards",
+    home_ey4: "Ready to grow your revenue?",
+    home_tt4: "Book your <em>free audit</em>",
+    home_su_cta: "45 minutes with Elton Skenderaj to analyze your situation and identify your revenue opportunities. No commitment.",
+    srv_ey: "Our services",
+    met_ey: "Our approach",
+    ap_ey: "The founder",
+    res_ey: "Performance",
+    tar_ey: "Investment",
+    con_ey: "Free Audit",
+    form_prenom: "First name *",
+    form_nom: "Last name *",
+    form_hotel: "Hotel name *",
+    form_rooms: "Number of rooms *",
+    form_email: "Email *",
+    form_phone: "Phone",
+    form_submit: "Send my audit request",
+  },
+  sq: {
+    nav_home: "Kreu",
+    nav_services: "Shërbime",
+    nav_methode: "Metoda",
+    nav_apropos: "Rreth nesh",
+    nav_resultats: "Rezultate",
+    nav_tarifs: "Çmimet",
+    nav_blog: "Blog",
+    nav_contact: "Kontakt",
+    nav_cta: "Auditim Falas",
+    hero_tag: "Acces Hotels Revenue Performance Array",
+    hero_h1: 'Menaxhimi i të Ardhurave<em>profesional</em>për hotelet në Shqipëri',
+    hero_desc: 'Ne rrisim të ardhurat tuaja. Ne optimizojmë çmimet tuaja. Ne maksimizojmë rentabilitetin tuaj.<br><strong style="color:var(--gl)">Rezultate të matshme që nga muaji i parë.</strong>',
+    hero_btn1: "Rezervoni auditim falas",
+    hero_btn2: "Zbuloni metodën tonë →",
+    stat_rev: "Të ardhura max",
+    stat_revpar: "RevPAR max",
+    stat_exp: "Vite eksperiencë",
+    card_tag: "Shërbimi ynë",
+    card_h3: "Menaxhim i plotë i<br>të ardhurave, çdo ditë",
+    card_li1: "Optimizim ditor i çmimeve",
+    card_li2: "Menaxhim OTA &amp; barazi tarifore",
+    card_li3: "Strategji dinamike çmimesh",
+    card_li4: "Raporte & panele kontrolli",
+    home_ey4: "Gati të rrisni të ardhurat tuaja?",
+    home_tt4: "Rezervoni <em>auditimin falas</em>",
+    home_su_cta: "45 minuta me Elton Skenderaj për të analizuar situatën tuaj dhe identifikuar mundësitë tuaja të të ardhurave. Pa asnjë angazhim.",
+    srv_ey: "Shërbimet tona",
+    met_ey: "Qasja jonë",
+    ap_ey: "Themeluesi",
+    res_ey: "Performanca",
+    tar_ey: "Investimi",
+    con_ey: "Auditim Falas",
+    form_prenom: "Emri *",
+    form_nom: "Mbiemri *",
+    form_hotel: "Emri i hotelit *",
+    form_rooms: "Numri i dhomave *",
+    form_email: "Email-i juaj *",
+    form_phone: "Telefon",
+    form_submit: "Dërgoni kërkesën për auditim",
+  }
+};
+
+
+
 function setLang(l){
   document.querySelectorAll('.lb').forEach(b=>b.classList.remove('on'));
   document.querySelectorAll('.lb').forEach(b=>{if(b.textContent===l.toUpperCase())b.classList.add('on');});
+  document.documentElement.lang = l;
+  const t = T[l] || T.fr;
+  document.querySelectorAll('[data-t]').forEach(el=>{
+    const k = el.getAttribute('data-t');
+    if(t[k] !== undefined) el.innerHTML = t[k];
+  });
 }
 
 // ─── CANVAS PARTICLES ───────────────────────────────────────

@@ -54,6 +54,19 @@
   <!-- Stylesheet (non-render-blocking via media trick then swap) -->
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="assets/illustrations.css">
+  <style>
+    .canvas-3d { display:block; width:100%; border-radius:16px; }
+    .canvas-hotel { height:380px; }
+    .canvas-chart { height:220px; }
+    .canvas-globe { height:300px; width:300px; margin:0 auto; border-radius:50%; }
+    @media(max-width:768px) {
+      .canvas-hotel { height:260px; }
+      .canvas-chart { height:160px; }
+      .canvas-globe { height:200px; width:200px; }
+    }
+    /* Fallback message si WebGL indisponible */
+    .webgl-fallback { display:none; text-align:center; padding:2rem; color:rgba(255,255,255,0.4); font-size:0.85rem; }
+  </style>
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230a1628'/><text y='.9em' font-size='75' x='50%' text-anchor='middle' dominant-baseline='hanging' fill='%23c9a84c' font-family='Arial' font-weight='900'>A</text></svg>">
@@ -390,25 +403,29 @@
               <span class="stat-label">Réponse audit</span>
             </div>
           </div>
-        <!-- 3D Illustration Hero -->
-        <div class="hero-3d-wrapper" aria-hidden="true" style="position:relative;width:360px;margin:3rem auto 0;height:280px;">
+        <!-- 3D WebGL Illustrations -->
+        <div style="max-width:520px;margin:3rem auto 0;">
 
-          <!-- Floating stat cards -->
-          <div class="stat-card-3d" style="top:0;right:0;--rotate:-3deg;--delay:0s;">
-            <span class="val">+23%</span>
-            <span class="lbl">RevPAR</span>
-          </div>
-          <div class="stat-card-3d" style="bottom:20px;left:0;--rotate:2deg;--delay:1.5s;">
-            <span class="val">+18%</span>
-            <span class="lbl">ADR moyen</span>
-          </div>
-          <div class="stat-card-3d" style="top:80px;left:20px;--rotate:-1deg;--delay:0.8s;">
-            <span class="val">92%</span>
-            <span class="lbl">Satisfaction</span>
+          <!-- Floating stat cards KPI (CSS) -->
+          <div style="display:flex;gap:1rem;justify-content:center;margin-bottom:1rem;flex-wrap:wrap;">
+            <div class="stat-card-3d" style="position:static;--rotate:0deg;--delay:0s;">
+              <span class="val">+23%</span><span class="lbl">RevPAR</span>
+            </div>
+            <div class="stat-card-3d" style="position:static;--rotate:0deg;--delay:0.8s;">
+              <span class="val">+18%</span><span class="lbl">ADR moyen</span>
+            </div>
+            <div class="stat-card-3d" style="position:static;--rotate:0deg;--delay:1.5s;">
+              <span class="val">24h</span><span class="lbl">Réponse</span>
+            </div>
           </div>
 
-          <!-- 3D Hotel building -->
-          <div class="hero-3d-scene" style="position:absolute;top:0;left:50%;transform:translateX(-50%);">
+          <!-- Canvas Three.js : Hôtel 3D WebGL -->
+          <canvas id="canvas-hotel" class="canvas-3d canvas-hotel"
+                  aria-label="Illustration 3D hôtel AHRPA"></canvas>
+          <p class="webgl-fallback" id="webgl-fallback-hotel">Illustration hôtel premium AHRPA</p>
+
+          <!-- 3D Hotel building (CSS fallback — masqué si WebGL OK) -->
+          <div class="hero-3d-scene" style="position:absolute;top:0;left:50%;transform:translateX(-50%);display:none;" id="css-hotel-fallback">
             <div class="hotel-3d" role="img" aria-label="Illustration hôtel 3D">
               <div class="hotel-face hotel-front">
                 <div class="hotel-window" style="--delay:0s"></div>
@@ -446,7 +463,8 @@
             </div>
             <p style="text-align:center;font-size:0.65rem;color:rgba(201,168,76,0.6);margin-top:0.3rem;letter-spacing:0.08em;text-transform:uppercase;">Évolution RevPAR avec AHRPA</p>
           </div>
-        </div>
+          </div><!-- fin CSS fallback -->
+        </div><!-- fin 3D wrapper -->
 
       </div>
     </section>
@@ -902,32 +920,28 @@
 
         </div>
 
-        <!-- Globe 3D illustration -->
-        <div aria-hidden="true" style="display:flex;justify-content:center;gap:3rem;align-items:center;flex-wrap:wrap;margin:3rem 0;">
-          <div class="globe-wrapper">
-            <div class="globe">
-              <div class="globe-line globe-line-h"></div>
-              <div class="globe-line globe-line-h2"></div>
-              <div class="globe-line globe-line-h3"></div>
-              <div class="globe-line globe-line-v"></div>
-              <div class="globe-dot globe-dot-albania" style="--delay:0s;"></div>
-              <div class="globe-dot globe-dot-france" style="--delay:0.8s;"></div>
-            </div>
-            <p style="text-align:center;font-size:0.7rem;color:rgba(201,168,76,0.7);margin-top:0.5rem;letter-spacing:0.08em;text-transform:uppercase;">Présence Albanie & France</p>
+        <!-- 3D WebGL Illustrations : Globe + Revenue Chart -->
+        <div aria-hidden="true" style="display:flex;justify-content:center;gap:2rem;align-items:center;flex-wrap:wrap;margin:3rem 0;">
+
+          <!-- Globe Three.js -->
+          <div>
+            <canvas id="canvas-globe" class="canvas-3d canvas-globe"
+                    aria-label="Globe 3D Albanie et France"></canvas>
+            <p style="text-align:center;font-size:0.7rem;color:rgba(201,168,76,0.7);margin-top:0.5rem;letter-spacing:0.08em;text-transform:uppercase;">Présence Albanie &amp; France</p>
           </div>
 
-          <!-- Dashboard 3D card -->
-          <div class="dashboard-3d">
-            <svg width="0" height="0"><defs><linearGradient id="sparkGradient" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c9a84c"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs></svg>
-            <div class="dashboard-metric">
-              <span class="dashboard-metric-label">RevPAR actuel</span>
-              <span class="dashboard-metric-value">+23%</span>
-              <span class="dashboard-metric-change">↑ vs période précédente</span>
+          <!-- Revenue Chart Three.js -->
+          <div style="flex:1;min-width:280px;max-width:420px;">
+            <canvas id="canvas-chart" class="canvas-3d canvas-chart"
+                    aria-label="Graphique 3D revenus hôteliers"></canvas>
+            <div style="display:flex;gap:1.5rem;justify-content:center;margin-top:0.5rem;">
+              <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.7rem;color:rgba(255,255,255,0.5);">
+                <span style="width:12px;height:12px;background:#1a3060;display:inline-block;border-radius:2px;"></span> Avant AHRPA
+              </div>
+              <div style="display:flex;align-items:center;gap:0.4rem;font-size:0.7rem;color:rgba(201,168,76,0.8);">
+                <span style="width:12px;height:12px;background:#c9a84c;display:inline-block;border-radius:2px;"></span> Avec AHRPA
+              </div>
             </div>
-            <svg class="dashboard-sparkline" viewBox="0 0 80 40">
-              <path class="sparkline-fill" d="M0 40 L10 32 L20 28 L30 20 L40 22 L50 12 L60 8 L70 4 L80 0 L80 40 Z"/>
-              <path class="sparkline-path" d="M0 32 L10 28 L20 24 L30 20 L40 22 L50 12 L60 8 L70 4 L80 0"/>
-            </svg>
           </div>
         </div>
 
@@ -1564,5 +1578,49 @@
 
   <!-- JavaScript (deferred, non-render-blocking) -->
   <script src="script.js" defer></script>
+
+  <!-- Three.js WebGL 3D Scenes -->
+  <script type="module">
+    // Vérification support WebGL
+    function hasWebGL() {
+      try {
+        const c = document.createElement('canvas');
+        return !!(window.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl')));
+      } catch(e) { return false; }
+    }
+
+    if (hasWebGL()) {
+      // Import dynamique pour ne pas bloquer le rendu
+      import('./assets/scenes3d.js').then(({ initHotelScene, initRevenueChart, initGlobe }) => {
+        // Masquer le fallback CSS hôtel
+        const cssFallback = document.getElementById('css-hotel-fallback');
+        if (cssFallback) cssFallback.style.display = 'none';
+
+        // Utiliser IntersectionObserver pour n'initialiser que si visible
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const id = entry.target.id;
+            if (id === 'canvas-hotel') { initHotelScene('canvas-hotel'); obs.unobserve(entry.target); }
+            if (id === 'canvas-chart') { initRevenueChart('canvas-chart'); obs.unobserve(entry.target); }
+            if (id === 'canvas-globe') { initGlobe('canvas-globe'); obs.unobserve(entry.target); }
+          });
+        }, { threshold: 0.1 });
+
+        ['canvas-hotel', 'canvas-chart', 'canvas-globe'].forEach(id => {
+          const el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      }).catch(() => {
+        // Fallback silencieux : les CSS 3D restent visibles
+        document.querySelectorAll('.webgl-fallback').forEach(el => el.style.display = 'block');
+      });
+    } else {
+      // Pas de WebGL : afficher les fallbacks CSS
+      document.querySelectorAll('.canvas-3d').forEach(c => c.style.display = 'none');
+      const cssFallback = document.getElementById('css-hotel-fallback');
+      if (cssFallback) cssFallback.style.display = 'block';
+    }
+  </script>
 </body>
 </html>

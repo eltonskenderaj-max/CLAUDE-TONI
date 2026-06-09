@@ -1,0 +1,110 @@
+{
+  "name": "AHRPA – Email IA Auto-Response",
+  "nodes": [
+    {
+      "parameters": {
+        "pollTimes": { "item": [{ "mode": "everyX", "value": 5, "unit": "minutes" }] },
+        "filters": { "q": "subject:(AHRPA OR audit OR \"revenue management\") is:unread" },
+        "format": "resolved",
+        "dataPropertyName": "data",
+        "options": {}
+      },
+      "name": "Gmail Trigger",
+      "type": "n8n-nodes-base.gmailTrigger",
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const email = $input.first().json;\nconst body = email.text || email.snippet || '';\nconst subject = email.subject || '';\nconst from = email.from || '';\n\n// Extraire les données du formulaire\nconst nameMatch = body.match(/[Nn]om[\\s:]+([^\\n]+)/i);\nconst hotelMatch = body.match(/[Hh]ôtel[\\s:]+([^\\n]+)/i) || body.match(/[Hh]otel[\\s:]+([^\\n]+)/i);\nconst roomsMatch = body.match(/[Cc]hambres?[\\s:]+([\\d]+)/i) || body.match(/rooms?[\\s:]+([\\d]+)/i);\nconst msgMatch = body.match(/[Mm]essage[\\s:]+([\\s\\S]+)/i);\n\nreturn [{\n  json: {\n    email_from: from,\n    email_subject: subject,\n    email_body: body,\n    prospect_name: nameMatch ? nameMatch[1].trim() : 'Inconnu',\n    hotel_name: hotelMatch ? hotelMatch[1].trim() : 'Non précisé',\n    rooms_count: roomsMatch ? parseInt(roomsMatch[1]) : 0,\n    message: msgMatch ? msgMatch[1].trim() : body.substring(0, 500),\n    timestamp: new Date().toISOString()\n  }\n}];"
+      },
+      "name": "Extraire données",
+      "type": "n8n-nodes-base.code",
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://openrouter.ai/api/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "method": "POST",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            { "name": "Content-Type", "value": "application/json" },
+            { "name": "HTTP-Referer", "value": "https://www.ahrpa.com" },
+            { "name": "X-Title", "value": "AHRPA Revenue Management" }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "=",
+              "value": "={{ JSON.stringify({ model: 'mistralai/mistral-7b-instruct:free', messages: [{ role: 'system', content: 'Tu es un assistant pour AHRPA, cabinet de Revenue Management pour hôtels en Albanie. Analyse le prospect et réponds en JSON avec: { \"temperature\": \"CHAUD|TIÈDE|FROID\", \"reason\": \"courte explication\", \"response\": \"email de réponse personnalisé en français de 150 mots max, de la part d\\'Elton Skenderaj, signé AHRPA\" }' }, { role: 'user', content: 'Prospect: ' + $json.prospect_name + '\\nHôtel: ' + $json.hotel_name + '\\nNombre de chambres: ' + $json.rooms_count + '\\nMessage: ' + $json.message }] }) }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "OpenRouter IA",
+      "type": "n8n-nodes-base.httpRequest",
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const aiResponse = $input.first().json;\nconst content = aiResponse.choices[0].message.content;\n\nlet parsed;\ntry {\n  const jsonMatch = content.match(/\\{[\\s\\S]+\\}/);\n  parsed = JSON.parse(jsonMatch[0]);\n} catch(e) {\n  parsed = {\n    temperature: 'TIÈDE',\n    reason: 'Erreur de parsing',\n    response: 'Merci de votre message. Elton Skenderaj vous contactera sous 24h pour un audit gratuit. AHRPA'\n  };\n}\n\nconst prev = $('Extraire données').first().json;\nreturn [{ json: { ...prev, ...parsed } }];"
+      },
+      "name": "Parser réponse IA",
+      "type": "n8n-nodes-base.code",
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [{ "value1": "={{ $json.temperature }}", "value2": "FROID", "operation": "notEqual" }]
+        }
+      },
+      "name": "Filtrer (pas FROID)",
+      "type": "n8n-nodes-base.if",
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.email_from }}",
+        "subject": "={{ $json.temperature === 'CHAUD' ? '🎯 Votre audit AHRPA – Réponse prioritaire' : 'Votre demande AHRPA – Revenue Management' }}",
+        "emailType": "text",
+        "message": "={{ $json.response }}",
+        "options": {}
+      },
+      "name": "Envoyer réponse Gmail",
+      "type": "n8n-nodes-base.gmail",
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": { "__rl": true, "mode": "url", "value": "VOTRE_GOOGLE_SHEETS_ID" },
+        "sheetName": "Leads AHRPA",
+        "dataMode": "autoMapInputData",
+        "options": {}
+      },
+      "name": "Google Sheets Log",
+      "type": "n8n-nodes-base.googleSheets",
+      "position": [1340, 420]
+    }
+  ],
+  "connections": {
+    "Gmail Trigger": { "main": [[{ "node": "Extraire données", "type": "main", "index": 0 }]] },
+    "Extraire données": { "main": [[{ "node": "OpenRouter IA", "type": "main", "index": 0 }]] },
+    "OpenRouter IA": { "main": [[{ "node": "Parser réponse IA", "type": "main", "index": 0 }]] },
+    "Parser réponse IA": { "main": [[{ "node": "Filtrer (pas FROID)", "type": "main", "index": 0 }]] },
+    "Filtrer (pas FROID)": {
+      "main": [
+        [{ "node": "Envoyer réponse Gmail", "type": "main", "index": 0 },
+         { "node": "Google Sheets Log", "type": "main", "index": 0 }],
+        [{ "node": "Google Sheets Log", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": { "executionOrder": "v1" }
+}

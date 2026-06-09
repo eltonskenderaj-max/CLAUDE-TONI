@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Page introuvable – AHRPA Revenue Management Albania</title>
+  <meta name="description" content="La page que vous cherchez n'existe pas ou a été déplacée. Retournez à l'accueil AHRPA ou explorez nos services de Revenue Management pour hôtels en Albanie.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0a1628">
+
+  <!-- Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='12' fill='%230a1628'/><text y='.9em' font-size='75' x='50%' text-anchor='middle' dominant-baseline='hanging' fill='%23c9a84c' font-family='Arial' font-weight='900'>A</text></svg>">
+
+  <style>
+    .error-page {
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+    }
+    .error-main {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .error-main::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(201,168,76,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 40%, rgba(201,168,76,0.05) 0%, transparent 55%);
+    }
+    .error-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 640px;
+    }
+    .error-code {
+      font-size: clamp(6rem, 15vw, 10rem);
+      font-weight: 900;
+      line-height: 1;
+      color: transparent;
+      background: linear-gradient(135deg, var(--gold), rgba(201,168,76,0.4));
+      -webkit-background-clip: text;
+      background-clip: text;
+      margin-bottom: 0.25rem;
+      letter-spacing: -0.04em;
+    }
+    .error-title {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .error-desc {
+      font-size: 1.05rem;
+      color: var(--text-light);
+      margin-bottom: 2.5rem;
+      line-height: 1.7;
+    }
+    .error-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 2.5rem;
+    }
+    @media (max-width: 480px) {
+      .error-links { grid-template-columns: 1fr; }
+    }
+    .error-link-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      text-decoration: none;
+      color: var(--white);
+      transition: all 0.2s ease;
+      text-align: left;
+    }
+    .error-link-card:hover {
+      background: rgba(201,168,76,0.1);
+      border-color: rgba(201,168,76,0.3);
+      transform: translateY(-2px);
+    }
+    .error-link-card-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+    .error-link-card-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-bottom: 0.15rem;
+    }
+    .error-link-card-desc {
+      font-size: 0.78rem;
+      color: var(--text-gray);
+    }
+    .error-search {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 50px;
+      padding: 0.15rem;
+      display: flex;
+      gap: 0;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    .error-search input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      padding: 0.65rem 1.25rem;
+      color: var(--white);
+      font-size: 0.9rem;
+      outline: none;
+    }
+    .error-search input::placeholder { color: var(--text-gray); }
+    .error-search button {
+      background: var(--gold);
+      border: none;
+      border-radius: 50px;
+      padding: 0.65rem 1.25rem;
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .error-search button:hover { opacity: 0.85; }
+    .error-badge {
+      display: inline-block;
+      background: rgba(201,168,76,0.12);
+      border: 1px solid rgba(201,168,76,0.25);
+      border-radius: 50px;
+      padding: 0.35rem 1rem;
+      color: var(--gold);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+  </style>
+</head>
+
+<body class="error-page">
+
+  <!-- ============================================
+       NAVIGATION
+       ============================================ -->
+  <nav id="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="nav-container">
+      <a href="/" class="nav-logo" aria-label="AHRPA – Accueil">
+        <img src="/assets/images/ahrpa-logo.png"
+             alt="AHRPA – Acces Hotels Revenue Performance Array"
+             class="nav-logo-img"
+             width="120" height="40"
+             loading="eager"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='inline';">
+        <span class="logo-text" style="display:none;">AHRPA</span>
+        <span class="logo-sub">Revenue Management Albania</span>
+      </a>
+
+      <div class="nav-links" role="menubar">
+        <a href="/#solution" role="menuitem">Services</a>
+        <a href="/#pricing" role="menuitem">Tarifs</a>
+        <a href="/#faq" role="menuitem">FAQ</a>
+        <a href="/blog/" role="menuitem">Blog</a>
+      </div>
+
+      <div class="nav-cta">
+        <a href="/contact/" class="btn btn-primary btn-sm">Audit gratuit</a>
+      </div>
+
+      <button
+        id="nav-toggle"
+        class="nav-toggle"
+        aria-label="Ouvrir le menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <nav id="mobile-menu" class="mobile-menu" aria-label="Menu mobile" aria-hidden="true">
+    <a href="/">Accueil</a>
+    <a href="/#solution">Nos services</a>
+    <a href="/#founder">Elton Skenderaj</a>
+    <a href="/#pricing">Tarifs</a>
+    <a href="/#faq">FAQ</a>
+    <a href="/blog/">Blog</a>
+    <a href="/contact/" class="btn btn-primary" style="text-align:center;justify-content:center;">Réserver un audit gratuit</a>
+  </nav>
+
+  <!-- ============================================
+       404 CONTENT
+       ============================================ -->
+  <main class="error-main" id="main-content">
+    <div class="error-content">
+
+      <div class="error-badge">Erreur 404</div>
+
+      <div class="error-code" aria-label="Erreur 404">404</div>
+
+      <h1 class="error-title">Page introuvable</h1>
+
+      <p class="error-desc">
+        La page que vous cherchez n'existe pas ou a été déplacée.<br>
+        Pas de panique — voici où vous pouvez aller :
+      </p>
+
+      <nav class="error-links" aria-label="Pages utiles">
+        <a href="/" class="error-link-card" aria-label="Aller à l'accueil">
+          <span class="error-link-card-icon">🏠</span>
+          <div class="error-link-card-title">Accueil AHRPA</div>
+          <div class="error-link-card-desc">Revenue Management pour hôtels en Albanie</div>
+        </a>
+
+        <a href="/revenue-management-albania/" class="error-link-card" aria-label="Découvrir le Revenue Management Albanie">
+          <span class="error-link-card-icon">📈</span>
+          <div class="error-link-card-title">Revenue Management Albanie</div>
+          <div class="error-link-card-desc">Nos services et notre approche</div>
+        </a>
+
+        <a href="/blog/" class="error-link-card" aria-label="Lire le blog AHRPA">
+          <span class="error-link-card-icon">✍️</span>
+          <div class="error-link-card-title">Blog & Ressources</div>
+          <div class="error-link-card-desc">Guides, stratégies et analyses</div>
+        </a>
+
+        <a href="/contact/" class="error-link-card" aria-label="Nous contacter">
+          <span class="error-link-card-icon">📅</span>
+          <div class="error-link-card-title">Audit gratuit</div>
+          <div class="error-link-card-desc">Réservez votre audit de 45 minutes</div>
+        </a>
+      </nav>
+
+      <div class="error-search" role="search" aria-label="Rechercher sur le site">
+        <input
+          type="search"
+          placeholder="Rechercher sur AHRPA..."
+          aria-label="Rechercher"
+          onkeydown="if(event.key==='Enter'&&this.value.trim()){window.location.href='/?s='+encodeURIComponent(this.value.trim())}"
+        >
+        <button
+          type="button"
+          onclick="var v=this.previousElementSibling.value.trim();if(v)window.location.href='/?s='+encodeURIComponent(v);"
+          aria-label="Lancer la recherche"
+        >
+          Rechercher
+        </button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <span class="logo-text">AHRPA</span>
+          <span class="logo-sub">Revenue Management Albania</span>
+          <p style="font-size:0.7rem;letter-spacing:0.12em;color:var(--gold);text-transform:uppercase;margin-bottom:0.3rem;">Acces Hotels Revenue Performance Array</p>
+          <p>Cabinet de Revenue Management spécialisé pour les hôtels indépendants en Albanie. Fondé par Elton Skenderaj.</p>
+          <div class="footer-social" aria-label="Réseaux sociaux">
+            <a href="https://www.linkedin.com/company/ahrpa" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn AHRPA">in</a>
+            <a href="https://twitter.com/AHRPA_Albania" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Twitter AHRPA">𝕏</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Services</h4>
+          <nav class="footer-links" aria-label="Services">
+            <a href="/revenue-management-albania/">Revenue Management Albanie</a>
+            <a href="/yield-management-albania/">Yield Management</a>
+            <a href="/hotel-consulting-albania/">Conseil Hôtelier</a>
+            <a href="/booking-optimization-albania/">Optimisation Booking</a>
+            <a href="/hotel-pricing-strategy-albania/">Stratégie Tarifaire</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>Ressources</h4>
+          <nav class="footer-links" aria-label="Ressources">
+            <a href="/blog/">Blog AHRPA</a>
+            <a href="/blog/augmenter-revpar-hotel/">Augmenter le RevPAR</a>
+            <a href="/blog/erreurs-pricing-hoteliers/">Erreurs de Pricing</a>
+            <a href="/blog/revenue-management-petits-hotels/">RM Petits Hôtels</a>
+          </nav>
+        </div>
+
+        <div class="footer-col">
+          <h4>À propos</h4>
+          <nav class="footer-links" aria-label="Navigation à propos">
+            <a href="/#founder">Elton Skenderaj</a>
+            <a href="/#pricing">Nos tarifs</a>
+            <a href="/#faq">FAQ</a>
+            <a href="/contact/">Contact</a>
+          </nav>
+          <div style="margin-top:1.5rem;">
+            <a href="/en/" style="font-size:0.8rem;color:var(--text-gray);">English version</a><br>
+            <a href="/sq/" style="font-size:0.8rem;color:var(--text-gray);margin-top:0.35rem;display:inline-block;">Versioni shqip</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 AHRPA – Revenue Management Albania. Tous droits réservés. Fondé par <strong style="color:var(--gold)">Elton Skenderaj</strong>.</p>
+        <div class="footer-lang" aria-label="Sélecteur de langue">
+          <a href="/" class="active" hreflang="fr" lang="fr" aria-current="page">FR</a>
+          <a href="/en/" hreflang="en" lang="en">EN</a>
+          <a href="/sq/" hreflang="sq" lang="sq">SQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

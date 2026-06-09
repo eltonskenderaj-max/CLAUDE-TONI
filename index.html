@@ -932,25 +932,65 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
 <script>
 // ─── DONNÉES ────────────────────────────────────────────────
 
-const FAQ_DATA = [
-  {q:"Qu'est-ce que le Revenue Management ?",a:"Le Revenue Management est l'art d'optimiser vos prix et votre inventaire en fonction de la demande, du marché et de la concurrence, afin de maximiser vos revenus et votre rentabilité."},
-  {q:"Pourquoi mon hôtel a-t-il besoin de Revenue Management ?",a:"Sans stratégie tarifaire structurée, la plupart des hôtels perdent entre 12% et 25% de revenus chaque année — prix mal positionnés, périodes fortes sous-exploitées, décisions tardives."},
-  {q:"AHRPA remplace-t-il un Revenue Manager interne ?",a:"Oui. AHRPA fonctionne comme un département complet de Revenue Management, pour une fraction du coût d'un salarié à temps plein. Vous bénéficiez d'une équipe, de méthodes et d'outils professionnels."},
-  {q:"À quelle fréquence ajustez-vous les prix ?",a:"Nous analysons et ajustons les prix tous les jours. En haute saison ou lors de périodes de forte demande, les prix peuvent être ajustés plusieurs fois par jour."},
-  {q:"Est-ce que je garde le contrôle sur mes prix ?",a:"Oui, toujours. Nous pouvons travailler de deux façons : nous proposons et vous validez, ou nous gérons directement selon un cadre défini ensemble. Dans tous les cas, vous restez décisionnaire final."},
-  {q:"Combien de temps faut-il pour voir des résultats ?",a:"En général, les premiers effets sont visibles entre 15 et 45 jours, selon la saison, la demande et la situation de départ de l'hôtel."},
-  {q:"Quel est le tarif du service AHRPA ?",a:"Notre tarif est de 450€ par mois + 8€ par chambre et par mois. Pour un hôtel de 30 chambres : 690€/mois — un investissement qui se rentabilise généralement dès le premier mois."},
-  {q:"Proposez-vous un engagement minimum ?",a:"Oui, nous demandons un engagement minimum de 3 mois. En dessous, il est difficile de mettre en place une stratégie solide et d'en mesurer les effets."},
-  {q:"Travaillez-vous avec des hôtels saisonniers ?",a:"Oui, les hôtels saisonniers font partie de notre cœur de cible en Albanie. Nous adaptons la stratégie à la saisonnalité, aux périodes d'ouverture et aux pics de demande."},
-  {q:"Travaillez-vous avec tous les PMS et Channel Managers ?",a:"Nous nous adaptons à la plupart des PMS et Channel Managers du marché. Si votre système est spécifique, nous étudions ensemble la meilleure manière de travailler."},
-  {q:"Pouvez-vous gérer uniquement les OTA ?",a:"Oui, nous pouvons nous concentrer sur la gestion des OTA (Booking.com, Expedia, etc.). Cependant, pour maximiser les résultats, nous recommandons une approche globale."},
-  {q:"Mes données sont-elles confidentielles ?",a:"Oui. Toutes les données de votre hôtel sont traitées de manière confidentielle et utilisées uniquement dans le cadre de la mission de Revenue Management."},
-  {q:"Fournissez-vous des rapports réguliers ?",a:"Oui. Nous fournissons des rapports clairs avec indicateurs clés (occupation, ADR, RevPAR, mix canaux) et commentaires pour la prise de décision."},
-  {q:"Travaillez-vous en français, en anglais ou en albanais ?",a:"Nous pouvons travailler en français, en anglais et en albanais, selon vos préférences et celles de votre équipe."},
-  {q:"Comment se passe le démarrage avec AHRPA ?",a:"Analyse de votre situation actuelle → définition des objectifs → mise en place des accès et process quotidiens → lancement avec suivi rapproché les premières semaines."},
-  {q:"AHRPA peut-il augmenter mes prix sans perdre de clients ?",a:"Oui. L'objectif est d'ajuster les prix intelligemment selon la demande réelle. Dans de nombreux cas, nous augmentons les prix tout en améliorant le taux d'occupation sur les bonnes périodes."},
-  {q:"Puis-je arrêter le service à tout moment ?",a:"Après la période minimale d'engagement (3 mois), vous pouvez arrêter le service avec un préavis raisonnable défini au contrat."}
-];
+const FAQ_DATA = {
+  fr: [
+    {q:"Qu'est-ce que le Revenue Management ?",a:"Le Revenue Management est l'art d'optimiser vos prix et votre inventaire en fonction de la demande, du marché et de la concurrence, afin de maximiser vos revenus et votre rentabilité."},
+    {q:"Pourquoi mon hôtel a-t-il besoin de Revenue Management ?",a:"Sans stratégie tarifaire structurée, la plupart des hôtels perdent entre 12% et 25% de revenus chaque année — prix mal positionnés, périodes fortes sous-exploitées, décisions tardives."},
+    {q:"AHRPA remplace-t-il un Revenue Manager interne ?",a:"Oui. AHRPA fonctionne comme un département complet de Revenue Management, pour une fraction du coût d'un salarié à temps plein. Vous bénéficiez d'une équipe, de méthodes et d'outils professionnels."},
+    {q:"À quelle fréquence ajustez-vous les prix ?",a:"Nous analysons et ajustons les prix tous les jours. En haute saison ou lors de périodes de forte demande, les prix peuvent être ajustés plusieurs fois par jour."},
+    {q:"Est-ce que je garde le contrôle sur mes prix ?",a:"Oui, toujours. Nous pouvons travailler de deux façons : nous proposons et vous validez, ou nous gérons directement selon un cadre défini ensemble. Dans tous les cas, vous restez décisionnaire final."},
+    {q:"Combien de temps faut-il pour voir des résultats ?",a:"En général, les premiers effets sont visibles entre 15 et 45 jours, selon la saison, la demande et la situation de départ de l'hôtel."},
+    {q:"Quel est le tarif du service AHRPA ?",a:"Notre tarif est de 450€ par mois + 8€ par chambre et par mois. Pour un hôtel de 30 chambres : 690€/mois — un investissement qui se rentabilise généralement dès le premier mois."},
+    {q:"Proposez-vous un engagement minimum ?",a:"Oui, nous demandons un engagement minimum de 3 mois. En dessous, il est difficile de mettre en place une stratégie solide et d'en mesurer les effets."},
+    {q:"Travaillez-vous avec des hôtels saisonniers ?",a:"Oui, les hôtels saisonniers font partie de notre cœur de cible en Albanie. Nous adaptons la stratégie à la saisonnalité, aux périodes d'ouverture et aux pics de demande."},
+    {q:"Travaillez-vous avec tous les PMS et Channel Managers ?",a:"Nous nous adaptons à la plupart des PMS et Channel Managers du marché. Si votre système est spécifique, nous étudions ensemble la meilleure manière de travailler."},
+    {q:"Pouvez-vous gérer uniquement les OTA ?",a:"Oui, nous pouvons nous concentrer sur la gestion des OTA (Booking.com, Expedia, etc.). Cependant, pour maximiser les résultats, nous recommandons une approche globale."},
+    {q:"Mes données sont-elles confidentielles ?",a:"Oui. Toutes les données de votre hôtel sont traitées de manière confidentielle et utilisées uniquement dans le cadre de la mission de Revenue Management."},
+    {q:"Fournissez-vous des rapports réguliers ?",a:"Oui. Nous fournissons des rapports clairs avec indicateurs clés (occupation, ADR, RevPAR, mix canaux) et commentaires pour la prise de décision."},
+    {q:"Travaillez-vous en français, en anglais ou en albanais ?",a:"Nous pouvons travailler en français, en anglais et en albanais, selon vos préférences et celles de votre équipe."},
+    {q:"Comment se passe le démarrage avec AHRPA ?",a:"Analyse de votre situation actuelle → définition des objectifs → mise en place des accès et process quotidiens → lancement avec suivi rapproché les premières semaines."},
+    {q:"AHRPA peut-il augmenter mes prix sans perdre de clients ?",a:"Oui. L'objectif est d'ajuster les prix intelligemment selon la demande réelle. Dans de nombreux cas, nous augmentons les prix tout en améliorant le taux d'occupation sur les bonnes périodes."},
+    {q:"Puis-je arrêter le service à tout moment ?",a:"Après la période minimale d'engagement (3 mois), vous pouvez arrêter le service avec un préavis raisonnable défini au contrat."}
+  ],
+  en: [
+    {q:"What is Revenue Management?",a:"Revenue Management is the art of optimizing your prices and inventory based on demand, the market and competition, in order to maximize your revenue and profitability."},
+    {q:"Why does my hotel need Revenue Management?",a:"Without a structured pricing strategy, most hotels lose between 12% and 25% of revenue each year — poorly positioned prices, underexploited peak periods, late decisions."},
+    {q:"Does AHRPA replace an in-house Revenue Manager?",a:"Yes. AHRPA operates as a complete Revenue Management department, for a fraction of the cost of a full-time employee. You benefit from a team, professional methods and tools."},
+    {q:"How often do you adjust prices?",a:"We analyze and adjust prices every day. During peak season or periods of high demand, prices can be adjusted several times a day."},
+    {q:"Do I keep control over my prices?",a:"Yes, always. We can work in two ways: we propose and you validate, or we manage directly within a framework defined together. In all cases, you remain the final decision-maker."},
+    {q:"How long does it take to see results?",a:"Generally, the first effects are visible within 15 to 45 days, depending on the season, demand and the hotel's starting situation."},
+    {q:"What is the AHRPA service price?",a:"Our rate is €450 per month + €8 per room per month. For a 30-room hotel: €690/month — an investment that generally pays for itself from the first month."},
+    {q:"Do you offer a minimum commitment?",a:"Yes, we require a minimum commitment of 3 months. Below that, it is difficult to implement a solid strategy and measure its effects."},
+    {q:"Do you work with seasonal hotels?",a:"Yes, seasonal hotels are at the heart of our target in Albania. We adapt the strategy to seasonality, opening periods and demand peaks."},
+    {q:"Do you work with all PMS and Channel Managers?",a:"We adapt to most PMS and Channel Managers on the market. If your system is specific, we will study together the best way to work."},
+    {q:"Can you manage OTAs only?",a:"Yes, we can focus on OTA management (Booking.com, Expedia, etc.). However, for maximum results, we recommend a global approach."},
+    {q:"Is my data confidential?",a:"Yes. All your hotel data is treated confidentially and used solely within the scope of the Revenue Management mission."},
+    {q:"Do you provide regular reports?",a:"Yes. We provide clear reports with key indicators (occupancy, ADR, RevPAR, channel mix) and commentary for decision-making."},
+    {q:"Do you work in French, English or Albanian?",a:"We can work in French, English and Albanian, according to your preferences and those of your team."},
+    {q:"How does onboarding with AHRPA work?",a:"Analysis of your current situation → definition of objectives → setup of accesses and daily processes → launch with close monitoring in the first weeks."},
+    {q:"Can AHRPA raise my prices without losing customers?",a:"Yes. The goal is to adjust prices intelligently according to real demand. In many cases, we increase prices while improving occupancy rates during the right periods."},
+    {q:"Can I stop the service at any time?",a:"After the minimum commitment period (3 months), you can stop the service with reasonable notice as defined in the contract."}
+  ],
+  sq: [
+    {q:"Çfarë është Menaxhimi i të Ardhurave?",a:"Menaxhimi i të Ardhurave është arti i optimizimit të çmimeve dhe inventarit tuaj bazuar në kërkesë, treg dhe konkurrencë, me qëllim maksimizimin e të ardhurave dhe rentabilitetit tuaj."},
+    {q:"Pse hoteli im ka nevojë për Menaxhim të të Ardhurave?",a:"Pa një strategji të strukturuar çmimesh, shumica e hoteleve humbasin ndërmjet 12% dhe 25% të të ardhurave çdo vit — çmime të pozicionuara keq, periudha kulmore të shfrytëzuara dobët, vendime të vonuara."},
+    {q:"A zëvendëson AHRPA një Revenue Manager të brendshëm?",a:"Po. AHRPA funksionon si një departament i plotë i Menaxhimit të të Ardhurave, për një fraksion të kostos së një punonjësi me kohë të plotë. Ju përfitoni nga një ekip, metoda dhe mjete profesionale."},
+    {q:"Sa shpesh i rregulloni çmimet?",a:"Ne analizojmë dhe rregullojmë çmimet çdo ditë. Gjatë sezonit të lartë ose periudhave të kërkesës së lartë, çmimet mund të rregullohen disa herë në ditë."},
+    {q:"A mbaj kontrollin mbi çmimet e mia?",a:"Po, gjithmonë. Mund të punojmë në dy mënyra: ne propozojmë dhe ju validoni, ose ne menaxhojmë drejtpërdrejt brenda një kuadri të përcaktuar së bashku. Në të gjitha rastet, ju mbeteni vendimmarrësi final."},
+    {q:"Sa kohë duhet për të parë rezultate?",a:"Në përgjithësi, efektet e para janë të dukshme ndërmjet 15 dhe 45 ditëve, në varësi të sezonit, kërkesës dhe situatës fillestare të hotelit."},
+    {q:"Cili është çmimi i shërbimit AHRPA?",a:"Tarifa jonë është 450€ në muaj + 8€ për dhomë në muaj. Për një hotel me 30 dhoma: 690€/muaj — një investim që zakonisht shpërblen veten nga muaji i parë."},
+    {q:"A ofroni angazhim minimal?",a:"Po, kërkojmë një angazhim minimal prej 3 muajsh. Nën këtë, është e vështirë të zbatohet një strategji solide dhe të maten efektet e saj."},
+    {q:"A punoni me hotele sezonale?",a:"Po, hotelet sezonale janë në zemër të targetit tonë në Shqipëri. Ne adaptojmë strategjinë ndaj sezonalitetit, periudhave të hapjes dhe pikeve të kërkesës."},
+    {q:"A punoni me të gjithë PMS dhe Channel Managers?",a:"Ne adaptohemi me shumicën e PMS dhe Channel Managers në treg. Nëse sistemi juaj është specifik, do të studiojmë së bashku mënyrën më të mirë të punës."},
+    {q:"A mund të menaxhoni vetëm OTA-t?",a:"Po, mund të fokusohemi në menaxhimin e OTA (Booking.com, Expedia, etj.). Megjithatë, për rezultate maksimale, rekomandojmë një qasje globale."},
+    {q:"A janë të dhënat e mia konfidenciale?",a:"Po. Të gjitha të dhënat e hotelit tuaj trajtohen në mënyrë konfidenciale dhe përdoren vetëm brenda kuadrit të misionit të Menaxhimit të të Ardhurave."},
+    {q:"A siguroni raporte të rregullta?",a:"Po. Ne sigurojmë raporte të qarta me tregues kryesorë (zënie, ADR, RevPAR, miks kanalesh) dhe komente për vendimmarrje."},
+    {q:"A punoni në frëngjisht, anglisht ose shqip?",a:"Mund të punojmë në frëngjisht, anglisht dhe shqip, sipas preferencave tuaja dhe të ekipit tuaj."},
+    {q:"Si funksionon fillimi me AHRPA?",a:"Analiza e situatës suaj aktuale → përcaktimi i objektivave → vendosja e akseseve dhe proceseve ditore → nisja me monitorim të ngushtë në javët e para."},
+    {q:"A mund të rrisë AHRPA çmimet e mia pa humbur klientë?",a:"Po. Objektivi është rregullimi inteligjent i çmimeve sipas kërkesës reale. Në shumë raste, rrisim çmimet duke përmirësuar njëkohësisht normën e zënies në periudhat e duhura."},
+    {q:"A mund të ndaloj shërbimin në çdo kohë?",a:"Pas periudhës minimale të angazhimit (3 muaj), mund të ndaloni shërbimin me njoftim të arsyeshëm siç përcaktohet në kontratë."}
+  ]
+};
 
 const BLOG_DATA = [
   {tag:"Fondamentaux",t:"Comment augmenter le RevPAR de votre hôtel ?",p:"Stratégies concrètes pour augmenter votre Revenue Per Available Room : pricing, occupation, segmentation et gestion des canaux."},
@@ -973,8 +1013,10 @@ function buildFaq(containerId, indices, dark) {
   const c = document.getElementById(containerId);
   if(!c) return;
   c.innerHTML = '';
+  const lang = document.documentElement.lang || 'fr';
+  const data = FAQ_DATA[lang] || FAQ_DATA.fr;
   indices.forEach(i => {
-    const d = FAQ_DATA[i];
+    const d = data[i];
     const item = document.createElement('div');
     item.className = 'faq-item';
     item.innerHTML = `<div class="faq-q${dark?' lt':''}" onclick="toggleFaq(this.parentElement)"><h3>${d.q}</h3><span class="faq-ico">+</span></div><div class="faq-a${dark?' lt':''}"><p>${d.a}</p></div>`;
@@ -1390,6 +1432,15 @@ function setLang(l){
     const k = el.getAttribute('data-t');
     if(t[k] !== undefined) el.innerHTML = t[k];
   });
+  // Rebuild FAQs in new language
+  ['faq-home','faq-tarifs','faq-contact'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.innerHTML = '';
+  });
+  const dark = document.getElementById('faq-home') !== null;
+  buildFaq('faq-home',[0,1,2,3,4,5,6],true);
+  buildFaq('faq-tarifs',[6,7,8,9,10],false);
+  buildFaq('faq-contact',[14,15,16],false);
 }
 function updateMobLang(l){
   document.querySelectorAll('.mob-lb').forEach(b=>b.classList.remove('on'));

@@ -57,6 +57,128 @@ img{max-width:100%;display:block}a{text-decoration:none;color:inherit}
 .prc-install-desc{font-size:.58rem;line-height:1.7;color:var(--tm)}
 .pms-tag{font-size:.55rem;letter-spacing:.08em;padding:.25rem .65rem;background:rgba(201,165,90,.12);border:1px solid rgba(201,165,90,.25);color:var(--gd);border-radius:2px}
 .cm-tag{background:rgba(201,165,90,.22);border-color:rgba(201,165,90,.5)}
+
+/* ── 3D & VISUAL ENHANCEMENTS ─────────────────────────────── */
+/* Glassmorphism for prc-card */
+.prc-card{
+  background:linear-gradient(135deg,rgba(26,24,21,.95) 0%,rgba(20,18,16,.98) 100%);
+  border:1px solid rgba(201,165,90,.25);
+  box-shadow:0 24px 80px rgba(0,0,0,.5),0 0 0 1px rgba(201,165,90,.08),inset 0 1px 0 rgba(201,165,90,.12);
+  backdrop-filter:blur(16px);
+  transition:transform .4s cubic-bezier(.25,.46,.45,.94),box-shadow .4s;
+}
+.prc-card:hover{
+  transform:translateY(-6px) scale(1.01);
+  box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 60px rgba(201,165,90,.12),0 0 0 1px rgba(201,165,90,.2),inset 0 1px 0 rgba(201,165,90,.2);
+}
+/* Gold glow on section headings */
+.tt em{
+  background:linear-gradient(135deg,var(--gd) 0%,var(--gl) 50%,#E8D49A 100%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  filter:drop-shadow(0 0 20px rgba(201,165,90,.35));
+}
+/* 3D service cards */
+.db{
+  transition:transform .35s cubic-bezier(.25,.46,.45,.94),box-shadow .35s,border-color .35s;
+  transform-style:preserve-3d;
+}
+.db:hover{
+  transform:translateY(-8px) rotateX(2deg) rotateY(-1deg);
+  box-shadow:0 20px 60px rgba(0,0,0,.4),0 0 30px rgba(201,165,90,.1);
+  border-color:rgba(201,165,90,.4);
+}
+/* Glowing stats */
+.stat-num{
+  text-shadow:0 0 30px rgba(201,165,90,.5),0 0 60px rgba(201,165,90,.2);
+  animation:statPulse 3s ease-in-out infinite;
+}
+@keyframes statPulse{
+  0%,100%{text-shadow:0 0 30px rgba(201,165,90,.5),0 0 60px rgba(201,165,90,.2);}
+  50%{text-shadow:0 0 50px rgba(201,165,90,.8),0 0 90px rgba(201,165,90,.35);}
+}
+/* Hero gradient overlay enhancement */
+.hov{
+  background:linear-gradient(135deg,rgba(13,12,10,.92) 0%,rgba(13,12,10,.7) 50%,rgba(26,24,21,.85) 100%);
+}
+/* Gold shimmer on CTA buttons */
+.btn-g{
+  position:relative;
+  overflow:hidden;
+}
+.btn-g::after{
+  content:'';
+  position:absolute;
+  top:-50%;
+  left:-75%;
+  width:50%;
+  height:200%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.12),transparent);
+  transform:skewX(-25deg);
+  transition:left .6s ease;
+}
+.btn-g:hover::after{left:125%;}
+/* FAQ items 3D hover */
+.faq-item{
+  transition:transform .25s ease,box-shadow .25s ease;
+}
+.faq-item:hover{
+  transform:translateX(4px);
+  box-shadow:-3px 0 0 var(--gd);
+}
+/* pms-tag subtle animation */
+.pms-tag{
+  transition:transform .2s,background .2s,box-shadow .2s;
+}
+.pms-tag:hover{
+  transform:translateY(-2px);
+  background:rgba(201,165,90,.25);
+  box-shadow:0 4px 12px rgba(201,165,90,.2);
+}
+/* Nav blur enhancement */
+nav{
+  background:linear-gradient(180deg,rgba(8,7,5,.98) 0%,rgba(13,12,10,.96) 100%);
+}
+/* Section reveal animation */
+@keyframes fadeSlideUp{
+  from{opacity:0;transform:translateY(28px);}
+  to{opacity:1;transform:translateY(0);}
+}
+.prc-ex,.prc-card,.db,.fti,.lwb,.tli{
+  animation:fadeSlideUp .6s ease both;
+}
+/* Floating gradient orbs behind hero */
+.hov::before{
+  content:'';
+  position:absolute;
+  top:20%;left:10%;
+  width:400px;height:400px;
+  background:radial-gradient(circle,rgba(201,165,90,.06) 0%,transparent 70%);
+  border-radius:50%;
+  animation:orbFloat 8s ease-in-out infinite;
+  pointer-events:none;
+}
+.hov::after{
+  content:'';
+  position:absolute;
+  bottom:15%;right:8%;
+  width:300px;height:300px;
+  background:radial-gradient(circle,rgba(201,165,90,.04) 0%,transparent 70%);
+  border-radius:50%;
+  animation:orbFloat 10s ease-in-out infinite reverse;
+  pointer-events:none;
+}
+@keyframes orbFloat{
+  0%,100%{transform:translate(0,0) scale(1);}
+  33%{transform:translate(20px,-30px) scale(1.05);}
+  66%{transform:translate(-15px,20px) scale(.95);}
+}
+/* HT badge on price */
+.prc-price span{
+  vertical-align:super;
+  font-size:1rem;
+}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:.9rem 3rem;background:rgba(13,12,10,.97);backdrop-filter:blur(24px);border-bottom:1px solid rgba(201,165,90,.18);transition:padding .35s var(--ease)}
 nav.sc{padding:.55rem 3rem}
@@ -743,7 +865,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
     <div class="c2">
       <div class="prc-card">
         <div style="font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gd);margin-bottom:1.2rem" data-t="tar_badge">Abonnement mensuel</div>
-        <div class="prc-price">450 €</div>
+        <div class="prc-price">450 € <span style="font-size:1rem;font-weight:400;color:var(--gd);letter-spacing:.1em">HT</span></div>
         <div class="prc-per" data-t="tar_per">par mois + 8 € par chambre / mois</div>
         <ul class="prc-list" data-t="tar_prc_list">
           <li>Optimisation quotidienne des prix</li>
@@ -755,7 +877,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
           <li>Accès direct à votre Revenue Manager</li>
           <li>Support et conseil continu</li>
         </ul>
-        <button class="btn-g" onclick="showPage('contact')" style="width:100%;justify-content:center;display:block;text-align:center">Démarrer — Audit gratuit</button>
+        <button class="btn-g" onclick="showPage('contact')" style="width:100%;justify-content:center;display:block;text-align:center" data-t="tar_btn">Démarrer — Audit gratuit</button>
         <p class="prc-note" data-t="tar_prc_note">Tarifs <strong>HT</strong>. Abonnement mensuel + 8&nbsp;€ HT/chambre/mois. Engagement sur 1&nbsp;an.</p>
         <div class="prc-install" data-t="tar_install_box">
           <div class="prc-install-title">Frais d'installation uniques</div>
@@ -1011,7 +1133,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
     <div style="font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem" data-t="popup_tag">Avant de partir</div>
     <h3 data-t="popup_h3">Votre audit <em>gratuit</em><br>vous attend</h3>
     <p data-t="popup_p">45 minutes pour identifier vos opportunités de revenus — sans engagement, sans frais.</p>
-    <button class="btn-g" onclick="closePopup();showPage('contact')" style="width:100%;display:block;text-align:center">Réserver maintenant</button>
+    <button class="btn-g" onclick="closePopup();showPage('contact')" style="width:100%;display:block;text-align:center" data-t="home_cta_btn1">Réserver maintenant</button>
     <p style="font-size:.55rem;color:rgba(253,250,246,.25);text-align:center;margin-top:.8rem;cursor:pointer" onclick="closePopup()" data-t="popup_no">Non merci, je préfère perdre des revenus</p>
   </div>
 </div>
@@ -1312,6 +1434,71 @@ const T = {
     tar_sub: "Un coût fixe et prévisible. Un retour sur investissement mesurable dès le premier mois. Pas de mauvaise surprise.",
     tar_badge: "Abonnement mensuel",
     tar_per: "par mois + 8 € par chambre / mois",
+    tar_pms_section: `<div class="sh" style="text-align:left">
+        <div class="ey l">Infrastructure technologique</div>
+        <h2 class="tt">PMS &amp; Channel Manager —<br><em>le socle de votre rentabilité</em></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem">
+        <div class="prc-ex" style="padding:2rem">
+          <div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">PMS — Property Management System</div>
+          <p style="font-size:.65rem;line-height:1.85;color:var(--tm)">Le PMS est le système nerveux de votre hôtel : il centralise les réservations, la gestion des chambres, les profils clients et la facturation. Sans PMS, aucune gestion professionnelle des revenus n'est possible.</p>
+        </div>
+        <div class="prc-ex" style="padding:2rem">
+          <div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">Channel Manager — Distribution en temps réel</div>
+          <p style="font-size:.65rem;line-height:1.85;color:var(--tm)">Le Channel Manager connecte votre PMS à tous vos canaux de vente (site internet, Booking.com, Expedia, Airbnb…) en temps réel. Il garantit que vos tarifs et disponibilités sont synchronisés partout, à chaque instant.</p>
+        </div>
+      </div>
+      <div class="hlb" style="margin-top:2rem">
+        <p>« Un PMS et un Channel Manager performants permettent non seulement de distribuer vos tarifs efficacement — mais surtout de mettre en place une stratégie pour amener vos clients à réserver <strong>en direct</strong>, en évitant les commissions de 15 à 17 % prélevées par Booking.com et Expedia sur chaque réservation. »</p>
+        <cite>Elton Skenderaj — Fondateur AHRPA</cite>
+      </div>
+      <div style="background:var(--nv);padding:2.5rem;margin-top:2rem;border-top:2px solid var(--gd)">
+        <div class="ey l" style="margin-bottom:1rem">Résultat prouvé en France</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--wh);margin-bottom:1.5rem">De 75 % OTA à <em style="color:var(--gd)">70 % réservations directes</em> — sans perte de CA</h3>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+          <div style="text-align:center;padding:1.5rem;background:rgba(201,165,90,.08);border:1px solid rgba(201,165,90,.2)">
+            <div style="font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,165,90,.6);margin-bottom:.5rem">Année 1 — Ouverture</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gd);line-height:1">75 %</div>
+            <div style="font-size:.58rem;color:rgba(253,250,246,.5);margin-top:.3rem">via OTA</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:rgba(253,250,246,.4);margin-top:.4rem">25 % direct</div>
+          </div>
+          <div style="text-align:center;padding:1.5rem;background:rgba(201,165,90,.12);border:1px solid rgba(201,165,90,.35)">
+            <div style="font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,165,90,.6);margin-bottom:.5rem">Année 2 — Après AHRPA</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gd);line-height:1">40 %</div>
+            <div style="font-size:.58rem;color:rgba(253,250,246,.5);margin-top:.3rem">via OTA</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gl);margin-top:.4rem">60 % direct</div>
+          </div>
+          <div style="text-align:center;padding:1.5rem;background:rgba(201,165,90,.18);border:1px solid rgba(201,165,90,.5)">
+            <div style="font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,165,90,.6);margin-bottom:.5rem">Année 3 — Optimisé</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gd);line-height:1">30 %</div>
+            <div style="font-size:.58rem;color:rgba(253,250,246,.5);margin-top:.3rem">via OTA</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gl);font-weight:600;margin-top:.4rem">70 % direct</div>
+          </div>
+        </div>
+        <p style="font-size:.6rem;line-height:1.8;color:rgba(253,250,246,.5);margin-top:1rem;text-align:center">Résultats obtenus dans des hôtels français accompagnés dès l'ouverture. <strong style="color:rgba(253,250,246,.7)">Aucun impact négatif sur le chiffre d'affaires.</strong></p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem">
+        <div>
+          <div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">PMS compatibles</div>
+          <div style="display:flex;flex-wrap:wrap;gap:.4rem"><span class="pms-tag">Medialog</span><span class="pms-tag">Misterbooking</span><span class="pms-tag">Thais</span><span class="pms-tag">Hoteleasy</span><span class="pms-tag">Mews</span><span class="pms-tag">Host</span><span class="pms-tag">Chloé</span><span class="pms-tag">Cloudbeds</span><span class="pms-tag">Guesty</span><span class="pms-tag">Asterio</span><span class="pms-tag">Hotsoft</span><span class="pms-tag">Apaleo</span><span class="pms-tag">Opera Cloud</span><span class="pms-tag">Lean</span><span class="pms-tag">Clock</span></div>
+        </div>
+        <div>
+          <div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">Channel Managers connectés</div>
+          <div style="display:flex;flex-wrap:wrap;gap:.4rem"><span class="pms-tag cm-tag">DEDGE</span><span class="pms-tag cm-tag">Misterbooking</span><span class="pms-tag cm-tag">Thais</span><span class="pms-tag cm-tag">Mews</span><span class="pms-tag cm-tag">Cloudbeds</span><span class="pms-tag cm-tag">Guesty</span><span class="pms-tag cm-tag">Hotsoft</span><span class="pms-tag cm-tag">Apaleo</span><span class="pms-tag cm-tag">Clock</span></div>
+        </div>
+      </div>
+      <p style="font-size:.6rem;line-height:1.8;color:var(--tm);margin-top:1.2rem;padding:1rem;background:rgba(201,165,90,.06);border-left:2px solid var(--gd)">Vous ne disposez pas encore d'un PMS ou d'un Channel Manager ? <strong>Nous vous accompagnons</strong> dans le choix de la solution la plus adaptée à votre hôtel, votre taille et vos besoins — pour garantir une distribution optimale sur tous vos canaux et maximiser vos réservations directes.</p>
+      <div style="margin-top:2rem;padding:2rem;background:var(--ow);border-top:2px solid var(--gd)">
+        <div class="ey l" style="margin-bottom:.8rem">Reporting &amp; Prévisionnel</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--tx);margin-bottom:1rem">Des rapports pour <em>mieux négocier et mieux anticiper</em></h3>
+        <p style="font-size:.65rem;line-height:1.85;color:var(--tm)">AHRPA produit des <strong>reportings professionnels</strong> réguliers qui vous permettent :</p>
+        <ul style="font-size:.63rem;line-height:2;color:var(--tm);padding-left:1.2rem;margin-top:.6rem">
+          <li><strong>Négocier vos contrats agences</strong> avec des données précises (groupes loisirs, séminaires, événementiels)</li>
+          <li><strong>Prévoir votre chiffre d'affaires</strong> avec les prévisionnels les plus précis pour l'année suivante</li>
+          <li><strong>Piloter votre mix-canal</strong> et réduire progressivement votre dépendance aux OTA</li>
+          <li><strong>Prendre les bonnes décisions</strong> au bon moment, basées sur des données réelles et non sur l'intuition</li>
+        </ul>
+      </div>`,
     tar_install_box: `<div class="prc-install-title">Frais d'installation uniques</div><div class="prc-install-price">350 € HT</div><div class="prc-install-desc">Connexion et paramétrage de votre PMS &amp; Channel Manager avec notre système RM. Opération unique à la mise en place.</div>`,
     tar_roi_ey: "Ce n'est pas une dépense",
     tar_roi_tt: "C'est un <em>investissement</em><br>qui se rentabilise",
@@ -1355,7 +1542,7 @@ const T = {
     met_tools_items: `<div class="fti"><div class="ftic">📡</div><div><h4>PMS & Channel Manager</h4><p>Nous nous adaptons à votre système existant — aucun changement imposé de votre côté.</p></div></div><div class="fti"><div class="ftic">📈</div><div><h4>Outils de rate shopping</h4><p>Surveillance automatisée des prix concurrents sur tous les canaux de distribution.</p></div></div><div class="fti"><div class="ftic">🤖</div><div><h4>Analyse de la demande</h4><p>Données de marché, événements locaux, tendances de recherche — pour anticiper la demande.</p></div></div><div class="fti"><div class="ftic">📋</div><div><h4>Tableaux de bord personnalisés</h4><p>Reporting clair et lisible, adapté à vos besoins et à votre niveau de détail souhaité.</p></div></div>`,
     met_hlb: `<p>«&nbsp;L'objectif n'est pas d'augmenter les prix au hasard, mais de les ajuster intelligemment selon la demande réelle, la concurrence et les tendances du marché.&nbsp;»</p><cite>Elton Skenderaj — Fondateur AHRPA</cite>`,
     ap_founder_quote: `"J'ai passé 18 ans dans les hôtels les plus exigeants de la Côte d'Azur. J'ai appris à la réception de Cannes, j'ai managé des équipes dans un SPA hôtel 4 étoiles, j'ai développé des établissements de Saint-Tropez à la Croisette. Chaque poste m'a appris une chose : <strong style="color:var(--gd);font-style:normal">la différence entre un hôtel qui survit et un hôtel qui prospère, c'est la maîtrise du prix au bon moment.</strong>"`,
-    ap_narrative: `<p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Diplômé de l'école hôtelière, Elton débute sa carrière en 2008 dans les palaces cannois. Il gravit rapidement les échelons : de la réception au management d'équipes complètes, de la gestion opérationnelle au développement commercial stratégique pour des établissements haut de gamme — Groupe Accor, résidences privées de St-Tropez, établissements de prestige sur la Croisette.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Fort de cette expérience de terrain irremplaçable, il fonde <strong>AHRPA</strong> avec une conviction profonde : les hôteliers albanais, qui accueillent une clientèle internationale de plus en plus exigeante, méritent les mêmes outils de pilotage des revenus que les grands groupes internationaux — sans en payer le prix.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Aujourd'hui, depuis Antibes, Elton pilote au quotidien les stratégies tarifaires de ses clients albanais avec la même rigueur qu'il appliquait sur la Côte d'Azur. <strong>Pas de théorie. Que de l'opérationnel.</strong></p>`,
+    ap_narrative: `<p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Titulaire d'un diplôme de <strong>Directeur Général d'Établissements Touristiques, branche Hôtellerie</strong> (Prom'hote IFITEL, Saint-Raphaël), Elton débute sa carrière en 2008 dans les palaces cannois. Il gravit rapidement les échelons : de la réception au management d'équipes complètes, de la gestion opérationnelle au développement commercial stratégique pour des établissements haut de gamme — Groupe Accor, résidences privées de St-Tropez, établissements de prestige sur la Croisette.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Fort de cette expérience de terrain irremplaçable, il fonde <strong>AHRPA</strong> avec une conviction profonde : les hôteliers albanais, qui accueillent une clientèle internationale de plus en plus exigeante, méritent les mêmes outils de pilotage des revenus que les grands groupes internationaux — sans en payer le prix.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Aujourd'hui, depuis Antibes, Elton pilote au quotidien les stratégies tarifaires de ses clients albanais avec la même rigueur qu'il appliquait sur la Côte d'Azur. <strong>Pas de théorie. Que de l'opérationnel.</strong></p>`,
     ap_bio1: "Elton Skenderaj est un professionnel de l'hôtellerie française de nationalité française, basé à Antibes (Alpes-Maritimes). Après plus de 18 ans passés dans les établissements les plus prestigieux de la Côte d'Azur — du Groupe Accor aux résidences privées de St-Tropez — il a fondé AHRPA avec une conviction forte : <strong>les hôtels albanais méritent le même niveau d'expertise que les palaces de Cannes.</strong>",
     ap_bio2: "Son parcours, de réceptionniste à manager d'établissements et développeur commercial pour des propriétés premium, lui a donné une vision complète de l'hôtellerie : opérationnelle, commerciale, financière et humaine.",
     ap_albania_hlb: `<p>«&nbsp;L'Albanie est un marché en croissance exceptionnelle, avec un potentiel touristique immense encore largement sous-exploité. Nous apportons les standards de l'hôtellerie française aux hôteliers albanais — pour qu'ils capturent enfin leur juste part de valeur.&nbsp;»</p><cite>Elton Skenderaj — Fondateur AHRPA</cite>`,
@@ -1490,6 +1677,51 @@ const T = {
     tar_sub: "A fixed, predictable cost. A measurable return on investment from the first month. No surprises.",
     tar_badge: "Monthly subscription",
     tar_per: "per month + €8 per room / month",
+    tar_pms_section: `<div class="sh" style="text-align:left">
+        <div class="ey l">Technology infrastructure</div>
+        <h2 class="tt">PMS &amp; Channel Manager —<br><em>the foundation of your profitability</em></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem">
+        <div class="prc-ex" style="padding:2rem">
+          <div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">PMS — Property Management System</div>
+          <p style="font-size:.65rem;line-height:1.85;color:var(--tm)">The PMS is the nervous system of your hotel: it centralizes reservations, room management, guest profiles, and billing. Without a PMS, no professional revenue management is possible.</p>
+        </div>
+        <div class="prc-ex" style="padding:2rem">
+          <div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">Channel Manager — Real-time distribution</div>
+          <p style="font-size:.65rem;line-height:1.85;color:var(--tm)">The Channel Manager connects your PMS to all your distribution channels (website, Booking.com, Expedia, Airbnb…) in real time. It ensures your rates and availability are synchronized everywhere, at every moment.</p>
+        </div>
+      </div>
+      <div class="hlb" style="margin-top:2rem">
+        <p>« A high-performance PMS and Channel Manager not only distributes your rates efficiently — but above all, enables a strategy to drive guests to book <strong>directly</strong>, avoiding the 15–17% commission charged by Booking.com and Expedia on every booking. »</p>
+        <cite>Elton Skenderaj — Founder AHRPA</cite>
+      </div>
+      <div style="background:var(--nv);padding:2.5rem;margin-top:2rem;border-top:2px solid var(--gd)">
+        <div class="ey l" style="margin-bottom:1rem">Proven result in France</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--wh);margin-bottom:1.5rem">From 75% OTA to <em style="color:var(--gd)">70% direct bookings</em> — no revenue loss</h3>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+          <div style="text-align:center;padding:1.5rem;background:rgba(201,165,90,.08);border:1px solid rgba(201,165,90,.2)"><div style="font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,165,90,.6);margin-bottom:.5rem">Year 1 — Opening</div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gd);line-height:1">75%</div><div style="font-size:.58rem;color:rgba(253,250,246,.5);margin-top:.3rem">via OTA</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:rgba(253,250,246,.4);margin-top:.4rem">25% direct</div></div>
+          <div style="text-align:center;padding:1.5rem;background:rgba(201,165,90,.12);border:1px solid rgba(201,165,90,.35)"><div style="font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,165,90,.6);margin-bottom:.5rem">Year 2 — After AHRPA</div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gd);line-height:1">40%</div><div style="font-size:.58rem;color:rgba(253,250,246,.5);margin-top:.3rem">via OTA</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gl);margin-top:.4rem">60% direct</div></div>
+          <div style="text-align:center;padding:1.5rem;background:rgba(201,165,90,.18);border:1px solid rgba(201,165,90,.5)"><div style="font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,165,90,.6);margin-bottom:.5rem">Year 3 — Optimized</div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gd);line-height:1">30%</div><div style="font-size:.58rem;color:rgba(253,250,246,.5);margin-top:.3rem">via OTA</div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gl);font-weight:600;margin-top:.4rem">70% direct</div></div>
+        </div>
+        <p style="font-size:.6rem;line-height:1.8;color:rgba(253,250,246,.5);margin-top:1rem;text-align:center">Results achieved in French hotels accompanied from opening. <strong style="color:rgba(253,250,246,.7)">No negative impact on revenue.</strong></p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem">
+        <div><div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">Compatible PMS</div><div style="display:flex;flex-wrap:wrap;gap:.4rem"><span class="pms-tag">Medialog</span><span class="pms-tag">Misterbooking</span><span class="pms-tag">Thais</span><span class="pms-tag">Hoteleasy</span><span class="pms-tag">Mews</span><span class="pms-tag">Host</span><span class="pms-tag">Chloé</span><span class="pms-tag">Cloudbeds</span><span class="pms-tag">Guesty</span><span class="pms-tag">Asterio</span><span class="pms-tag">Hotsoft</span><span class="pms-tag">Apaleo</span><span class="pms-tag">Opera Cloud</span><span class="pms-tag">Lean</span><span class="pms-tag">Clock</span></div></div>
+        <div><div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">Connected Channel Managers</div><div style="display:flex;flex-wrap:wrap;gap:.4rem"><span class="pms-tag cm-tag">DEDGE</span><span class="pms-tag cm-tag">Misterbooking</span><span class="pms-tag cm-tag">Thais</span><span class="pms-tag cm-tag">Mews</span><span class="pms-tag cm-tag">Cloudbeds</span><span class="pms-tag cm-tag">Guesty</span><span class="pms-tag cm-tag">Hotsoft</span><span class="pms-tag cm-tag">Apaleo</span><span class="pms-tag cm-tag">Clock</span></div></div>
+      </div>
+      <p style="font-size:.6rem;line-height:1.8;color:var(--tm);margin-top:1.2rem;padding:1rem;background:rgba(201,165,90,.06);border-left:2px solid var(--gd)">Don't have a PMS or Channel Manager yet? <strong>We guide you</strong> in choosing the solution best suited to your hotel, size, and needs — to ensure optimal distribution across all your channels and maximize direct bookings.</p>
+      <div style="margin-top:2rem;padding:2rem;background:var(--ow);border-top:2px solid var(--gd)">
+        <div class="ey l" style="margin-bottom:.8rem">Reporting &amp; Forecasting</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--tx);margin-bottom:1rem">Reports to <em>negotiate better and plan ahead</em></h3>
+        <p style="font-size:.65rem;line-height:1.85;color:var(--tm)">AHRPA produces regular <strong>professional reports</strong> that allow you to:</p>
+        <ul style="font-size:.63rem;line-height:2;color:var(--tm);padding-left:1.2rem;margin-top:.6rem">
+          <li><strong>Negotiate your agency contracts</strong> with precise data (leisure groups, seminars, events)</li>
+          <li><strong>Forecast your revenue</strong> with the most accurate projections for the following year</li>
+          <li><strong>Manage your channel mix</strong> and progressively reduce your OTA dependency</li>
+          <li><strong>Make the right decisions</strong> at the right time, based on real data — not intuition</li>
+        </ul>
+      </div>`,
+    tar_install_box: `<div class="prc-install-title">One-time installation fee</div><div class="prc-install-price">€350 excl. VAT</div><div class="prc-install-desc">Connection and configuration of your PMS &amp; Channel Manager with our RM system. One-time operation at setup.</div>`,
     tar_roi_ey: "It's not an expense",
     tar_roi_tt: "It's an <em>investment</em><br>that pays for itself",
     tar_faq_ey: "Pricing questions",
@@ -1667,6 +1899,51 @@ const T = {
     tar_sub: "Një kosto fikse dhe e parashikueshme. Kthim i matshëm nga investimi që nga muaji i parë. Pa surpriza.",
     tar_badge: "Abonim mujor",
     tar_per: "në muaj + 8 € për dhomë / muaj",
+    tar_pms_section: `<div class="sh" style="text-align:left">
+        <div class="ey l">Infrastruktura teknologjike</div>
+        <h2 class="tt">PMS &amp; Channel Manager —<br><em>themeli i rentabilitetit tuaj</em></h2>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem">
+        <div class="prc-ex" style="padding:2rem">
+          <div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">PMS — Sistemi i Menaxhimit të Pronës</div>
+          <p style="font-size:.65rem;line-height:1.85;color:var(--tm)">PMS-i është sistemi nervor i hotelit tuaj: ai centralizon rezervimet, menaxhimin e dhomave, profilet e klientëve dhe faturimin. Pa PMS, asnjë menaxhim profesional i të ardhurave nuk është i mundur.</p>
+        </div>
+        <div class="prc-ex" style="padding:2rem">
+          <div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">Channel Manager — Shpërndarje në kohë reale</div>
+          <p style="font-size:.65rem;line-height:1.85;color:var(--tm)">Channel Manager-i lidh PMS-in tuaj me të gjitha kanalet tuaja të shitjes (faqe interneti, Booking.com, Expedia, Airbnb…) në kohë reale. Ai garanton që tarifat dhe disponibiliteti juaj janë të sinkronizuara kudo, në çdo moment.</p>
+        </div>
+      </div>
+      <div class="hlb" style="margin-top:2rem">
+        <p>« Një PMS dhe Channel Manager me performancë të lartë jo vetëm shpërndan tarifat tuaja me efikasitet — por mbi të gjitha, mundëson zbatimin e një strategjie për të sjellë klientët të rezervojnë <strong>drejtpërdrejt</strong>, duke shmangur komisionet 15–17% që Booking.com dhe Expedia marrin nga çdo rezervim. »</p>
+        <cite>Elton Skenderaj — Themelues AHRPA</cite>
+      </div>
+      <div style="background:var(--nv);padding:2.5rem;margin-top:2rem;border-top:2px solid var(--gd)">
+        <div class="ey l" style="margin-bottom:1rem">Rezultat i provuar në Francë</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--wh);margin-bottom:1.5rem">Nga 75% OTA në <em style="color:var(--gd)">70% rezervime direkte</em> — pa humbje qarkullimi</h3>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem">
+          <div style="text-align:center;padding:1.5rem;background:rgba(201,165,90,.08);border:1px solid rgba(201,165,90,.2)"><div style="font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,165,90,.6);margin-bottom:.5rem">Viti 1 — Hapja</div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gd);line-height:1">75%</div><div style="font-size:.58rem;color:rgba(253,250,246,.5);margin-top:.3rem">nëpërmjet OTA</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:rgba(253,250,246,.4);margin-top:.4rem">25% direkt</div></div>
+          <div style="text-align:center;padding:1.5rem;background:rgba(201,165,90,.12);border:1px solid rgba(201,165,90,.35)"><div style="font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,165,90,.6);margin-bottom:.5rem">Viti 2 — Pas AHRPA</div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gd);line-height:1">40%</div><div style="font-size:.58rem;color:rgba(253,250,246,.5);margin-top:.3rem">nëpërmjet OTA</div><div style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--gl);margin-top:.4rem">60% direkt</div></div>
+          <div style="text-align:center;padding:1.5rem;background:rgba(201,165,90,.18);border:1px solid rgba(201,165,90,.5)"><div style="font-size:.5rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(201,165,90,.6);margin-bottom:.5rem">Viti 3 — Optimizuar</div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gd);line-height:1">30%</div><div style="font-size:.58rem;color:rgba(253,250,246,.5);margin-top:.3rem">nëpërmjet OTA</div><div style="font-family:'Cormorant Garamond',serif;font-size:2rem;color:var(--gl);font-weight:600;margin-top:.4rem">70% direkt</div></div>
+        </div>
+        <p style="font-size:.6rem;line-height:1.8;color:rgba(253,250,246,.5);margin-top:1rem;text-align:center">Rezultate të arritura në hotele franceze të shoqëruara që nga hapja. <strong style="color:rgba(253,250,246,.7)">Asnjë ndikim negativ në qarkullim.</strong></p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem">
+        <div><div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">PMS të mbështetur</div><div style="display:flex;flex-wrap:wrap;gap:.4rem"><span class="pms-tag">Medialog</span><span class="pms-tag">Misterbooking</span><span class="pms-tag">Thais</span><span class="pms-tag">Hoteleasy</span><span class="pms-tag">Mews</span><span class="pms-tag">Host</span><span class="pms-tag">Chloé</span><span class="pms-tag">Cloudbeds</span><span class="pms-tag">Guesty</span><span class="pms-tag">Asterio</span><span class="pms-tag">Hotsoft</span><span class="pms-tag">Apaleo</span><span class="pms-tag">Opera Cloud</span><span class="pms-tag">Lean</span><span class="pms-tag">Clock</span></div></div>
+        <div><div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">Channel Manager të lidhur</div><div style="display:flex;flex-wrap:wrap;gap:.4rem"><span class="pms-tag cm-tag">DEDGE</span><span class="pms-tag cm-tag">Misterbooking</span><span class="pms-tag cm-tag">Thais</span><span class="pms-tag cm-tag">Mews</span><span class="pms-tag cm-tag">Cloudbeds</span><span class="pms-tag cm-tag">Guesty</span><span class="pms-tag cm-tag">Hotsoft</span><span class="pms-tag cm-tag">Apaleo</span><span class="pms-tag cm-tag">Clock</span></div></div>
+      </div>
+      <p style="font-size:.6rem;line-height:1.8;color:var(--tm);margin-top:1.2rem;padding:1rem;background:rgba(201,165,90,.06);border-left:2px solid var(--gd)">Nuk keni ende PMS ose Channel Manager? <strong>Ne ju udhëzojmë</strong> në zgjedhjen e zgjidhjes më të përshtatshme për hotelin, madhësinë dhe nevojat tuaja — për të garantuar shpërndarje optimale në të gjitha kanalet dhe maksimizimin e rezervimeve direkte.</p>
+      <div style="margin-top:2rem;padding:2rem;background:var(--ow);border-top:2px solid var(--gd)">
+        <div class="ey l" style="margin-bottom:.8rem">Raportim &amp; Parashikim</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--tx);margin-bottom:1rem">Raporte për <em>të negociuar më mirë dhe për të planifikuar me saktësi</em></h3>
+        <p style="font-size:.65rem;line-height:1.85;color:var(--tm)">AHRPA prodhon <strong>raporte profesionale</strong> të rregullta që ju mundësojnë:</p>
+        <ul style="font-size:.63rem;line-height:2;color:var(--tm);padding-left:1.2rem;margin-top:.6rem">
+          <li><strong>Negocimin e kontratave me agjencitë</strong> bazuar në të dhëna të sakta (grupe pushuesish, seminare, ngjarje)</li>
+          <li><strong>Parashikimin e qarkullimit tuaj</strong> me previzionet më të sakta për vitin e ardhshëm</li>
+          <li><strong>Pilotimin e përzierjes suaj të kanaleve</strong> dhe reduktimin gradual të varësisë nga OTA</li>
+          <li><strong>Marrjen e vendimeve të duhura</strong> në momentin e duhur, bazuar në të dhëna reale — jo në intuicion</li>
+        </ul>
+      </div>`,
+    tar_install_box: `<div class="prc-install-title">Tarifë instalimi njëherëshe</div><div class="prc-install-price">350 € pa TVSH</div><div class="prc-install-desc">Lidhja dhe konfigurimi i PMS &amp; Channel Manager tuaj me sistemin tonë RM. Operacion i vetëm gjatë instalimit.</div>`,
     tar_roi_ey: "Nuk është një shpenzim",
     tar_roi_tt: "Është një <em>investim</em><br>që shpërblehet",
     tar_faq_ey: "Pyetje mbi çmimet",
@@ -1883,7 +2160,8 @@ document.getElementById('contact-form').addEventListener('submit',function(e){
   if(!f.querySelector('[name=rgpd]').checked){ok=false;f.querySelector('[name=rgpd]').parentElement.style.color='#e57373';}
   if(!ok) return;
   const btn = f.querySelector('.fsub');
-  btn.textContent = 'Envoi en cours…';
+  const sendingMsg = {fr:'Envoi en cours…', en:'Sending…', sq:'Duke dërguar…'};
+  btn.textContent = sendingMsg[document.documentElement.lang] || sendingMsg.fr;
   btn.disabled = true;
   setTimeout(()=>{
     f.style.display = 'none';

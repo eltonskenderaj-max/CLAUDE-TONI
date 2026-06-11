@@ -632,7 +632,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
       <div>
         <div class="ey l" data-t="srv_prob_ey">Le problème</div>
         <h2 class="tt" data-t="srv_prob_tt">Pourquoi les hôtels <em>perdent</em><br>entre 12% et 25% de revenus ?</h2>
-        <p style="font-size:.68rem;line-height:1.92;color:var(--tm);margin-top:.9rem">La plupart des hôtels indépendants en Albanie laissent une part significative de leurs revenus potentiels non réalisés. Ces pertes sont souvent invisibles dans les chiffres du quotidien, mais elles s'accumulent mois après mois.</p>
+        <p style="font-size:.68rem;line-height:1.92;color:var(--tm);margin-top:.9rem" data-t="srv_prob_sub">La plupart des hôtels indépendants en Albanie laissent une part significative de leurs revenus potentiels non réalisés. Ces pertes sont souvent invisibles dans les chiffres du quotidien, mais elles s'accumulent mois après mois.</p>
         <div class="ftl" data-t="srv_prob_items">
           <div class="fti"><div class="ftic">💡</div><div><h4>Prix fixés à l'intuition</h4><p>Sans analyse de la demande réelle ni de la concurrence, les prix sont souvent mal positionnés.</p></div></div>
           <div class="fti"><div class="ftic">📱</div><div><h4>Dépendance excessive aux OTA</h4><p>Booking.com et Expedia captent jusqu'à 25% de commission sans optimisation tarifaire.</p></div></div>
@@ -771,7 +771,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
           <cite>Elton Skenderaj — Fondateur AHRPA</cite>
         </div>
         <div style="margin-top:1.5rem;display:grid;grid-template-columns:1fr 1fr;gap:1px">
-          <div style="background:var(--ow);padding:1rem;border-top:2px solid var(--gd)"><div style="font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gd);margin-bottom:.3rem">Formation</div><p style="font-size:.62rem;color:var(--tm)"><span data-t="ap_formation_val">Directeur Général d'Établissements Touristiques, branche Hôtellerie — Prom'hote IFITEL, Saint-Raphaël</span></p></div>
+          <div style="background:var(--ow);padding:1rem;border-top:2px solid var(--gd)"><div style="font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gd);margin-bottom:.3rem">Formation</div><p style="font-size:.62rem;color:var(--tm)"><span data-t="ap_formation_val">Responsable d'Établissements Touristiques, branche Hôtellerie — Prom'hote IFITEL, Saint-Raphaël (2017)</span></p></div>
           <div style="background:var(--ow);padding:1rem;border-top:2px solid var(--gd)"><div style="font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gd);margin-bottom:.3rem">Langues</div><p style="font-size:.62rem;color:var(--tm)"><span data-t="ap_langues_val">Français (natif) · Anglais (courant) · Italien (courant) · Albanais</span></p></div>
         </div>
         <div style="margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap">
@@ -866,7 +866,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
       <div class="prc-card">
         <div style="font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gd);margin-bottom:1.2rem" data-t="tar_badge">Abonnement mensuel</div>
         <div class="prc-price">450 € <span style="font-size:1rem;font-weight:400;color:var(--gd);letter-spacing:.1em">HT</span></div>
-        <div class="prc-per" data-t="tar_per">par mois + 8 € par chambre / mois</div>
+        <div class="prc-per" data-t="tar_per">HT / mois &nbsp;+&nbsp; 8 € HT par chambre / mois</div>
         <ul class="prc-list" data-t="tar_prc_list">
           <li>Optimisation quotidienne des prix</li>
           <li>Gestion complète des OTA</li>
@@ -976,7 +976,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
           </div>
         </div>
       </div>
-      <p style="font-size:.6rem;line-height:1.8;color:var(--tm);margin-top:1.2rem;padding:1rem;background:rgba(201,165,90,.06);border-left:2px solid var(--gd)">Vous ne disposez pas encore d'un PMS ou d'un Channel Manager ? <strong>Nous vous accompagnons</strong> dans le choix de la solution la plus adaptée à votre hôtel, votre taille et vos besoins — pour garantir une distribution optimale sur tous vos canaux et maximiser vos réservations directes.</p>
+      <p style="font-size:.72rem;line-height:1.9;color:var(--tx);margin-top:1.4rem;padding:1.2rem 1.5rem;background:rgba(201,165,90,.08);border-left:3px solid var(--gd);font-weight:500" data-t="tar_no_pms_note">Vous ne disposez pas encore d'un PMS ou d'un Channel Manager ? <strong>Nous vous accompagnons</strong> dans le choix de la solution la plus adaptée à votre hôtel, votre taille et vos besoins — pour garantir une distribution optimale sur tous vos canaux et maximiser vos réservations directes.</p>
 
       <div style="margin-top:2rem;padding:2rem;background:var(--ow);border-top:2px solid var(--gd)">
         <div class="ey l" style="margin-bottom:.8rem">Reporting &amp; Prévisionnel</div>
@@ -1394,6 +1394,7 @@ const T = {
     home_cta_btn2: "Voir les tarifs",
     srv_h1: "Notre Service de <em>Revenue Management</em><br>pour Hôtels en Albanie",
     srv_sub: "Un accompagnement complet, quotidien, structuré — pour que votre hôtel génère chaque jour le maximum de revenus possible.",
+    srv_prob_sub: "La plupart des hôtels indépendants en Albanie laissent une part significative de leurs revenus potentiels non réalisés. Ces pertes sont souvent invisibles dans les chiffres du quotidien, mais elles s'accumulent mois après mois.",
     srv_prob_ey: "Le problème",
     srv_prob_tt: "Pourquoi les hôtels <em>perdent</em><br>entre 12% et 25% de revenus ?",
     srv_sol_ey: "Notre solution",
@@ -1433,7 +1434,7 @@ const T = {
     tar_h1: "Une Tarification <em>Transparente</em>",
     tar_sub: "Un coût fixe et prévisible. Un retour sur investissement mesurable dès le premier mois. Pas de mauvaise surprise.",
     tar_badge: "Abonnement mensuel",
-    tar_per: "par mois + 8 € par chambre / mois",
+    tar_per: "HT / mois &nbsp;+&nbsp; 8 € HT par chambre / mois",
     tar_pms_section: `<div class="sh" style="text-align:left">
         <div class="ey l">Infrastructure technologique</div>
         <h2 class="tt">PMS &amp; Channel Manager —<br><em>le socle de votre rentabilité</em></h2>
@@ -1487,7 +1488,7 @@ const T = {
           <div style="display:flex;flex-wrap:wrap;gap:.4rem"><span class="pms-tag cm-tag">DEDGE</span><span class="pms-tag cm-tag">Misterbooking</span><span class="pms-tag cm-tag">Thais</span><span class="pms-tag cm-tag">Mews</span><span class="pms-tag cm-tag">Cloudbeds</span><span class="pms-tag cm-tag">Guesty</span><span class="pms-tag cm-tag">Hotsoft</span><span class="pms-tag cm-tag">Apaleo</span><span class="pms-tag cm-tag">Clock</span></div>
         </div>
       </div>
-      <p style="font-size:.6rem;line-height:1.8;color:var(--tm);margin-top:1.2rem;padding:1rem;background:rgba(201,165,90,.06);border-left:2px solid var(--gd)">Vous ne disposez pas encore d'un PMS ou d'un Channel Manager ? <strong>Nous vous accompagnons</strong> dans le choix de la solution la plus adaptée à votre hôtel, votre taille et vos besoins — pour garantir une distribution optimale sur tous vos canaux et maximiser vos réservations directes.</p>
+      <p style="font-size:.72rem;line-height:1.9;color:var(--tx);margin-top:1.4rem;padding:1.2rem 1.5rem;background:rgba(201,165,90,.08);border-left:3px solid var(--gd);font-weight:500" data-t="tar_no_pms_note">Vous ne disposez pas encore d'un PMS ou d'un Channel Manager ? <strong>Nous vous accompagnons</strong> dans le choix de la solution la plus adaptée à votre hôtel, votre taille et vos besoins — pour garantir une distribution optimale sur tous vos canaux et maximiser vos réservations directes.</p>
       <div style="margin-top:2rem;padding:2rem;background:var(--ow);border-top:2px solid var(--gd)">
         <div class="ey l" style="margin-bottom:.8rem">Reporting &amp; Prévisionnel</div>
         <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--tx);margin-bottom:1rem">Des rapports pour <em>mieux négocier et mieux anticiper</em></h3>
@@ -1500,6 +1501,7 @@ const T = {
         </ul>
       </div>`,
     tar_install_box: `<div class="prc-install-title">Frais d'installation uniques</div><div class="prc-install-price">350 € HT</div><div class="prc-install-desc">Connexion et paramétrage de votre PMS &amp; Channel Manager avec notre système RM. Opération unique à la mise en place.</div>`,
+    tar_no_pms_note: "Vous ne disposez pas encore d'un PMS ou d'un Channel Manager ? <strong>Nous vous accompagnons</strong> dans le choix de la solution la plus adaptée à votre hôtel, votre taille et vos besoins — pour garantir une distribution optimale sur tous vos canaux et maximiser vos réservations directes.",
     tar_roi_ey: "Ce n'est pas une dépense",
     tar_roi_tt: "C'est un <em>investissement</em><br>qui se rentabilise",
     tar_faq_ey: "Questions sur les tarifs",
@@ -1542,12 +1544,12 @@ const T = {
     met_tools_items: `<div class="fti"><div class="ftic">📡</div><div><h4>PMS & Channel Manager</h4><p>Nous nous adaptons à votre système existant — aucun changement imposé de votre côté.</p></div></div><div class="fti"><div class="ftic">📈</div><div><h4>Outils de rate shopping</h4><p>Surveillance automatisée des prix concurrents sur tous les canaux de distribution.</p></div></div><div class="fti"><div class="ftic">🤖</div><div><h4>Analyse de la demande</h4><p>Données de marché, événements locaux, tendances de recherche — pour anticiper la demande.</p></div></div><div class="fti"><div class="ftic">📋</div><div><h4>Tableaux de bord personnalisés</h4><p>Reporting clair et lisible, adapté à vos besoins et à votre niveau de détail souhaité.</p></div></div>`,
     met_hlb: `<p>«&nbsp;L'objectif n'est pas d'augmenter les prix au hasard, mais de les ajuster intelligemment selon la demande réelle, la concurrence et les tendances du marché.&nbsp;»</p><cite>Elton Skenderaj — Fondateur AHRPA</cite>`,
     ap_founder_quote: `"J'ai passé 18 ans dans les hôtels les plus exigeants de la Côte d'Azur. J'ai appris à la réception de Cannes, j'ai managé des équipes dans un SPA hôtel 4 étoiles, j'ai développé des établissements de Saint-Tropez à la Croisette. Chaque poste m'a appris une chose : <strong style="color:var(--gd);font-style:normal">la différence entre un hôtel qui survit et un hôtel qui prospère, c'est la maîtrise du prix au bon moment.</strong>"`,
-    ap_narrative: `<p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Titulaire d'un diplôme de <strong>Directeur Général d'Établissements Touristiques, branche Hôtellerie</strong> (Prom'hote IFITEL, Saint-Raphaël), Elton débute sa carrière en 2008 dans les palaces cannois. Il gravit rapidement les échelons : de la réception au management d'équipes complètes, de la gestion opérationnelle au développement commercial stratégique pour des établissements haut de gamme — Groupe Accor, résidences privées de St-Tropez, établissements de prestige sur la Croisette.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Fort de cette expérience de terrain irremplaçable, il fonde <strong>AHRPA</strong> avec une conviction profonde : les hôteliers albanais, qui accueillent une clientèle internationale de plus en plus exigeante, méritent les mêmes outils de pilotage des revenus que les grands groupes internationaux — sans en payer le prix.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Aujourd'hui, depuis Antibes, Elton pilote au quotidien les stratégies tarifaires de ses clients albanais avec la même rigueur qu'il appliquait sur la Côte d'Azur. <strong>Pas de théorie. Que de l'opérationnel.</strong></p>`,
-    ap_bio1: "Elton Skenderaj est un professionnel de l'hôtellerie française de nationalité française, basé à Antibes (Alpes-Maritimes). Après plus de 18 ans passés dans les établissements les plus prestigieux de la Côte d'Azur — du Groupe Accor aux résidences privées de St-Tropez — il a fondé AHRPA avec une conviction forte : <strong>les hôtels albanais méritent le même niveau d'expertise que les palaces de Cannes.</strong>",
+    ap_narrative: `<p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Diplômé <strong>Responsable d'Établissements Touristiques, branche Hôtellerie</strong> (Prom'hote IFITEL, Saint-Raphaël, 2017), Elton débute sa carrière en 2008 dans les palaces cannois. Il gravit rapidement les échelons : de la réception au management d'équipes complètes, de la gestion opérationnelle au développement commercial stratégique pour des établissements haut de gamme — Groupe Accor, résidences privées de St-Tropez, établissements de prestige sur la Croisette.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Fort de cette expérience de terrain irremplaçable, il fonde <strong>AHRPA</strong> avec une conviction profonde : les hôteliers albanais, qui accueillent une clientèle internationale de plus en plus exigeante, méritent les mêmes outils de pilotage des revenus que les grands groupes internationaux — sans en payer le prix.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Aujourd'hui, depuis Antibes, Elton pilote au quotidien les stratégies tarifaires de ses clients albanais avec la même rigueur qu'il appliquait sur la Côte d'Azur. <strong>Pas de théorie. Que de l'opérationnel.</strong></p>`,
+    ap_bio1: "Diplômé <strong>Responsable d'Établissements Touristiques, branche Hôtellerie</strong> (Prom'hote IFITEL, 2017), Elton Skenderaj est un professionnel de l'hôtellerie française basé à Antibes (Alpes-Maritimes). Après plus de 18 ans dans les établissements les plus prestigieux de la Côte d'Azur — du Groupe Accor aux résidences privées de St-Tropez — il a fondé AHRPA avec une conviction forte : <strong>les hôtels albanais méritent le même niveau d'expertise que les palaces de Cannes.</strong>",
     ap_bio2: "Son parcours, de réceptionniste à manager d'établissements et développeur commercial pour des propriétés premium, lui a donné une vision complète de l'hôtellerie : opérationnelle, commerciale, financière et humaine.",
     ap_albania_hlb: `<p>«&nbsp;L'Albanie est un marché en croissance exceptionnelle, avec un potentiel touristique immense encore largement sous-exploité. Nous apportons les standards de l'hôtellerie française aux hôteliers albanais — pour qu'ils capturent enfin leur juste part de valeur.&nbsp;»</p><cite>Elton Skenderaj — Fondateur AHRPA</cite>`,
     ap_formation_lbl: "Formation",
-    ap_formation_val: "Directeur Général d'Établissements Touristiques, branche Hôtellerie — Prom'hote IFITEL, Saint-Raphaël",
+    ap_formation_val: "Responsable d'Établissements Touristiques, branche Hôtellerie — Prom'hote IFITEL, Saint-Raphaël (2017)",
     ap_langues_lbl: "Langues",
     ap_langues_val: "Français (natif) · Anglais (courant) · Italien (courant) · Albanais",
     con_person_role: "Fondateur & Directeur AHRPA",
@@ -1637,6 +1639,7 @@ const T = {
     home_cta_btn2: "View pricing",
     srv_h1: "Our <em>Revenue Management</em> Service<br>for Hotels in Albania",
     srv_sub: "Complete, daily, structured support — so your hotel generates the maximum revenue possible every day.",
+    srv_prob_sub: "Most independent hotels in Albania leave a significant share of their potential revenue unrealized. These losses are often invisible in the daily numbers — but they add up month after month.",
     srv_prob_ey: "The problem",
     srv_prob_tt: "Why hotels <em>lose</em><br>between 12% and 25% of revenue?",
     srv_sol_ey: "Our solution",
@@ -1676,7 +1679,7 @@ const T = {
     tar_h1: "<em>Transparent</em> Pricing",
     tar_sub: "A fixed, predictable cost. A measurable return on investment from the first month. No surprises.",
     tar_badge: "Monthly subscription",
-    tar_per: "per month + €8 per room / month",
+    tar_per: "excl. VAT / month &nbsp;+&nbsp; €8 excl. VAT per room / month",
     tar_pms_section: `<div class="sh" style="text-align:left">
         <div class="ey l">Technology infrastructure</div>
         <h2 class="tt">PMS &amp; Channel Manager —<br><em>the foundation of your profitability</em></h2>
@@ -1709,7 +1712,7 @@ const T = {
         <div><div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">Compatible PMS</div><div style="display:flex;flex-wrap:wrap;gap:.4rem"><span class="pms-tag">Medialog</span><span class="pms-tag">Misterbooking</span><span class="pms-tag">Thais</span><span class="pms-tag">Hoteleasy</span><span class="pms-tag">Mews</span><span class="pms-tag">Host</span><span class="pms-tag">Chloé</span><span class="pms-tag">Cloudbeds</span><span class="pms-tag">Guesty</span><span class="pms-tag">Asterio</span><span class="pms-tag">Hotsoft</span><span class="pms-tag">Apaleo</span><span class="pms-tag">Opera Cloud</span><span class="pms-tag">Lean</span><span class="pms-tag">Clock</span></div></div>
         <div><div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">Connected Channel Managers</div><div style="display:flex;flex-wrap:wrap;gap:.4rem"><span class="pms-tag cm-tag">DEDGE</span><span class="pms-tag cm-tag">Misterbooking</span><span class="pms-tag cm-tag">Thais</span><span class="pms-tag cm-tag">Mews</span><span class="pms-tag cm-tag">Cloudbeds</span><span class="pms-tag cm-tag">Guesty</span><span class="pms-tag cm-tag">Hotsoft</span><span class="pms-tag cm-tag">Apaleo</span><span class="pms-tag cm-tag">Clock</span></div></div>
       </div>
-      <p style="font-size:.6rem;line-height:1.8;color:var(--tm);margin-top:1.2rem;padding:1rem;background:rgba(201,165,90,.06);border-left:2px solid var(--gd)">Don't have a PMS or Channel Manager yet? <strong>We guide you</strong> in choosing the solution best suited to your hotel, size, and needs — to ensure optimal distribution across all your channels and maximize direct bookings.</p>
+      <p style="font-size:.72rem;line-height:1.9;color:var(--tx);margin-top:1.4rem;padding:1.2rem 1.5rem;background:rgba(201,165,90,.08);border-left:3px solid var(--gd);font-weight:500">Don't have a PMS or Channel Manager yet? <strong>We guide you</strong> in choosing the solution best suited to your hotel, size, and needs — to ensure optimal distribution across all your channels and maximize direct bookings.</p>
       <div style="margin-top:2rem;padding:2rem;background:var(--ow);border-top:2px solid var(--gd)">
         <div class="ey l" style="margin-bottom:.8rem">Reporting &amp; Forecasting</div>
         <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--tx);margin-bottom:1rem">Reports to <em>negotiate better and plan ahead</em></h3>
@@ -1722,6 +1725,7 @@ const T = {
         </ul>
       </div>`,
     tar_install_box: `<div class="prc-install-title">One-time installation fee</div><div class="prc-install-price">€350 excl. VAT</div><div class="prc-install-desc">Connection and configuration of your PMS &amp; Channel Manager with our RM system. One-time operation at setup.</div>`,
+    tar_no_pms_note: "Don't have a PMS or Channel Manager yet? <strong>We guide you</strong> in choosing the solution best suited to your hotel, size, and needs — to ensure optimal distribution across all your channels and maximize direct bookings.",
     tar_roi_ey: "It's not an expense",
     tar_roi_tt: "It's an <em>investment</em><br>that pays for itself",
     tar_faq_ey: "Pricing questions",
@@ -1764,12 +1768,12 @@ const T = {
     met_tools_items: `<div class="fti"><div class="ftic">📡</div><div><h4>PMS & Channel Manager</h4><p>We adapt to your existing system — no changes imposed on your side.</p></div></div><div class="fti"><div class="ftic">📈</div><div><h4>Rate shopping tools</h4><p>Automated monitoring of competitor prices across all distribution channels.</p></div></div><div class="fti"><div class="ftic">🤖</div><div><h4>Demand analysis</h4><p>Market data, local events, search trends — to anticipate demand before it peaks.</p></div></div><div class="fti"><div class="ftic">📋</div><div><h4>Custom dashboards</h4><p>Clear, readable reporting adapted to your needs and preferred level of detail.</p></div></div>`,
     met_hlb: `<p>«&nbsp;The goal is not to raise prices randomly, but to adjust them intelligently based on real demand, competition and market trends.&nbsp;»</p><cite>Elton Skenderaj — Founder AHRPA</cite>`,
     ap_founder_quote: `"I spent 18 years in the most demanding hotels on the Côte d'Azur. I learned at the reception in Cannes, I managed teams in a 4-star SPA hotel, I developed establishments from Saint-Tropez to the Croisette. Every position taught me one thing: <strong style="color:var(--gd);font-style:normal">the difference between a hotel that survives and one that thrives is mastering the right price at the right moment.</strong>"`,
-    ap_narrative: `<p style="font-size:.68rem;line-height:1.9;color:var(--tm)">A hospitality school graduate, Elton began his career in 2008 in Cannes' most prestigious hotels. He quickly climbed the ranks: from reception to managing complete teams, from operational management to strategic business development for upscale establishments — Accor Group, private residences in St-Tropez, prestige properties on the Croisette.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Drawing on this irreplaceable field experience, he founded <strong>AHRPA</strong> with a deep conviction: Albanian hoteliers, who welcome an increasingly demanding international clientele, deserve the same revenue management tools as major international groups — without paying their price.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Today, from Antibes, Elton manages the daily pricing strategies of his Albanian clients with the same rigor he applied on the Côte d'Azur. <strong>No theory. Pure operations.</strong></p>`,
-    ap_bio1: "Elton Skenderaj is a French hospitality professional of French nationality, based in Antibes (Alpes-Maritimes). After more than 18 years in the most prestigious establishments on the Côte d'Azur — from the Accor Group to private residences in St-Tropez — he founded AHRPA with a strong conviction: <strong>Albanian hotels deserve the same level of expertise as the palaces of Cannes.</strong>",
+    ap_narrative: `<p style="font-size:.68rem;line-height:1.9;color:var(--tm)">A graduate as <strong>Hotel Tourism Establishment Manager, Hotel branch</strong> (Prom'hote IFITEL, Saint-Raphaël, 2017), Elton began his career in 2008 in the most prestigious hotels of the Côte d'Azur. He quickly climbed the ranks: from reception to managing complete teams, from operational management to strategic business development for upscale establishments — Accor Group, private residences in St-Tropez, prestige properties on the Croisette.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Drawing on this irreplaceable field experience, he founded <strong>AHRPA</strong> with a deep conviction: Albanian hoteliers, who welcome an increasingly demanding international clientele, deserve the same revenue management tools as major international groups — without paying their price.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Today, from Antibes, Elton manages the daily pricing strategies of his Albanian clients with the same rigor he applied on the Côte d'Azur. <strong>No theory. Pure operations.</strong></p>`,
+    ap_bio1: "A graduate as <strong>General Manager of Tourism Establishments, Hotel branch</strong> (Prom'hote IFITEL, 2017), Elton Skenderaj is a hospitality professional with over 18 years of experience in luxury French hotels, based in Antibes (Alpes-Maritimes). After years in the most prestigious establishments on the Côte d'Azur — from the Accor Group to private residences in St-Tropez — he founded AHRPA with a strong conviction: <strong>Albanian hotels deserve the same level of expertise as the palaces of Cannes.</strong>",
     ap_bio2: "His career path, from receptionist to hotel manager and commercial developer for premium properties, gave him a complete vision of hospitality: operational, commercial, financial and human.",
     ap_albania_hlb: `<p>«&nbsp;Albania is a market of exceptional growth, with immense tourist potential still largely underexploited. We bring the standards of French hospitality to Albanian hoteliers — so they can finally capture their fair share of value.&nbsp;»</p><cite>Elton Skenderaj — Founder AHRPA</cite>`,
     ap_formation_lbl: "Education",
-    ap_formation_val: "General Manager of Tourism Establishments, Hotel branch — Prom'hote IFITEL, Saint-Raphaël",
+    ap_formation_val: "Hotel Tourism Establishment Manager — Prom'hote IFITEL, Saint-Raphaël (2017)",
     ap_langues_lbl: "Languages",
     ap_langues_val: "French (native) · English (fluent) · Italian (fluent) · Albanian",
     con_person_role: "Founder & Director AHRPA",
@@ -1859,6 +1863,7 @@ const T = {
     home_cta_btn2: "Shikoni çmimet",
     srv_h1: "Shërbimi ynë i <em>Menaxhimit të Të Ardhurave</em><br>për Hotelet në Shqipëri",
     srv_sub: "Mbështetje e plotë, ditore, e strukturuar — që hoteli juaj të gjenerojë çdo ditë të ardhurat maksimale të mundshme.",
+    srv_prob_sub: "Shumica e hoteleve të pavarura në Shqipëri humbasin një pjesë të konsiderueshme të të ardhurave të tyre potenciale. Këto humbje shpesh janë të padukshme në shifrat e përditshme — por ato grumbullohen muaj pas muaji.",
     srv_prob_ey: "Problemi",
     srv_prob_tt: "Pse hotelet <em>humbasin</em><br>ndërmjet 12% dhe 25% të të ardhurave?",
     srv_sol_ey: "Zgjidhja jonë",
@@ -1898,7 +1903,7 @@ const T = {
     tar_h1: "Çmime <em>Transparente</em>",
     tar_sub: "Një kosto fikse dhe e parashikueshme. Kthim i matshëm nga investimi që nga muaji i parë. Pa surpriza.",
     tar_badge: "Abonim mujor",
-    tar_per: "në muaj + 8 € për dhomë / muaj",
+    tar_per: "pa TVSH / muaj &nbsp;+&nbsp; 8 € pa TVSH për dhomë / muaj",
     tar_pms_section: `<div class="sh" style="text-align:left">
         <div class="ey l">Infrastruktura teknologjike</div>
         <h2 class="tt">PMS &amp; Channel Manager —<br><em>themeli i rentabilitetit tuaj</em></h2>
@@ -1931,7 +1936,7 @@ const T = {
         <div><div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">PMS të mbështetur</div><div style="display:flex;flex-wrap:wrap;gap:.4rem"><span class="pms-tag">Medialog</span><span class="pms-tag">Misterbooking</span><span class="pms-tag">Thais</span><span class="pms-tag">Hoteleasy</span><span class="pms-tag">Mews</span><span class="pms-tag">Host</span><span class="pms-tag">Chloé</span><span class="pms-tag">Cloudbeds</span><span class="pms-tag">Guesty</span><span class="pms-tag">Asterio</span><span class="pms-tag">Hotsoft</span><span class="pms-tag">Apaleo</span><span class="pms-tag">Opera Cloud</span><span class="pms-tag">Lean</span><span class="pms-tag">Clock</span></div></div>
         <div><div style="font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gd);margin-bottom:.8rem">Channel Manager të lidhur</div><div style="display:flex;flex-wrap:wrap;gap:.4rem"><span class="pms-tag cm-tag">DEDGE</span><span class="pms-tag cm-tag">Misterbooking</span><span class="pms-tag cm-tag">Thais</span><span class="pms-tag cm-tag">Mews</span><span class="pms-tag cm-tag">Cloudbeds</span><span class="pms-tag cm-tag">Guesty</span><span class="pms-tag cm-tag">Hotsoft</span><span class="pms-tag cm-tag">Apaleo</span><span class="pms-tag cm-tag">Clock</span></div></div>
       </div>
-      <p style="font-size:.6rem;line-height:1.8;color:var(--tm);margin-top:1.2rem;padding:1rem;background:rgba(201,165,90,.06);border-left:2px solid var(--gd)">Nuk keni ende PMS ose Channel Manager? <strong>Ne ju udhëzojmë</strong> në zgjedhjen e zgjidhjes më të përshtatshme për hotelin, madhësinë dhe nevojat tuaja — për të garantuar shpërndarje optimale në të gjitha kanalet dhe maksimizimin e rezervimeve direkte.</p>
+      <p style="font-size:.72rem;line-height:1.9;color:var(--tx);margin-top:1.4rem;padding:1.2rem 1.5rem;background:rgba(201,165,90,.08);border-left:3px solid var(--gd);font-weight:500">Nuk keni ende PMS ose Channel Manager? <strong>Ne ju udhëzojmë</strong> në zgjedhjen e zgjidhjes më të përshtatshme për hotelin, madhësinë dhe nevojat tuaja — për të garantuar shpërndarje optimale në të gjitha kanalet dhe maksimizimin e rezervimeve direkte.</p>
       <div style="margin-top:2rem;padding:2rem;background:var(--ow);border-top:2px solid var(--gd)">
         <div class="ey l" style="margin-bottom:.8rem">Raportim &amp; Parashikim</div>
         <h3 style="font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:300;color:var(--tx);margin-bottom:1rem">Raporte për <em>të negociuar më mirë dhe për të planifikuar me saktësi</em></h3>
@@ -1944,6 +1949,7 @@ const T = {
         </ul>
       </div>`,
     tar_install_box: `<div class="prc-install-title">Tarifë instalimi njëherëshe</div><div class="prc-install-price">350 € pa TVSH</div><div class="prc-install-desc">Lidhja dhe konfigurimi i PMS &amp; Channel Manager tuaj me sistemin tonë RM. Operacion i vetëm gjatë instalimit.</div>`,
+    tar_no_pms_note: "Nuk keni ende PMS ose Channel Manager? <strong>Ne ju udhëzojmë</strong> në zgjedhjen e zgjidhjes më të përshtatshme për hotelin, madhësinë dhe nevojat tuaja — për të garantuar shpërndarje optimale në të gjitha kanalet dhe maksimizimin e rezervimeve direkte.",
     tar_roi_ey: "Nuk është një shpenzim",
     tar_roi_tt: "Është një <em>investim</em><br>që shpërblehet",
     tar_faq_ey: "Pyetje mbi çmimet",
@@ -1986,12 +1992,12 @@ const T = {
     met_tools_items: `<div class="fti"><div class="ftic">📡</div><div><h4>PMS & Channel Manager</h4><p>Ne adaptohemi me sistemin tuaj ekzistues — asnjë ndryshim i imponuar nga ana juaj.</p></div></div><div class="fti"><div class="ftic">📈</div><div><h4>Mjete rate shopping</h4><p>Monitorim i automatizuar i çmimeve të konkurrentëve në të gjitha kanalet e shpërndarjes.</p></div></div><div class="fti"><div class="ftic">🤖</div><div><h4>Analizë e kërkesës</h4><p>Të dhëna tregu, ngjarje lokale, tendenca kërkimi — për të anticipuar kërkesën para pikut.</p></div></div><div class="fti"><div class="ftic">📋</div><div><h4>Panele kontrolli të personalizuara</h4><p>Raportim i qartë dhe i lexueshëm, i adaptuar ndaj nevojave tuaja dhe nivelit të detajit të dëshiruar.</p></div></div>`,
     met_hlb: `<p>«&nbsp;Qëllimi nuk është të rrisësh çmimet rastësisht, por t'i rregullosh ato në mënyrë inteligjente sipas kërkesës reale, konkurrencës dhe tendencave të tregut.&nbsp;»</p><cite>Elton Skenderaj — Themelues AHRPA</cite>`,
     ap_founder_quote: `"Kalova 18 vite në hotelet më të kërkuara të Côte d'Azur. Mësova në recepsion në Cannes, drejtova ekipe në një hotel SPA 4 yjet, zhvillova hotele nga Saint-Tropez deri në Croisette. Çdo pozicion më mësoi një gjë: <strong style="color:var(--gd);font-style:normal">ndryshimi midis një hoteli që mbijetëson dhe njërit që lulëzon është zotërimi i çmimit të duhur në momentin e duhur.</strong>"`,
-    ap_narrative: `<p style="font-size:.68rem;line-height:1.9;color:var(--tm)">I diplomuar nga shkolla e hotelërisë, Elton fillon karrierën në 2008 në palatat e Cannes. Ai ngjitet shpejt: nga recepsioni në menaxhimin e ekipeve të plota, nga menaxhimi operacional në zhvillimin komercial strategjik për hotele luksi — Grupi Accor, rezidenca private në St-Tropez, prona prestigjioze në Croisette.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Duke u mbështetur në këtë eksperiencë tereni të pazëvendësueshme, ai themelon <strong>AHRPA</strong> me një bindje të thellë: hotelierët shqiptarë, që mirëpresin një klientelë ndërkombëtare gjithnjë e më kërkuese, meritojnë të njëjtat mjete menaxhimi të të ardhurave si grupet e mëdha ndërkombëtare — pa paguar çmimin e tyre.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Sot, nga Antibes, Elton drejton çdo ditë strategjitë tarifore të klientëve të tij shqiptarë me të njëjtën rigorozitet që zbatonte në Côte d'Azur. <strong>Pa teori. Vetëm operacional.</strong></p>`,
-    ap_bio1: "Elton Skenderaj është një profesionist i hotelërisë franceze me kombësi franceze, i bazuar në Antibes (Alpes-Maritimes). Pas më shumë se 18 viteve në hotelet më prestigjioze të Côte d'Azur — nga Grupi Accor tek rezidentat private të St-Tropez — ai themeloi AHRPA me një bindje të fortë: <strong>hotelet shqiptare meritojnë të njëjtin nivel ekspertize si palatat e Cannes.</strong>",
+    ap_narrative: `<p style="font-size:.68rem;line-height:1.9;color:var(--tm)">I diplomuar si <strong>Drejtor i Përgjithshëm i Institucioneve Turistike, dega Hotelieri</strong> (Prom'hote IFITEL, Saint-Raphaël, 2017), Elton fillon karrierën e tij në vitin 2008 në hotelet më prestigjioze të Côte d'Azur. Nga recepsioni i palaceve të Cannes-it deri te menaxhimi i ekipeve të plota, nga drejtimi operacional deri te zhvillimi tregtar strategjik — Grupi Accor, rezidenca private në St-Tropez, prona prestigjioze në La Croisette.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Duke u mbështetur në këtë eksperiencë tereni të pazëvendësueshme, ai themelon <strong>AHRPA</strong> me një bindje të thellë: hotelierët shqiptarë, që mirëpresin një klientelë ndërkombëtare gjithnjë e më kërkuese, meritojnë të njëjtat mjete menaxhimi të të ardhurave si grupet e mëdha ndërkombëtare — pa paguar çmimin e tyre.</p><p style="font-size:.68rem;line-height:1.9;color:var(--tm)">Sot, nga Antibes, Elton drejton çdo ditë strategjitë tarifore të klientëve të tij shqiptarë me të njëjtën rigorozitet që zbatonte në Côte d'Azur. <strong>Pa teori. Vetëm operacional.</strong></p>`,
+    ap_bio1: "I diplomuar si <strong>Drejtor i Përgjithshëm i Institucioneve Turistike, dega Hotelieri</strong> (Prom'hote IFITEL, 2017), Elton Skenderaj është një profesionist me mbi 18 vite eksperiencë në hotelërinë franceze të klasit të lartë, i bazuar në Antibes (Alpes-Maritimes). Pas viteve në hotelet më prestigjioze të Côte d'Azur — nga Grupi Accor tek rezidentat private të St-Tropez — ai themeloi AHRPA me një bindje të fortë: <strong>hotelet shqiptare meritojnë të njëjtin nivel ekspertize si palatat e Cannes.</strong>",
     ap_bio2: "Rruga e tij, nga recepsionisti te menaxheri i hoteleve dhe zhvilluesi komercial për prona premium, i dha një vizion të plotë të hotelërisë: operacional, komercial, financiar dhe njerëzor.",
     ap_albania_hlb: `<p>«&nbsp;Shqipëria është një treg me rritje të jashtëzakonshme, me potencial turistik të jashtëzakonshëm ende kryesisht të pashfrytëzuar. Ne sjellim standardet e hotelërisë franceze tek hotelierët shqiptarë — që të kapin më në fund pjesën e tyre të drejtë të vlerës.&nbsp;»</p><cite>Elton Skenderaj — Themelues AHRPA</cite>`,
     ap_formation_lbl: "Arsimimi",
-    ap_formation_val: "Drejtor i Përgjithshëm i Institucioneve Turistike, dega Hotelieri — Prom'hote IFITEL, Saint-Raphaël",
+    ap_formation_val: "Drejtor i Përgjithshëm i Institucioneve Turistike, dega Hotelieri — Prom'hote IFITEL, Saint-Raphaël (2017)",
     ap_langues_lbl: "Gjuhët",
     ap_langues_val: "Frëngjisht (amtare) · Anglisht (rrjedhshëm) · Italisht (rrjedhshëm) · Shqip",
     con_person_role: "Themelues & Drejtor AHRPA",

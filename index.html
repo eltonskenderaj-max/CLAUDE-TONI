@@ -179,6 +179,94 @@ nav{
   vertical-align:super;
   font-size:1rem;
 }
+
+/* ── 3D EXTENDED TO ALL PAGES ──────────────────────────────── */
+.inn{perspective:1200px}
+/* Timeline items 3D */
+.tli{
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+  transform-origin:left center;
+}
+.tli:hover{
+  transform:translateX(8px) rotateY(-1deg);
+  box-shadow:-4px 0 0 var(--gd),4px 4px 20px rgba(0,0,0,.15);
+}
+/* Light-mode cards (results, apropos team) */
+.lwb{
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.lwb:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 40px rgba(0,0,0,.12),0 0 0 1px rgba(201,165,90,.2);
+}
+/* Tarifs examples 3D */
+.prc-ex{
+  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+.prc-ex:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 35px rgba(0,0,0,.1),0 0 0 1px rgba(201,165,90,.25);
+}
+/* Blog cards */
+.bc{
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+.bc:hover{
+  transform:translateY(-8px) scale(1.015);
+  box-shadow:0 24px 60px rgba(0,0,0,.18),0 0 0 1px rgba(201,165,90,.2);
+}
+/* Hero section entrance */
+.pgh{
+  position:relative;
+  overflow:hidden;
+}
+.pgh::before{
+  content:'';
+  position:absolute;
+  top:-50%;left:-20%;
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(201,165,90,.05) 0%,transparent 65%);
+  border-radius:50%;
+  animation:orbFloat 12s ease-in-out infinite;
+  pointer-events:none;
+}
+/* Smooth entrance for page sections */
+.inn > *{
+  animation:fadeSlideUp .55s ease both;
+}
+.inn > *:nth-child(2){animation-delay:.08s}
+.inn > *:nth-child(3){animation-delay:.16s}
+.inn > *:nth-child(4){animation-delay:.24s}
+/* Gold glow line on active nav */
+.nl>li>a.an{
+  position:relative;
+}
+.nl>li>a.an::after{
+  content:'';
+  position:absolute;
+  bottom:-2px;left:0;right:0;
+  height:1px;
+  background:linear-gradient(90deg,transparent,var(--gd),transparent);
+  box-shadow:0 0 8px rgba(201,165,90,.6);
+}
+/* prc-install 3D */
+.prc-install{
+  transition:transform .3s ease,box-shadow .3s ease;
+}
+.prc-install:hover{
+  transform:scale(1.02);
+  box-shadow:0 8px 25px rgba(201,165,90,.15);
+}
+/* pms-tag bounce */
+.pms-tag:active{transform:scale(.95) translateY(1px);}
+/* hlb quote subtle float */
+.hlb{
+  transition:transform .4s ease,box-shadow .4s ease;
+}
+.hlb:hover{
+  transform:translateY(-3px);
+  box-shadow:0 12px 35px rgba(0,0,0,.08);
+}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:900;display:flex;align-items:center;justify-content:space-between;padding:.9rem 3rem;background:rgba(13,12,10,.97);backdrop-filter:blur(24px);border-bottom:1px solid rgba(201,165,90,.18);transition:padding .35s var(--ease)}
 nav.sc{padding:.55rem 3rem}
@@ -695,7 +783,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
       <div class="srb"><div class="srn">365</div><div class="srl" data-t="met_s1">Jours/an de suivi</div></div>
       <div class="srb"><div class="srn">24h</div><div class="srl" data-t="met_s2">Réponse maximale</div></div>
       <div class="srb"><div class="srn">+12%</div><div class="srl" data-t="met_s3">RevPAR minimum</div><div class="srs" data-t="met_s3b">constaté</div></div>
-      <div class="srb"><div class="srn">3 mois</div><div class="srl" data-t="met_s4">Engagement minimum</div></div>
+      <div class="srb"><div class="srn">1 an</div><div class="srl" data-t="met_s4">Engagement</div></div>
     </div>
 
     <div class="c2" style="margin-top:3rem">
@@ -865,7 +953,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
     <div class="c2">
       <div class="prc-card">
         <div style="font-size:.52rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gd);margin-bottom:1.2rem" data-t="tar_badge">Abonnement mensuel</div>
-        <div class="prc-price">450 € <span style="font-size:1rem;font-weight:400;color:var(--gd);letter-spacing:.1em">HT</span></div>
+        <div class="prc-price">450 € <span style="font-size:1rem;font-weight:400;color:var(--gd);letter-spacing:.1em" data-t="vat_badge">HT</span></div>
         <div class="prc-per" data-t="tar_per">HT / mois &nbsp;+&nbsp; 8 € HT par chambre / mois</div>
         <ul class="prc-list" data-t="tar_prc_list">
           <li>Optimisation quotidienne des prix</li>
@@ -878,7 +966,7 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
           <li>Support et conseil continu</li>
         </ul>
         <button class="btn-g" onclick="showPage('contact')" style="width:100%;justify-content:center;display:block;text-align:center" data-t="tar_btn">Démarrer — Audit gratuit</button>
-        <p class="prc-note" data-t="tar_prc_note">Tarifs <strong>HT</strong>. Abonnement mensuel + 8&nbsp;€ HT/chambre/mois. Engagement sur 1&nbsp;an.</p>
+        <p class="prc-note" data-t="tar_prc_note">Tarifs <strong>HT</strong>. Abonnement mensuel + 8&nbsp;€ HT/chambre/mois. Engagement sur 1&nbsp;an, renouvelable.</p>
         <div class="prc-install" data-t="tar_install_box">
           <div class="prc-install-title">Frais d'installation uniques</div>
           <div class="prc-install-price">350 € HT</div>
@@ -1152,8 +1240,8 @@ const FAQ_DATA = {
     {q:"À quelle fréquence ajustez-vous les prix ?",a:"Nous analysons et ajustons les prix tous les jours. En haute saison ou lors de périodes de forte demande, les prix peuvent être ajustés plusieurs fois par jour."},
     {q:"Est-ce que je garde le contrôle sur mes prix ?",a:"Oui, toujours. Nous pouvons travailler de deux façons : nous proposons et vous validez, ou nous gérons directement selon un cadre défini ensemble. Dans tous les cas, vous restez décisionnaire final."},
     {q:"Combien de temps faut-il pour voir des résultats ?",a:"En général, les premiers effets sont visibles entre 15 et 45 jours, selon la saison, la demande et la situation de départ de l'hôtel."},
-    {q:"Quel est le tarif du service AHRPA ?",a:"Notre tarif est de 450€ par mois + 8€ par chambre et par mois. Pour un hôtel de 30 chambres : 690€/mois — un investissement qui se rentabilise généralement dès le premier mois."},
-    {q:"Proposez-vous un engagement minimum ?",a:"Oui, nous demandons un engagement minimum de 3 mois. En dessous, il est difficile de mettre en place une stratégie solide et d'en mesurer les effets."},
+    {q:"Quel est le tarif du service AHRPA ?",a:"Notre tarif est de 450€ HT/mois + 8€ HT par chambre/mois, avec un engagement sur 1 an. Pour un hôtel de 30 chambres : 690€/mois HT. Frais d'installation uniques de 350€ HT (connexion PMS & Channel Manager). Un investissement qui se rentabilise dès le premier mois."},
+    {q:"Proposez-vous un engagement minimum ?",a:"Oui, nous demandons un engagement sur 1 an, renouvelable. Cela nous permet de déployer une stratégie tarifaire complète, d'en mesurer les effets dans la durée et de vous garantir des résultats solides et pérennes."},
     {q:"Travaillez-vous avec des hôtels saisonniers ?",a:"Oui, les hôtels saisonniers font partie de notre cœur de cible en Albanie. Nous adaptons la stratégie à la saisonnalité, aux périodes d'ouverture et aux pics de demande."},
     {q:"Travaillez-vous avec tous les PMS et Channel Managers ?",a:"Nous nous adaptons à la plupart des PMS et Channel Managers du marché. Si votre système est spécifique, nous étudions ensemble la meilleure manière de travailler."},
     {q:"Pouvez-vous gérer uniquement les OTA ?",a:"Oui, nous pouvons nous concentrer sur la gestion des OTA (Booking.com, Expedia, etc.). Cependant, pour maximiser les résultats, nous recommandons une approche globale."},
@@ -1162,7 +1250,7 @@ const FAQ_DATA = {
     {q:"Travaillez-vous en français, en anglais ou en albanais ?",a:"Nous pouvons travailler en français, en anglais et en albanais, selon vos préférences et celles de votre équipe."},
     {q:"Comment se passe le démarrage avec AHRPA ?",a:"Analyse de votre situation actuelle → définition des objectifs → mise en place des accès et process quotidiens → lancement avec suivi rapproché les premières semaines."},
     {q:"AHRPA peut-il augmenter mes prix sans perdre de clients ?",a:"Oui. L'objectif est d'ajuster les prix intelligemment selon la demande réelle. Dans de nombreux cas, nous augmentons les prix tout en améliorant le taux d'occupation sur les bonnes périodes."},
-    {q:"Puis-je arrêter le service à tout moment ?",a:"Après la période minimale d'engagement (3 mois), vous pouvez arrêter le service avec un préavis raisonnable défini au contrat."}
+    {q:"Puis-je arrêter le service à tout moment ?",a:"L'engagement est sur 1 an, renouvelable. À l'issue de cette période, le contrat est renouvelé tacitement ou peut être résilié avec un préavis raisonnable défini au contrat."}
   ],
   en: [
     {q:"What is Revenue Management?",a:"Revenue Management is the art of optimizing your prices and inventory based on demand, the market and competition, in order to maximize your revenue and profitability."},
@@ -1172,7 +1260,7 @@ const FAQ_DATA = {
     {q:"Do I keep control over my prices?",a:"Yes, always. We can work in two ways: we propose and you validate, or we manage directly within a framework defined together. In all cases, you remain the final decision-maker."},
     {q:"How long does it take to see results?",a:"Generally, the first effects are visible within 15 to 45 days, depending on the season, demand and the hotel's starting situation."},
     {q:"What is the AHRPA service price?",a:"Our rate is €450 per month + €8 per room per month. For a 30-room hotel: €690/month — an investment that generally pays for itself from the first month."},
-    {q:"Do you offer a minimum commitment?",a:"Yes, we require a minimum commitment of 3 months. Below that, it is difficult to implement a solid strategy and measure its effects."},
+    {q:"Do you offer a minimum commitment?",a:"Yes, we require a 1-year commitment, renewable. This allows us to deploy a complete pricing strategy, measure its effects over time, and guarantee you solid, lasting results."},
     {q:"Do you work with seasonal hotels?",a:"Yes, seasonal hotels are at the heart of our target in Albania. We adapt the strategy to seasonality, opening periods and demand peaks."},
     {q:"Do you work with all PMS and Channel Managers?",a:"We adapt to most PMS and Channel Managers on the market. If your system is specific, we will study together the best way to work."},
     {q:"Can you manage OTAs only?",a:"Yes, we can focus on OTA management (Booking.com, Expedia, etc.). However, for maximum results, we recommend a global approach."},
@@ -1181,7 +1269,7 @@ const FAQ_DATA = {
     {q:"Do you work in French, English or Albanian?",a:"We can work in French, English and Albanian, according to your preferences and those of your team."},
     {q:"How does onboarding with AHRPA work?",a:"Analysis of your current situation → definition of objectives → setup of accesses and daily processes → launch with close monitoring in the first weeks."},
     {q:"Can AHRPA raise my prices without losing customers?",a:"Yes. The goal is to adjust prices intelligently according to real demand. In many cases, we increase prices while improving occupancy rates during the right periods."},
-    {q:"Can I stop the service at any time?",a:"After the minimum commitment period (3 months), you can stop the service with reasonable notice as defined in the contract."}
+    {q:"Can I stop the service at any time?",a:"The commitment is for 1 year, renewable. At the end of this period, the contract is tacitly renewed or can be terminated with reasonable notice as defined in the contract."}
   ],
   sq: [
     {q:"Çfarë është Menaxhimi i të Ardhurave?",a:"Menaxhimi i të Ardhurave është arti i optimizimit të çmimeve dhe inventarit tuaj bazuar në kërkesë, treg dhe konkurrencë, me qëllim maksimizimin e të ardhurave dhe rentabilitetit tuaj."},
@@ -1190,8 +1278,8 @@ const FAQ_DATA = {
     {q:"Sa shpesh i rregulloni çmimet?",a:"Ne analizojmë dhe rregullojmë çmimet çdo ditë. Gjatë sezonit të lartë ose periudhave të kërkesës së lartë, çmimet mund të rregullohen disa herë në ditë."},
     {q:"A mbaj kontrollin mbi çmimet e mia?",a:"Po, gjithmonë. Mund të punojmë në dy mënyra: ne propozojmë dhe ju validoni, ose ne menaxhojmë drejtpërdrejt brenda një kuadri të përcaktuar së bashku. Në të gjitha rastet, ju mbeteni vendimmarrësi final."},
     {q:"Sa kohë duhet për të parë rezultate?",a:"Në përgjithësi, efektet e para janë të dukshme ndërmjet 15 dhe 45 ditëve, në varësi të sezonit, kërkesës dhe situatës fillestare të hotelit."},
-    {q:"Cili është çmimi i shërbimit AHRPA?",a:"Tarifa jonë është 450€ në muaj + 8€ për dhomë në muaj. Për një hotel me 30 dhoma: 690€/muaj — një investim që zakonisht shpërblen veten nga muaji i parë."},
-    {q:"A ofroni angazhim minimal?",a:"Po, kërkojmë një angazhim minimal prej 3 muajsh. Nën këtë, është e vështirë të zbatohet një strategji solide dhe të maten efektet e saj."},
+    {q:"Cili është çmimi i shërbimit AHRPA?",a:"Tarifa jonë është 450€ pa TVSH/muaj + 8€ pa TVSH për dhomë/muaj, me angazhim 1-vjeçar. Për një hotel me 30 dhoma: 690€/muaj pa TVSH. Gjithashtu, tarifë instalimi njëherëshe prej 350€ pa TVSH (lidhja e PMS dhe Channel Manager). Një investim që zakonisht shpërblen veten nga muaji i parë."},
+    {q:"A ofroni angazhim minimal?",a:"Po, kërkojmë një angazhim 1-vjeçar, të ripërtëritshëm. Kjo na lejon të zbatojmë një strategji tarifare të plotë, të masim efektet e saj me kalimin e kohës dhe t'ju garantojmë rezultate solide dhe të qëndrueshme."},
     {q:"A punoni me hotele sezonale?",a:"Po, hotelet sezonale janë në zemër të targetit tonë në Shqipëri. Ne adaptojmë strategjinë ndaj sezonalitetit, periudhave të hapjes dhe pikeve të kërkesës."},
     {q:"A punoni me të gjithë PMS dhe Channel Managers?",a:"Ne adaptohemi me shumicën e PMS dhe Channel Managers në treg. Nëse sistemi juaj është specifik, do të studiojmë së bashku mënyrën më të mirë të punës."},
     {q:"A mund të menaxhoni vetëm OTA-t?",a:"Po, mund të fokusohemi në menaxhimin e OTA (Booking.com, Expedia, etj.). Megjithatë, për rezultate maksimale, rekomandojmë një qasje globale."},
@@ -1200,7 +1288,7 @@ const FAQ_DATA = {
     {q:"A punoni në frëngjisht, anglisht ose shqip?",a:"Mund të punojmë në frëngjisht, anglisht dhe shqip, sipas preferencave tuaja dhe të ekipit tuaj."},
     {q:"Si funksionon fillimi me AHRPA?",a:"Analiza e situatës suaj aktuale → përcaktimi i objektivave → vendosja e akseseve dhe proceseve ditore → nisja me monitorim të ngushtë në javët e para."},
     {q:"A mund të rrisë AHRPA çmimet e mia pa humbur klientë?",a:"Po. Objektivi është rregullimi inteligjent i çmimeve sipas kërkesës reale. Në shumë raste, rrisim çmimet duke përmirësuar njëkohësisht normën e zënies në periudhat e duhura."},
-    {q:"A mund të ndaloj shërbimin në çdo kohë?",a:"Pas periudhës minimale të angazhimit (3 muaj), mund të ndaloni shërbimin me njoftim të arsyeshëm siç përcaktohet në kontratë."}
+    {q:"A mund të ndaloj shërbimin në çdo kohë?",a:"Angazhimi është 1-vjeçar, i ripërtëritshëm. Në fund të kësaj periudhe, kontrata ripërtërihet tacitisht ose mund të ndërpritet me njoftim të arsyeshëm siç përcaktohet në kontratë."}
   ]
 };
 
@@ -1407,7 +1495,7 @@ const T = {
     met_s2: "Réponse maximale",
     met_s3: "RevPAR minimum",
     met_s3b: "constaté",
-    met_s4: "Engagement minimum",
+    met_s4: "Engagement",
     met_steps_ey: "Les 6 étapes",
     met_steps_tt: "Ce que nous faisons<br><em>chaque jour</em> pour votre hôtel",
     met_tools_ey: "Nos outils",
@@ -1434,6 +1522,7 @@ const T = {
     tar_h1: "Une Tarification <em>Transparente</em>",
     tar_sub: "Un coût fixe et prévisible. Un retour sur investissement mesurable dès le premier mois. Pas de mauvaise surprise.",
     tar_badge: "Abonnement mensuel",
+    vat_badge: "HT",
     tar_per: "HT / mois &nbsp;+&nbsp; 8 € HT par chambre / mois",
     tar_pms_section: `<div class="sh" style="text-align:left">
         <div class="ey l">Infrastructure technologique</div>
@@ -1652,7 +1741,7 @@ const T = {
     met_s2: "Maximum response time",
     met_s3: "Minimum RevPAR",
     met_s3b: "observed",
-    met_s4: "Minimum commitment",
+    met_s4: "Commitment",
     met_steps_ey: "The 6 steps",
     met_steps_tt: "What we do<br><em>every day</em> for your hotel",
     met_tools_ey: "Our tools",
@@ -1679,6 +1768,7 @@ const T = {
     tar_h1: "<em>Transparent</em> Pricing",
     tar_sub: "A fixed, predictable cost. A measurable return on investment from the first month. No surprises.",
     tar_badge: "Monthly subscription",
+    vat_badge: "excl. VAT",
     tar_per: "excl. VAT / month &nbsp;+&nbsp; €8 excl. VAT per room / month",
     tar_pms_section: `<div class="sh" style="text-align:left">
         <div class="ey l">Technology infrastructure</div>
@@ -1903,6 +1993,7 @@ const T = {
     tar_h1: "Çmime <em>Transparente</em>",
     tar_sub: "Një kosto fikse dhe e parashikueshme. Kthim i matshëm nga investimi që nga muaji i parë. Pa surpriza.",
     tar_badge: "Abonim mujor",
+    vat_badge: "pa TVSH",
     tar_per: "pa TVSH / muaj &nbsp;+&nbsp; 8 € pa TVSH për dhomë / muaj",
     tar_pms_section: `<div class="sh" style="text-align:left">
         <div class="ey l">Infrastruktura teknologjike</div>

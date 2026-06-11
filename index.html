@@ -1430,6 +1430,11 @@ function showPage(id){
   if(id==='tarifs' && !document.getElementById('faq-tarifs').children.length){buildFaq('faq-tarifs',[6,7,8,9,10],false);}
   if(id==='contact' && !document.getElementById('faq-contact').children.length){buildFaq('faq-contact',[14,15,16],false);}
   if(id==='blog') buildBlog();
+  // Start particles for this page's header canvas (lazy — page was hidden before)
+  if(id !== 'home' && pg){
+    const cv = pg.querySelector('.pgc-particles');
+    if(cv) requestAnimationFrame(()=>startParticles(cv, 55, .22, 110));
+  }
 }
 
 function toggleMob(){
@@ -2176,23 +2181,33 @@ function updateMobLang(l){
   document.querySelectorAll('.mob-lb').forEach(b=>{if(b.textContent===l.toUpperCase())b.classList.add('on');});
 }
 
-// ─── CANVAS PARTICLES (all pages) ──────────────────────────
+// ─── CANVAS PARTICLES ───────────────────────────────────────
+// Each canvas is initialized LAZILY the first time its page is shown,
+// because hidden pages have offsetWidth/offsetHeight = 0.
 
-function initParticles(cv, count, speed, dist){
-  if(!cv) return;
+const _particleRAFs = {};   // pageId → raf handle
+const _particleReady = {};  // pageId → bool
+
+function startParticles(cv, count, speed, dist){
+  if(!cv || cv._ptDone) return;
+  cv._ptDone = true;
   const ctx = cv.getContext('2d');
   let W, H, pts = [], raf;
+
   function resize(){
-    W = cv.width = cv.offsetWidth;
-    H = cv.height = cv.offsetHeight;
+    W = cv.width  = cv.offsetWidth  || cv.parentElement.offsetWidth;
+    H = cv.height = cv.offsetHeight || cv.parentElement.offsetHeight;
+    if(!W || !H) return;
     pts = [];
     for(let i=0;i<count;i++) pts.push({
       x:Math.random()*W, y:Math.random()*H,
       vx:(Math.random()-.5)*speed, vy:(Math.random()-.5)*speed,
-      r:Math.random()*1.4+.4, o:Math.random()*.45+.08
+      r:Math.random()*1.5+.4, o:Math.random()*.5+.08
     });
   }
+
   function draw(){
+    if(!W||!H){ resize(); }
     ctx.clearRect(0,0,W,H);
     pts.forEach(p=>{
       p.x+=p.vx; p.y+=p.vy;
@@ -2209,31 +2224,28 @@ function initParticles(cv, count, speed, dist){
         if(d<dist){
           ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(pts[j].x,pts[j].y);
           ctx.strokeStyle=`rgba(201,165,90,${.07*(1-d/dist)})`;
-          ctx.lineWidth=.5;ctx.stroke();
+          ctx.lineWidth=.5; ctx.stroke();
         }
       }
     });
     raf = requestAnimationFrame(draw);
+    cv._ptRAF = raf;
   }
-  // Pause when not visible (performance)
-  const observer = new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-      if(e.isIntersecting){ if(!raf) draw(); }
-      else { cancelAnimationFrame(raf); raf=null; }
-    });
-  },{threshold:0});
-  observer.observe(cv);
+
   resize();
-  window.addEventListener('resize', resize);
+  draw();
+  window.addEventListener('resize', ()=>{ resize(); });
 }
 
-// Hero canvas (home) — dense & fast
-initParticles(document.getElementById('hc'), 90, .35, 130);
+function stopParticles(cv){
+  if(cv && cv._ptRAF){ cancelAnimationFrame(cv._ptRAF); cv._ptRAF = null; }
+}
 
-// Page header canvases — lighter & slower
-document.querySelectorAll('.pgc-particles').forEach(cv => {
-  initParticles(cv, 55, .22, 110);
-});
+// Home hero — start immediately (it's visible on load)
+startParticles(document.getElementById('hc'), 90, .35, 130);
+
+// Inner pages — canvases stored by page id, started on first showPage()
+// (already wired into showPage below)
 
 // ─── CARD 3D TILT ───────────────────────────────────────────
 

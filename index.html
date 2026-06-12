@@ -598,21 +598,21 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
 
 <!-- MOBILE MENU -->
 <div class="mob" id="mob">
-  <a onclick="showPage('home');
-  setLang('sq');toggleMob()" data-t="nav_home">Accueil</a>
-  <a onclick="showPage('services');toggleMob()" data-t="nav_services">Services</a>
-  <a onclick="showPage('methode');toggleMob()" data-t="nav_methode">Méthode</a>
-  <a onclick="showPage('apropos');toggleMob()" data-t="nav_apropos">À propos</a>
-  <a onclick="showPage('resultats');toggleMob()" data-t="nav_resultats">Résultats</a>
-  <a onclick="showPage('tarifs');toggleMob()" data-t="nav_tarifs">Tarifs</a>
-  <a onclick="showPage('blog');toggleMob()" data-t="nav_blog">Blog</a>
-  <a onclick="showPage('contact');toggleMob()" data-t="nav_contact">Contact</a>
+  <a onclick="showPage('home')" data-t="nav_home">Accueil</a>
+  <a onclick="showPage('services')" data-t="nav_services">Services</a>
+  <a onclick="showPage('methode')" data-t="nav_methode">Méthode</a>
+  <a onclick="showPage('apropos')" data-t="nav_apropos">À propos</a>
+  <a onclick="showPage('resultats')" data-t="nav_resultats">Résultats</a>
+  <a onclick="showPage('tarifs')" data-t="nav_tarifs">Tarifs</a>
+  <a onclick="showPage('blog')" data-t="nav_blog">Blog</a>
+  <a onclick="showPage('contact')" data-t="nav_contact">Contact</a>
+  <a onclick="showPage('rgpd')" style="font-size:.6rem;opacity:.6" data-t="nav_rgpd">Politique de confidentialité</a>
   <div class="mob-lw">
     <button class="mob-lb on" onclick="setLang('fr');updateMobLang('fr')">FR</button>
     <button class="mob-lb" onclick="setLang('en');updateMobLang('en')">EN</button>
     <button class="mob-lb" onclick="setLang('sq');updateMobLang('sq')">SQ</button>
   </div>
-  <button class="mob-cta" onclick="showPage('contact');toggleMob()" data-t="nav_cta">Audit Gratuit</button>
+  <button class="mob-cta" onclick="showPage('contact')" data-t="nav_cta">Audit Gratuit</button>
 </div>
 
 <!-- ══════════════════════════════════════
@@ -1345,10 +1345,12 @@ footer{background:var(--n3);padding:3.5rem 3rem 2rem;border-top:1px solid rgba(2
       </div>
     </div>
   </div>
+  <div style="text-align:center;padding:.8rem 0;border-top:1px solid rgba(201,165,90,.08)">
+    <a onclick="showPage('rgpd')" style="font-size:.58rem;color:rgba(253,250,246,.4);cursor:pointer;text-decoration:underline;text-underline-offset:3px;transition:color .2s;letter-spacing:.05em" onmouseover="this.style.color='var(--gl)'" onmouseout="this.style.color='rgba(253,250,246,.4)'" data-t="nav_rgpd">Politique de confidentialité</a>
+  </div>
   <div class="fbot">
     <span class="fcopy" data-t="ft_copy">© 2026 AHRPA – Revenue Management Albania — Fondé par Elton Skenderaj</span>
     <span class="fcopy" data-t="ft_seo">Revenue Management Albania | Yield Management Albania | Hotel Consulting Albania</span>
-    <a onclick="showPage('rgpd')" style="font-size:.52rem;color:rgba(253,250,246,.3);cursor:pointer;text-decoration:none;transition:color .2s;margin-left:1.5rem" onmouseover="this.style.color='var(--gl)'" onmouseout="this.style.color='rgba(253,250,246,.3)'" data-t="nav_rgpd">Politique de confidentialité</a>
   </div>
 </footer>
 
@@ -1545,7 +1547,9 @@ function showPage(id){
   if(pg){pg.classList.add('on');window.scrollTo({top:0,behavior:'smooth'});}
   const nl = document.getElementById('nl-'+id);
   if(nl) nl.classList.add('an');
-  document.getElementById('mob').classList.remove('op');
+  const _mob = document.getElementById('mob');
+  _mob.classList.remove('op');
+  document.body.style.overflow = '';
   // Lazy init FAQs
   if(id==='home' && !document.getElementById('faq-home').children.length){buildFaq('faq-home',[0,1,2,3,4,5,6],true);}
   if(id==='tarifs' && !document.getElementById('faq-tarifs').children.length){buildFaq('faq-tarifs',[6,7,8,9,10],false);}

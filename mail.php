@@ -51,6 +51,7 @@ $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
 $headers .= "Content-Transfer-Encoding: 8bit\r\n";
 $headers .= "X-Mailer: PHP/" . phpversion() . "\r\n";
 
-$sent = mail($to, $subject, $body, $headers);
+// Le paramètre -f est requis par IONOS pour valider l'adresse d'enveloppe
+$sent = mail($to, $subject, $body, $headers, '-f contact@ahrpa.eu');
 
 echo json_encode(['success' => $sent]);

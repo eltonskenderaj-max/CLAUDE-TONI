@@ -1,5 +1,11 @@
-# Page 404 personnalisée — redirige vers le SPA
-ErrorDocument 404 /index.html
+# Redirige toutes les URLs inconnues vers le SPA
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ /index.html [L]
+</IfModule>
 
 # MIME types
 AddType application/xml .xml

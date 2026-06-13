@@ -2456,17 +2456,25 @@ document.getElementById('contact-form').addEventListener('submit',function(e){
   btn.textContent = sendingMsg[l]||sendingMsg.fr;
   btn.disabled = true;
   fetch('/mail.php', {method:'POST', body: new FormData(f)})
-    .then(r=>r.json())
-    .then(data=>{
-      if(data.success){
-        f.style.display = 'none';
-        document.getElementById('form-msg').style.display = 'block';
-      } else {
+    .then(r=>r.text())
+    .then(text=>{
+      alert('REPONSE: ' + text);
+      try {
+        const data = JSON.parse(text);
+        if(data.success){
+          f.style.display = 'none';
+          document.getElementById('form-msg').style.display = 'block';
+        } else {
+          btn.textContent = errorMsg[l]||errorMsg.fr;
+          btn.disabled = false;
+        }
+      } catch(e) {
         btn.textContent = errorMsg[l]||errorMsg.fr;
         btn.disabled = false;
       }
     })
-    .catch(()=>{
+    .catch(err=>{
+      alert('ERREUR RESEAU: ' + err.message);
       btn.textContent = errorMsg[l]||errorMsg.fr;
       btn.disabled = false;
     });

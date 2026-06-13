@@ -44,7 +44,7 @@ $body .= str_repeat("─", 40) . "\n";
 $body .= "Envoyé depuis ahrpa.eu\n";
 
 // En-têtes
-$headers  = "From: AHRPA Contact <noreply@ahrpa.eu>\r\n";
+$headers  = "From: AHRPA Contact <contact@ahrpa.eu>\r\n";
 $headers .= "Reply-To: $name <$email_safe>\r\n";
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: text/plain; charset=UTF-8\r\n";

@@ -1,13 +1,4 @@
 # Redirige toutes les URLs inconnues vers le SPA
-<IfModule mod_rewrite.c>
-  Options +FollowSymLinks
-  RewriteEngine On
-  RewriteBase /
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule .* /index.html [L,R=302]
-</IfModule>
-
 # MIME types
 AddType application/xml .xml
 AddType text/plain .txt

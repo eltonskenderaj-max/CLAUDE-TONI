@@ -1,3 +1,6 @@
+# Page 404 personnalisée — redirige vers le SPA
+ErrorDocument 404 /index.html
+
 # MIME types
 AddType application/xml .xml
 AddType text/plain .txt

@@ -2505,13 +2505,28 @@ document.getElementById('contact-form').addEventListener('submit',function(e){
   if(!f.querySelector('[name=rgpd]').checked){ok=false;f.querySelector('[name=rgpd]').parentElement.style.color='#e57373';}
   if(!ok) return;
   const btn = f.querySelector('.fsub');
-  const sendingMsg = {fr:'Envoi en cours…', en:'Sending…', sq:'Duke dërguar…'};
-  btn.textContent = sendingMsg[document.documentElement.lang] || sendingMsg.fr;
+  const l = document.documentElement.lang||'sq';
+  const msgs = {
+    sending:{fr:'Envoi en cours…', en:'Sending…', sq:'Duke dërguar…'},
+    error:{fr:'Erreur — réessayez', en:'Error — try again', sq:'Gabim — provoni sërish'}
+  };
+  btn.textContent = msgs.sending[l]||msgs.sending.fr;
   btn.disabled = true;
-  setTimeout(()=>{
-    f.style.display = 'none';
-    document.getElementById('form-msg').style.display = 'block';
-  }, 1200);
+  fetch('/mail.php', {method:'POST', body: new FormData(f)})
+    .then(r=>r.json())
+    .then(data=>{
+      if(data.success){
+        f.style.display = 'none';
+        document.getElementById('form-msg').style.display = 'block';
+      } else {
+        btn.textContent = msgs.error[l]||msgs.error.fr;
+        btn.disabled = false;
+      }
+    })
+    .catch(()=>{
+      btn.textContent = msgs.error[l]||msgs.error.fr;
+      btn.disabled = false;
+    });
 });
 
 // ─── INIT ───────────────────────────────────────────────────

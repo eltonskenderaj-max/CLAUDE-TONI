@@ -14,11 +14,14 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-$name    = htmlspecialchars(trim($_POST['name']    ?? ''), ENT_QUOTES, 'UTF-8');
-$email   = trim($_POST['email']   ?? '');
-$phone   = htmlspecialchars(trim($_POST['phone']   ?? ''), ENT_QUOTES, 'UTF-8');
+$prenom  = htmlspecialchars(trim($_POST['prenom']   ?? ''), ENT_QUOTES, 'UTF-8');
+$nom     = htmlspecialchars(trim($_POST['nom']     ?? ''), ENT_QUOTES, 'UTF-8');
+$name    = trim("$prenom $nom");
+$email   = trim($_POST['email']    ?? '');
+$phone   = htmlspecialchars(trim($_POST['tel']     ?? ''), ENT_QUOTES, 'UTF-8');
 $hotel   = htmlspecialchars(trim($_POST['hotel']   ?? ''), ENT_QUOTES, 'UTF-8');
-$rooms   = htmlspecialchars(trim($_POST['rooms']   ?? ''), ENT_QUOTES, 'UTF-8');
+$rooms   = htmlspecialchars(trim($_POST['chambres']?? ''), ENT_QUOTES, 'UTF-8');
+$source  = htmlspecialchars(trim($_POST['source']  ?? ''), ENT_QUOTES, 'UTF-8');
 $message = htmlspecialchars(trim($_POST['message'] ?? ''), ENT_QUOTES, 'UTF-8');
 
 if (!$name || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -36,7 +39,8 @@ $body   .= "Nom         : $name\r\n";
 $body   .= "Email       : $email_safe\r\n";
 $body   .= "Telephone   : $phone\r\n";
 $body   .= "Hotel       : $hotel\r\n";
-$body   .= "Nb chambres : $rooms\r\n\r\n";
+$body   .= "Nb chambres : $rooms\r\n";
+$body   .= "Source      : $source\r\n\r\n";
 $body   .= "Message :\r\n$message\r\n";
 
 $host = 'smtp.ionos.fr';

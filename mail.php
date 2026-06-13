@@ -2,6 +2,10 @@
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: https://ahrpa.eu');
 
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    echo json_encode(['version' => 'v6-smtp', 'ok' => true]);
+    exit;
+}
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     http_response_code(405);
     echo json_encode(['success' => false, 'error' => 'Method not allowed']);

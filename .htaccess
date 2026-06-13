@@ -1,4 +1,3 @@
-# Redirige toutes les URLs inconnues vers le SPA
 # MIME types
 AddType application/xml .xml
 AddType text/plain .txt

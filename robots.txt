@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.ahrpa.eu/sitemap.xml
+Sitemap: https://ahrpa.eu/sitemap.xml
 
 # Performance
 Crawl-delay: 1

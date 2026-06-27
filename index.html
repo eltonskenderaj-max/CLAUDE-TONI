@@ -149,8 +149,8 @@ nav{
   from{opacity:0;transform:translateY(28px);}
   to{opacity:1;transform:translateY(0);}
 }
-.prc-ex,.fti{
-  animation:fadeSlideUp .6s ease both;
+.prc-ex,.prc-card,.db,.fti,.lwb,.tli{
+  /* animation handled by Framer Motion */
 }
 /* Floating gradient orbs behind hero */
 .hov::before{
@@ -234,9 +234,7 @@ nav{
   animation:orbFloat 12s ease-in-out infinite;
   pointer-events:none;
 }
-/* Page transition fade-in */
-.pg.on{animation:pgFadeIn .38s cubic-bezier(.25,.46,.45,.94) both}
-@keyframes pgFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* Smooth entrance handled by Framer Motion inView */
 /* Gold glow line on active nav */
 .nl>li>a.an{
   position:relative;
@@ -349,12 +347,6 @@ nav.sc .nb img{height:34px}
 /* COMMONS */
 .sec{padding:5rem 3rem}
 .bdk{background:var(--nv)}.bof{background:var(--ow)}.n2b{background:var(--n2)}.n3b{background:var(--n3)}
-/* Conseil vs RM opérationnel */
-.conseil-vs{padding:4rem 3rem}
-.conseil-lead{font-family:"Cormorant Garamond",serif;font-size:clamp(1.4rem,2.5vw,2rem);font-weight:500;color:var(--tx);line-height:1.4;margin-bottom:2rem;border-left:2px solid var(--gd);padding-left:1.5rem;text-align:left}
-.conseil-body{text-align:left;max-width:720px;margin:0 auto}
-.conseil-body p{font-size:.88rem;line-height:1.85;color:var(--tm);margin-bottom:1rem}
-.conseil-diff{font-family:"Cormorant Garamond",serif;font-size:1.25rem;font-weight:600;color:var(--gd) !important;margin:1.5rem 0 !important}
 .sh{text-align:center;margin-bottom:3.5rem}
 .ey{font-size:.52rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gd);display:flex;align-items:center;justify-content:center;gap:.8rem;margin-bottom:.7rem}
 .ey::before,.ey::after{content:"";display:block;width:20px;height:1px;background:var(--gd)}
@@ -1793,20 +1785,20 @@ a.contact-item:hover .contact-item-value{
       <div class="ri r1"></div><div class="ri r2"></div><div class="ri r3"></div>
     </div>
     <div class="hl">
-      <div class="hey" data-t="hero_tag">Revenue Management Externalisé · Hôtels 4★ &amp; 5★</div>
+      <div class="hey" data-t="hero_tag">Revenue Operating System · Agence française</div>
       <h1 id="hero-h1">
-        <span class="h1a" data-t="hero_h1a">Transformez la performance de votre hôtel</span>
-        <em class="h1b" data-t="hero_h1b">grâce à un Revenue Management externalisé</em>
+        <span class="h1a" data-t="hero_h1a">Augmentez vos revenus</span>
+        <em class="h1b" data-t="hero_h1b">de 15 à 30 %.</em>
       </h1>
-      <p class="hd" data-t="hero_desc">AHRPA devient votre département Revenue Management dédié. Nous pilotons vos prix, votre distribution et votre stratégie commerciale pour maximiser durablement votre RevPAR.</p>
+      <p class="hd" data-t="hero_desc">Revenue Management, Distribution &amp; Forecasting pour hôtels indépendants. Agence française basée à Antibes — marché français, européen &amp; albanais.<br><strong style="color:var(--gl)">+RevPAR. +ADR. Résultats mesurables dès le premier mois.</strong></p>
       <div class="hb">
         <button class="btn-g" onclick="showPage('contact')" data-t="hero_btn1">Réserver mon audit gratuit</button>
         <button class="btn-h" onclick="showPage('services')" data-t="hero_btn2">Voir la plateforme →</button>
       </div>
       <div class="hst">
-        <div class="hsb"><div class="hsn stat-num">+30%</div><div class="hsl" data-t="stat_revpar">RevPAR max</div></div>
-        <div class="hsb"><div class="hsn stat-num">+15%</div><div class="hsl" data-t="stat_adr">ADR moyen</div></div>
-        <div class="hsb"><div class="hsn stat-num">18<span style="font-size:1rem">ans</span></div><div class="hsl" data-t="stat_exp">Côte d'Azur</div></div>
+        <div class="hsb"><div class="hsn stat-num">+25%</div><div class="hsl" data-t="stat_revpar">Revenus max</div></div>
+        <div class="hsb"><div class="hsn stat-num">+12%</div><div class="hsl" data-t="stat_adr">Revenus garantis</div></div>
+        <div class="hsb"><div class="hsn stat-num">24<span style="font-size:1rem">h</span></div><div class="hsl" data-t="stat_exp">Audit gratuit</div></div>
       </div>
     </div>
     <div class="hrc">
@@ -1827,34 +1819,20 @@ a.contact-item:hover .contact-item-value{
     </div>
   </section>
 
-  <!-- ═══ CONSEIL VS RM OPÉRATIONNEL ═══ -->
-  <section class="sec bof conseil-vs fade-in">
-    <div style="max-width:860px;margin:0 auto;text-align:center">
-      <p class="conseil-lead" data-t="conseil_lead">Le conseil vous indique la direction. Le Revenue Management externalisé génère des résultats.</p>
-      <div class="conseil-body">
-        <p data-t="conseil_p1">La majorité des acteurs du marché hôtelier proposent du conseil, des audits ou des recommandations stratégiques.</p>
-        <p class="conseil-diff" data-t="conseil_diff">AHRPA adopte une approche différente.</p>
-        <p data-t="conseil_p2">Nous ne nous contentons pas de vous indiquer quoi faire.</p>
-        <p data-t="conseil_p3">Nous pilotons directement la performance de votre établissement au quotidien, en combinant expertise humaine et technologie de Revenue Management.</p>
-        <p data-t="conseil_p4">Notre rôle est opérationnel : optimisation des prix, analyse de la demande, gestion des canaux de distribution et amélioration continue des performances commerciales.</p>
-      </div>
-    </div>
-  </section>
-
   <!-- ═══ KPI STRIP ═══ -->
   <div class="kpi-strip fade-in">
-    <div class="kpi-item"><div class="kpi-n stat-num">+30%</div><div class="kpi-l" data-t="kpi1">RevPAR maximum</div></div>
-    <div class="kpi-item"><div class="kpi-n stat-num">+15%</div><div class="kpi-l" data-t="kpi2">ADR moyen</div></div>
+    <div class="kpi-item"><div class="kpi-n stat-num">+25%</div><div class="kpi-l" data-t="kpi1">Revenus max garantis</div></div>
+    <div class="kpi-item"><div class="kpi-n stat-num">+12%</div><div class="kpi-l" data-t="kpi2">Revenus min garantis</div></div>
     <div class="kpi-item"><div class="kpi-n stat-num">365</div><div class="kpi-l" data-t="kpi3">Jours de pilotage</div></div>
-    <div class="kpi-item"><div class="kpi-n stat-num">18</div><div class="kpi-l" data-t="kpi4">Ans Côte d'Azur</div></div>
+    <div class="kpi-item"><div class="kpi-n stat-num">24h</div><div class="kpi-l" data-t="kpi4">Réponse audit gratuit</div></div>
   </div>
 
   <!-- ═══ INTRO BAND avec photo piscine ═══ -->
   <section class="photo-band bg-pool photo-band-l fade-in">
     <div class="photo-band-inner">
-      <div class="pb-ey" data-t="intro_ey">Revenue Management Externalisé · Hôtels 4★ &amp; 5★</div>
-      <h2 class="pb-h" data-t="intro_h">AHRPA accompagne les hôtels 4★ et 5★<br>dans l'optimisation de leur <em>performance commerciale</em></h2>
-      <p class="pb-p" data-t="intro_p">Nous intégrons une technologie avancée de RMS et une expertise opérationnelle pour transformer vos données en décisions tarifaires concrètes. Notre mission est simple : améliorer durablement vos revenus et renforcer la rentabilité de votre établissement.</p>
+      <div class="pb-ey" data-t="intro_ey">Agence française · Antibes</div>
+      <h2 class="pb-h" data-t="intro_h">Une équipe française d'experts<br>au service de votre hôtel — <em>chaque jour</em></h2>
+      <p class="pb-p" data-t="intro_p">AHRPA n'est pas un cabinet de conseil de plus. C'est votre département Revenue Management opérationnel, exécuté quotidiennement depuis Antibes par une équipe française dirigée par Elton Skenderaj. Notre méthode est née sur la Côte d'Azur, dans les palaces de la Riviera. Aujourd'hui, nous l'appliquons à votre hôtel — en France, en Europe, et désormais en Albanie.</p>
       <div class="pb-btn-row">
         <button class="btn-g" onclick="showPage('apropos')" data-t="intro_btn1">Découvrir l'équipe →</button>
         <button class="btn-h" onclick="showPage('contact')" data-t="intro_btn2">Audit gratuit</button>
@@ -1866,17 +1844,16 @@ a.contact-item:hover .contact-item-value{
   <section class="sec bdk fade-in">
     <div style="max-width:1100px;margin:0 auto">
       <div class="sh">
-        <div class="ey" data-t="why_h_ey">Pourquoi choisir AHRPA ?</div>
-        <h2 class="tt lt" data-t="why_h_tt">Un département Revenue Management<br><em>intégré à votre stratégie commerciale.</em></h2>
-        <p class="su lt" data-t="why_h_sub">AHRPA ne fonctionne pas comme une agence de conseil traditionnelle. Nous devenons un véritable département Revenue Management externalisé, assurant un pilotage quotidien de votre performance hôtelière.</p>
+        <div class="ey" data-t="why_h_ey">Pourquoi les hôtels nous choisissent</div>
+        <h2 class="tt lt" data-t="why_h_tt">Cinq bénéfices.<br>Un <em>seul partenaire.</em></h2>
       </div>
       <div class="benef-grid">
-        <div class="benef-cell"><h4 data-t="benef1_h">Optimisation dynamique des tarifs</h4><p data-t="benef1_p">Ajustements quotidiens — voire plusieurs fois par jour en haute saison — selon la demande, la concurrence et les événements locaux.</p></div>
-        <div class="benef-cell"><h4 data-t="benef2_h">Analyse de la demande et des pick-up</h4><p data-t="benef2_p">Lecture fine du booking window, du rythme de remplissage et des signaux de marché pour anticiper et maximiser chaque période.</p></div>
-        <div class="benef-cell"><h4 data-t="benef3_h">Gestion et optimisation OTA</h4><p data-t="benef3_p">Parité tarifaire, ranking, visibility boosts. Nous pilotons Booking.com, Expedia et Airbnb comme un système unifié, pas canal par canal.</p></div>
-        <div class="benef-cell"><h4 data-t="benef4_h">Suivi du RevPAR et de l'ADR</h4><p data-t="benef4_p">Reporting clair et régulier sur vos indicateurs clés. Vous voyez l'impact de chaque décision tarifaire en temps réel.</p></div>
-        <div class="benef-cell"><h4 data-t="benef5_h">Prévisions de performance</h4><p data-t="benef5_p">Forecasting à 7, 30 et 90 jours piloté par les données. Vous anticipez les tendances avant que vos concurrents ne réagissent.</p></div>
-        <div class="benef-cell"><h4 data-t="benef6_h">Ajustements stratégiques continus</h4><p data-t="benef6_p">Combinaison unique d'expertise humaine spécialisée et de technologie RMS avancée, analysant en continu les données de marché.</p></div>
+        <div class="benef-cell"><h4 data-t="benef1_h">+ ADR</h4><p data-t="benef1_p">Tarification dynamique pilotée chaque jour selon la demande, les événements et la concurrence. Votre prix moyen progresse sans perdre l'occupation.</p></div>
+        <div class="benef-cell"><h4 data-t="benef2_h">+ Occupation</h4><p data-t="benef2_p">Stratégie segmentée par canal et par période. Les nuits creuses se remplissent, les périodes fortes se maximisent.</p></div>
+        <div class="benef-cell"><h4 data-t="benef3_h">Gain de temps</h4><p data-t="benef3_p">Vous arrêtez de surveiller vos prix et vos OTA. Notre équipe le fait — vous vous concentrez sur l'accueil et l'opérationnel terrain.</p></div>
+        <div class="benef-cell"><h4 data-t="benef4_h">Multi-hôtels</h4><p data-t="benef4_p">Pilotage centralisé pour les groupes de 2 à 5 hôtels. Cohérence stratégique, reporting consolidé, économies d'échelle.</p></div>
+        <div class="benef-cell"><h4 data-t="benef5_h">Décisions par les données</h4><p data-t="benef5_p">Prévisions, pick-up, pace, booking window. Les bons prix sont calculés par les données — pas par l'intuition.</p></div>
+        <div class="benef-cell"><h4 data-t="benef6_h">Équipe française</h4><p data-t="benef6_p">Basée à Antibes, formée dans les palaces de la Riviera. Disponibilité réelle. Pas de sous-traitance, pas de relais offshore.</p></div>
       </div>
     </div>
   </section>
@@ -3281,41 +3258,38 @@ const T = {
     nav_contact: "Contact",
     nav_cta: "Audit Gratuit",
     // ── V4 SAAS PREMIUM ──
-    hero_tag: "Revenue Management Externalisé · Hôtels 4★ &amp; 5★",
-    hero_h1a: "Transformez la performance de votre hôtel",
-    hero_h1b: "grâce à un Revenue Management externalisé",
-    hero_desc: "AHRPA devient votre département Revenue Management dédié. Nous pilotons vos prix, votre distribution et votre stratégie commerciale pour maximiser durablement votre RevPAR.",
-    conseil_lead: "Le conseil vous indique la direction. Le Revenue Management externalisé génère des résultats.",
-    conseil_p1: "La majorité des acteurs du marché hôtelier proposent du conseil, des audits ou des recommandations stratégiques.",
-    conseil_diff: "AHRPA adopte une approche différente.",
-    conseil_p2: "Nous ne nous contentons pas de vous indiquer quoi faire.",
-    conseil_p3: "Nous pilotons directement la performance de votre établissement au quotidien, en combinant expertise humaine et technologie de Revenue Management.",
-    conseil_p4: "Notre rôle est opérationnel : optimisation des prix, analyse de la demande, gestion des canaux de distribution et amélioration continue des performances commerciales.",
-    stat_adr: "ADR moyen",
-    intro_ey: "Revenue Management Externalisé · Hôtels 4★ &amp; 5★",
-    intro_h: "AHRPA accompagne les hôtels 4★ et 5★<br>dans l'optimisation de leur <em>performance commerciale</em>",
-    intro_p: "Nous intégrons une technologie avancée de RMS et une expertise opérationnelle pour transformer vos données en décisions tarifaires concrètes. Notre mission est simple : améliorer durablement vos revenus et renforcer la rentabilité de votre établissement.",
+    hero_h1a: "Augmentez vos revenus",
+    hero_h1b: "de 15 à 30 %.",
+    stat_revpar: "Revenus max",
+    stat_adr: "Revenus garantis",
+    stat_exp: "Audit gratuit",
+    kpi1: "Revenus max garantis",
+    kpi2: "Revenus min garantis",
+    kpi3: "Jours de pilotage",
+    kpi4: "Réponse audit gratuit",
+    intro_ey: "Agence française · Antibes",
+    intro_h: "Une équipe française d'experts<br>au service de votre hôtel — <em>chaque jour</em>",
+    intro_p: "AHRPA n'est pas un cabinet de conseil de plus. C'est votre département Revenue Management opérationnel, exécuté quotidiennement depuis Antibes par une équipe française dirigée par Elton Skenderaj. Notre méthode est née sur la Côte d'Azur, dans les palaces de la Riviera. Aujourd'hui, nous l'appliquons à votre hôtel — en France, en Europe, et désormais en Albanie.",
     intro_btn1: "Découvrir l'équipe →",
     intro_btn2: "Audit gratuit",
     kpi1: "RevPAR maximum",
     kpi2: "ADR moyen",
     kpi3: "Jours de pilotage",
     kpi4: "Ans Côte d'Azur",
-    why_h_ey: "Pourquoi choisir AHRPA ?",
-    why_h_tt: "Un département Revenue Management<br><em>intégré à votre stratégie commerciale.</em>",
-    why_h_sub: "AHRPA ne fonctionne pas comme une agence de conseil traditionnelle. Nous devenons un véritable département Revenue Management externalisé, assurant un pilotage quotidien de votre performance hôtelière.",
-    benef1_h: "Optimisation dynamique des tarifs",
-    benef1_p: "Ajustements quotidiens — voire plusieurs fois par jour en haute saison — selon la demande, la concurrence et les événements locaux.",
-    benef2_h: "Analyse de la demande et des pick-up",
-    benef2_p: "Lecture fine du booking window, du rythme de remplissage et des signaux de marché pour anticiper et maximiser chaque période.",
-    benef3_h: "Gestion et optimisation OTA",
-    benef3_p: "Parité tarifaire, ranking, visibility boosts. Nous pilotons Booking.com, Expedia et Airbnb comme un système unifié, pas canal par canal.",
-    benef4_h: "Suivi du RevPAR et de l'ADR",
-    benef4_p: "Reporting clair et régulier sur vos indicateurs clés. Vous voyez l'impact de chaque décision tarifaire en temps réel.",
-    benef5_h: "Prévisions de performance",
-    benef5_p: "Forecasting à 7, 30 et 90 jours piloté par les données. Vous anticipez les tendances avant que vos concurrents ne réagissent.",
-    benef6_h: "Ajustements stratégiques continus",
-    benef6_p: "Combinaison unique d'expertise humaine spécialisée et de technologie RMS avancée, analysant en continu les données de marché.",
+    why_h_ey: "Pourquoi les hôtels nous choisissent",
+    why_h_tt: "Cinq bénéfices.<br>Un <em>seul partenaire.</em>",
+    benef1_h: "+ ADR",
+    benef1_p: "Tarification dynamique pilotée chaque jour selon la demande, les événements et la concurrence. Votre prix moyen progresse sans perdre l'occupation.",
+    benef2_h: "+ Occupation",
+    benef2_p: "Stratégie segmentée par canal et par période. Les nuits creuses se remplissent, les périodes fortes se maximisent.",
+    benef3_h: "Gain de temps",
+    benef3_p: "Vous arrêtez de surveiller vos prix et vos OTA. Notre équipe le fait — vous vous concentrez sur l'accueil et l'opérationnel terrain.",
+    benef4_h: "Multi-hôtels",
+    benef4_p: "Pilotage centralisé pour les groupes de 2 à 5 hôtels. Cohérence stratégique, reporting consolidé, économies d'échelle.",
+    benef5_h: "Décisions par les données",
+    benef5_p: "Prévisions, pick-up, pace, booking window. Les bons prix sont calculés par les données — pas par l'intuition.",
+    benef6_h: "Équipe française",
+    benef6_p: "Basée à Antibes, formée dans les palaces de la Riviera. Disponibilité réelle. Pas de sous-traitance, pas de relais offshore.",
     plat_ey: "La plateforme AHRPA",
     plat_tt: "Cinq modules.<br><em>Un seul système.</em>",
     plat_sub: "Cinq modules qui travaillent en synergie pour maximiser vos revenus — exécutés chaque jour par notre équipe française.",
@@ -5296,91 +5270,6 @@ buildBlog();
 </script>
 
 <!-- ══════════════════════════════════════
-     FRAMER MOTION – SCROLL ANIMATIONS
-══════════════════════════════════════ -->
-<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
-<script>
-(function(){
-  if(!window.Motion) return;
-  const { animate, inView } = window.Motion;
-
-  // ── Pré-masquer les éléments hors viewport ──────────────────
-  const belowFold = el => el.getBoundingClientRect().top > window.innerHeight;
-
-  const SCROLL_SELECTORS = '.db,.prc-card,.tli,.lwb,.pillar,.rom-cell,.mod-cell,.benef-cell,.res-card,.ia-cap-cell,.ia-flow-cell,.tli6,.bc,.prc-ex';
-  setTimeout(() => {
-    document.querySelectorAll(SCROLL_SELECTORS).forEach(el => {
-      if(belowFold(el)){ el.style.opacity='0'; el.style.transform='translateY(28px)'; }
-    });
-    document.querySelectorAll('.faq-item').forEach(el => {
-      if(belowFold(el)) el.style.opacity='0';
-    });
-  }, 50);
-
-  // ── Cartes sombres ───────────────────────────────────────────
-  ['.db','.pillar','.rom-cell','.res-card','.ia-cap-cell','.tli6'].forEach(sel => {
-    inView(sel, ({target}) => {
-      animate(target, {opacity:[0,1], y:[28,0]}, {duration:.55, easing:[.25,.46,.45,.94]});
-    }, {margin:'-8% 0px'});
-  });
-
-  // ── Carte pricing ────────────────────────────────────────────
-  inView('.prc-card', ({target}) => {
-    animate(target, {opacity:[0,1], y:[40,0], scale:[.97,1]}, {duration:.7, easing:[.19,1,.22,1]});
-  }, {margin:'-8% 0px'});
-
-  // ── Cartes claires ────────────────────────────────────────────
-  ['.lwb','.benef-cell','.mod-cell','.bc','.ia-flow-cell','.prc-ex'].forEach(sel => {
-    inView(sel, ({target}) => {
-      animate(target, {opacity:[0,1], y:[22,0]}, {duration:.5, easing:'ease-out'});
-    }, {margin:'-8% 0px'});
-  });
-
-  // ── Timeline ──────────────────────────────────────────────────
-  inView('.tli', ({target}) => {
-    animate(target, {opacity:[0,1], x:[-22,0]}, {duration:.45, easing:[.25,.46,.45,.94]});
-  }, {margin:'-8% 0px'});
-
-  // ── Titres de section ─────────────────────────────────────────
-  inView('.sh', ({target}) => {
-    animate(target, {opacity:[0,1], y:[14,0]}, {duration:.5, easing:'ease-out'});
-  }, {margin:'-5% 0px'});
-
-  // ── FAQ (cascade) ─────────────────────────────────────────────
-  document.querySelectorAll('.faq-item').forEach((el, i) => {
-    inView(el, ({target}) => {
-      animate(target, {opacity:[0,1], x:[-12,0]}, {duration:.38, delay:(i%5)*.06, easing:'ease-out'});
-    }, {margin:'-5% 0px'});
-  });
-
-  // ── Compteur animé pour les chiffres clés ────────────────────
-  function animateCounter(el) {
-    if(el.children.length > 0) return;
-    const raw = el.textContent.trim();
-    const prefix = raw.match(/^[^0-9]*/)[0];
-    const suffix = raw.match(/[^0-9]*$/)[0];
-    const num = parseFloat(raw.replace(/[^0-9.]/g,''));
-    if(isNaN(num) || num < 2) return;
-    const t0 = performance.now();
-    const dur = Math.min(1200 + num * 2, 2000);
-    const ease = t => 1 - Math.pow(1 - t, 3);
-    (function tick(now){
-      const p = Math.min((now - t0) / dur, 1);
-      const v = ease(p) * num;
-      el.textContent = prefix + (Number.isInteger(num) ? Math.round(v) : Math.round(v*10)/10) + suffix;
-      if(p < 1) requestAnimationFrame(tick);
-    })(t0);
-  }
-
-  inView('.stat-num,.hsn,.srn,.kpi-n,.res-stat-n', ({target}) => {
-    animate(target, {opacity:[0,1], scale:[.82,1]}, {duration:.45, easing:'ease-out'});
-    animateCounter(target);
-  }, {margin:'-5% 0px'});
-
-})();
-</script>
-
-<!-- ══════════════════════════════════════
      BLOG ARTICLE MODAL
 ══════════════════════════════════════ -->
 <div id="blog-modal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(13,12,10,.97);z-index:1200;overflow-y:auto;padding:2rem">
@@ -5389,5 +5278,82 @@ buildBlog();
     <div id="blog-modal-content"></div>
   </div>
 </div>
+<!-- ══ FRAMER MOTION CDN ══ -->
+<script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+<script>
+(function(){
+  if(!window.Motion) return;
+  const { animate, inView } = window.Motion;
+
+  const belowFold = el => el.getBoundingClientRect().top > window.innerHeight;
+
+  // Pré-masquer uniquement les éléments réellement sous le fold
+  setTimeout(function(){
+    const SCROLL_SELS = '.db,.prc-card,.tli,.lwb,.pillar,.rom-cell,.mod-cell,.benef-cell,.res-card,.ia-cap-cell,.ia-flow-cell,.tli6,.bc,.prc-ex';
+    document.querySelectorAll(SCROLL_SELS).forEach(function(el){
+      if(belowFold(el)){ el.style.opacity='0'; el.style.transform='translateY(28px)'; }
+    });
+    document.querySelectorAll('.faq-item').forEach(function(el){
+      if(belowFold(el)) el.style.opacity='0';
+    });
+  }, 60);
+
+  // Cartes sombres & pilliers
+  ['.db','.pillar','.rom-cell','.res-card','.ia-cap-cell','.tli6'].forEach(function(sel){
+    inView(sel, function(info){
+      animate(info.target, {opacity:[0,1], y:[28,0]}, {duration:.55, easing:[.25,.46,.45,.94]});
+    }, {margin:'-8% 0px'});
+  });
+
+  // Pricing cards (légèrement plus dramatique)
+  inView('.prc-card', function(info){
+    animate(info.target, {opacity:[0,1], y:[40,0], scale:[.97,1]}, {duration:.7, easing:[.19,1,.22,1]});
+  }, {margin:'-8% 0px'});
+
+  // Éléments secondaires
+  ['.lwb','.benef-cell','.mod-cell','.bc','.ia-flow-cell','.prc-ex'].forEach(function(sel){
+    inView(sel, function(info){
+      animate(info.target, {opacity:[0,1], y:[22,0]}, {duration:.5, easing:'ease-out'});
+    }, {margin:'-8% 0px'});
+  });
+
+  // Timeline items (slide depuis la gauche)
+  inView('.tli', function(info){
+    animate(info.target, {opacity:[0,1], x:[-22,0]}, {duration:.45, easing:[.25,.46,.45,.94]});
+  }, {margin:'-8% 0px'});
+
+  // FAQ items
+  document.querySelectorAll('.faq-item').forEach(function(el, i){
+    inView(el, function(info){
+      animate(info.target, {opacity:[0,1], x:[-12,0]}, {duration:.38, delay:(i%5)*.06, easing:'ease-out'});
+    }, {margin:'-5% 0px'});
+  });
+
+  // Compteurs animés sur les stats
+  function animateCounter(el){
+    if(el.children.length > 0) return;
+    var raw = el.textContent.trim();
+    var prefix = (raw.match(/^[^0-9]*/) || [''])[0];
+    var suffix = (raw.match(/[^0-9]*$/) || [''])[0];
+    var num = parseFloat(raw.replace(/[^0-9.]/g,''));
+    if(isNaN(num) || num < 2) return;
+    var t0 = performance.now();
+    var dur = Math.min(1200 + num * 2, 2000);
+    var ease = function(t){ return 1 - Math.pow(1 - t, 3); };
+    (function tick(now){
+      var p = Math.min((now - t0) / dur, 1);
+      var v = ease(p) * num;
+      el.textContent = prefix + (Number.isInteger(num) ? Math.round(v) : Math.round(v*10)/10) + suffix;
+      if(p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  inView('.stat-num,.hsn,.srn,.kpi-n,.res-stat-n', function(info){
+    animate(info.target, {opacity:[0,1], scale:[.82,1]}, {duration:.45, easing:'ease-out'});
+    animateCounter(info.target);
+  }, {margin:'-5% 0px'});
+
+})();
+</script>
 </body>
 </html>

@@ -14,7 +14,7 @@
 <link rel="alternate" hreflang="sq" href="https://www.ahrpa.eu/sq/">
 <link rel="alternate" hreflang="x-default" href="https://www.ahrpa.eu/">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://ahrpa.eu/">
+<meta property="og:url" content="https://www.ahrpa.eu/">
 <meta property="og:title" content="AHRPA – Revenue Management Hôtels Albanie | +12% à +25% de Revenus">
 <meta property="og:description" content="Cabinet expert en Revenue Management pour hôtels indépendants en Albanie. Optimisation des prix, gestion OTA, stratégies tarifaires. Audit gratuit.">
 <meta property="og:image" content="https://ahrpa.eu/og-image.jpg">
@@ -45,6 +45,7 @@
 ]}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Josefin+Sans:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--nv:#1A1815;--n2:#141210;--n3:#0D0C0A;--navy:#0E1A2E;--navy2:#16243F;--navy3:#0A1422;--bronze:#A8794A;--gd:#C9A55A;--gl:#D4B878;--gp:#F5E8D0;--wh:#FDFAF6;--ow:#F5EFE6;--ow2:#EDE5D8;--tx:#1A1410;--tm:#5A4A30;--tl:rgba(253,250,246,.62);--bgl:rgba(201,165,90,.2);--ease:cubic-bezier(.25,.46,.45,.94);--ease2:cubic-bezier(.19,1,.22,1)}
@@ -233,13 +234,9 @@ nav{
   animation:orbFloat 12s ease-in-out infinite;
   pointer-events:none;
 }
-/* Smooth entrance for page sections */
-.inn > *{
-  animation:fadeSlideUp .55s ease both;
-}
-.inn > *:nth-child(2){animation-delay:.08s}
-.inn > *:nth-child(3){animation-delay:.16s}
-.inn > *:nth-child(4){animation-delay:.24s}
+/* Page transition fade-in */
+.pg.on{animation:pgFadeIn .38s cubic-bezier(.25,.46,.45,.94) both}
+@keyframes pgFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 /* Gold glow line on active nav */
 .nl>li>a.an{
   position:relative;
@@ -5274,65 +5271,80 @@ buildBlog();
 <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
 <script>
 (function(){
+  if(!window.Motion) return;
   const { animate, inView } = window.Motion;
 
-  // Cartes services (.db)
-  inView('[class*="db"]', ({ target }) => {
-    animate(target,
-      { opacity: [0, 1], y: [40, 0] },
-      { duration: 0.6, easing: [0.25, 0.46, 0.45, 0.94] }
-    );
-  }, { margin: '-10% 0px' });
+  // ── Pré-masquer les éléments hors viewport ──────────────────
+  const belowFold = el => el.getBoundingClientRect().top > window.innerHeight * 0.15;
 
-  // Cartes pricing (.prc-card)
-  inView('.prc-card', ({ target }) => {
-    animate(target,
-      { opacity: [0, 1], y: [50, 0], scale: [0.97, 1] },
-      { duration: 0.7, easing: [0.19, 1, 0.22, 1] }
-    );
-  }, { margin: '-10% 0px' });
-
-  // Stats (.stat-num)
-  inView('.stat-num', ({ target }) => {
-    animate(target,
-      { opacity: [0, 1], scale: [0.8, 1] },
-      { duration: 0.5, easing: 'ease-out' }
-    );
-  }, { margin: '-5% 0px' });
-
-  // Timeline items (.tli)
-  inView('.tli', ({ target }) => {
-    animate(target,
-      { opacity: [0, 1], x: [-30, 0] },
-      { duration: 0.5, easing: [0.25, 0.46, 0.45, 0.94] }
-    );
-  }, { margin: '-10% 0px' });
-
-  // Titres de section (.tt)
-  inView('.tt', ({ target }) => {
-    animate(target,
-      { opacity: [0, 1], y: [20, 0] },
-      { duration: 0.55, easing: 'ease-out' }
-    );
-  }, { margin: '-5% 0px' });
-
-  // Items FAQ (.faq-item)
-  document.querySelectorAll('.faq-item').forEach((el, i) => {
-    inView(el, ({ target }) => {
-      animate(target,
-        { opacity: [0, 1], x: [-16, 0] },
-        { duration: 0.4, delay: i % 3 * 0.08, easing: 'ease-out' }
-      );
-    }, { margin: '-5% 0px' });
+  const SCROLL_SELECTORS = '.db,.prc-card,.tli,.lwb,.pillar,.rom-cell,.mod-cell,.benef-cell,.res-card,.ia-cap-cell,.ia-flow-cell,.tli6,.bc,.prc-ex,.sh';
+  document.querySelectorAll(SCROLL_SELECTORS).forEach(el => {
+    if(belowFold(el)){ el.style.opacity='0'; el.style.transform='translateY(28px)'; }
+  });
+  document.querySelectorAll('.faq-item').forEach(el => {
+    if(belowFold(el)) el.style.opacity='0';
   });
 
-  // Cards blog / résultats (.lwb)
-  inView('.lwb', ({ target }) => {
-    animate(target,
-      { opacity: [0, 1], y: [30, 0] },
-      { duration: 0.5, easing: 'ease-out' }
-    );
-  }, { margin: '-10% 0px' });
+  // ── Cartes sombres ───────────────────────────────────────────
+  ['.db','.pillar','.rom-cell','.res-card','.ia-cap-cell','.tli6'].forEach(sel => {
+    inView(sel, ({target}) => {
+      animate(target, {opacity:[0,1], y:[28,0]}, {duration:.55, easing:[.25,.46,.45,.94]});
+    }, {margin:'-8% 0px'});
+  });
+
+  // ── Carte pricing ────────────────────────────────────────────
+  inView('.prc-card', ({target}) => {
+    animate(target, {opacity:[0,1], y:[40,0], scale:[.97,1]}, {duration:.7, easing:[.19,1,.22,1]});
+  }, {margin:'-8% 0px'});
+
+  // ── Cartes claires ────────────────────────────────────────────
+  ['.lwb','.benef-cell','.mod-cell','.bc','.ia-flow-cell','.prc-ex'].forEach(sel => {
+    inView(sel, ({target}) => {
+      animate(target, {opacity:[0,1], y:[22,0]}, {duration:.5, easing:'ease-out'});
+    }, {margin:'-8% 0px'});
+  });
+
+  // ── Timeline ──────────────────────────────────────────────────
+  inView('.tli', ({target}) => {
+    animate(target, {opacity:[0,1], x:[-22,0]}, {duration:.45, easing:[.25,.46,.45,.94]});
+  }, {margin:'-8% 0px'});
+
+  // ── Titres de section ─────────────────────────────────────────
+  inView('.sh', ({target}) => {
+    animate(target, {opacity:[0,1], y:[14,0]}, {duration:.5, easing:'ease-out'});
+  }, {margin:'-5% 0px'});
+
+  // ── FAQ (cascade) ─────────────────────────────────────────────
+  document.querySelectorAll('.faq-item').forEach((el, i) => {
+    inView(el, ({target}) => {
+      animate(target, {opacity:[0,1], x:[-12,0]}, {duration:.38, delay:(i%5)*.06, easing:'ease-out'});
+    }, {margin:'-5% 0px'});
+  });
+
+  // ── Compteur animé pour les chiffres clés ────────────────────
+  function animateCounter(el) {
+    if(el.children.length > 0) return;
+    const raw = el.textContent.trim();
+    const prefix = raw.match(/^[^0-9]*/)[0];
+    const suffix = raw.match(/[^0-9]*$/)[0];
+    const num = parseFloat(raw.replace(/[^0-9.]/g,''));
+    if(isNaN(num) || num < 2) return;
+    const t0 = performance.now();
+    const dur = Math.min(1200 + num * 2, 2000);
+    const ease = t => 1 - Math.pow(1 - t, 3);
+    (function tick(now){
+      const p = Math.min((now - t0) / dur, 1);
+      const v = ease(p) * num;
+      el.textContent = prefix + (Number.isInteger(num) ? Math.round(v) : Math.round(v*10)/10) + suffix;
+      if(p < 1) requestAnimationFrame(tick);
+    })(t0);
+  }
+
+  inView('.stat-num,.hsn,.srn,.kpi-n,.res-stat-n', ({target}) => {
+    animate(target, {opacity:[0,1], scale:[.82,1]}, {duration:.45, easing:'ease-out'});
+    animateCounter(target);
+  }, {margin:'-5% 0px'});
+
 })();
 </script>
 

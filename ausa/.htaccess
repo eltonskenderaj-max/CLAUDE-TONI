@@ -2,15 +2,20 @@
 <Files "config.php">
   Require all denied
 </Files>
-<Files "config.exemple.php">
-  Require all denied
-</Files>
 <FilesMatch "\.md$">
   Require all denied
 </FilesMatch>
 
-# Page 404 : décommenter et adapter le chemin selon l’emplacement du site sur le serveur
-# ErrorDocument 404 /404.html
+# Page 404
+ErrorDocument 404 /404.html
+
+# Forcer HTTPS et l'adresse sans www (https://ausantibes.fr)
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^(.*)$ https://ausantibes.fr/$1 [L,R=301]
+</IfModule>
 
 <IfModule mod_expires.c>
   ExpiresActive On

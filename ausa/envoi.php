@@ -4,8 +4,8 @@
  *   - contact, bénévolat, partenariat (formulaire court)
  *   - bulletin d'adhésion (formulaire complet + copie envoyée à l'adhérent)
  *
- * Les adresses e-mail sont dans config.php (NON versionné).
- * Sur le serveur : copier config.exemple.php en config.php et le compléter.
+ * Les adresses e-mail sont dans config.php (contact@ausantibes.fr).
+ * config.php est protégé : il ne peut pas être ouvert depuis le navigateur.
  */
 error_reporting(0);
 ini_set('display_errors', '0');

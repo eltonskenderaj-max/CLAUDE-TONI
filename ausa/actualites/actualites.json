@@ -5,11 +5,11 @@
       "date": "2026-11-18",
       "titre": "Bienvenue sur le site de l’AUSA",
       "resume": "Notre association se dote d’un site pour présenter ses actions, partager ses actualités et faciliter le contact avec les habitants d’Antibes.",
-      "texte": "Ce site est la vitrine de l’Association Union & Solidarité Antibes. Vous y trouverez nos domaines d’action, nos projets et les moyens de nous rejoindre.\n\nIl s’enrichira au fil de nos activités : comptes rendus, photographies et annonces d’événements. N’hésitez pas à nous écrire pour toute question ou proposition.",
+      "texte": "Ce site est la vitrine de l’Association Union & Solidarité Antibes. Vous y trouverez nos domaines d’action, nos projets et les moyens de nous rejoindre.\n\nLe site est accessible à l’adresse ausantibes.fr et l’association est joignable à contact@ausantibes.fr.\n\nIl s’enrichira au fil de nos activités : comptes rendus, photographies et annonces d’événements. N’hésitez pas à nous écrire pour toute question ou proposition.",
       "categorie": "Vie de l’association",
       "portage": "ausa",
-      "image": "",
-      "image_alt": "",
+      "image": "assets/img/photos/antibes.webp",
+      "image_alt": "Vue sur le vieil Antibes et la mer",
       "publie": true
     }
   ],

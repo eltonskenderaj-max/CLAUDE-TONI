@@ -3,23 +3,21 @@
 Site statique (HTML/CSS/JS) + un petit script PHP pour les formulaires.
 Aucune base de données, aucun cookie, aucun traceur. Fonctionne sur tout hébergement mutualisé avec PHP (IONOS, OVH, o2switch…).
 
-## 1. Avant la mise en ligne (à faire une fois)
+## 1. Mise en ligne sur Hostinger (ausantibes.fr)
 
-1. **Compléter les passages surlignés en jaune** (classe `todo`) : rechercher `class="todo"` dans les fichiers `.html`.
-   Une fois le texte réel saisi, supprimer la balise `<span class="todo">…</span>` autour.
-   Pages concernées : qui-sommes-nous, nos-actions, nos-projets, partenaires, nous-rejoindre, contact, mentions-legales, confidentialite.
-2. **Nom de domaine** : remplacer `https://www.ausa-antibes.fr` (domaine provisoire) par le vrai domaine
-   dans tous les `.html`, `sitemap.xml` et `robots.txt` (rechercher/remplacer).
-3. **Formulaires** : sur le serveur, copier `config.exemple.php` en `config.php` et indiquer
-   l'adresse qui reçoit les messages, éventuellement une adresse dédiée aux adhésions, et une adresse
-   d'expédition du domaine. `config.php` n'est jamais versionné.
-   - Le **bulletin d'adhésion** (`adhesion.html`) arrive par e-mail sous forme de fiche complète
-     (identité, adresse, représentant légal si mineur, membres du foyer, règlement, droit à l'image, signature).
-     L'adhérent reçoit automatiquement une copie (désactivable : `'copie_adherent' => false`).
-   - Après la mise en ligne, faire un essai de chaque formulaire et vérifier les courriers indésirables.
-4. **Réseaux sociaux** : dans le pied de page de chaque page, décommenter les liens Facebook/Instagram et mettre les bonnes adresses.
-5. Envoyer **tout le contenu du dossier `ausa/`** à la racine de l'hébergement (FTP ou gestionnaire de fichiers).
-6. Déclarer le site dans **Google Search Console** et créer une fiche **Google Business Profile** « AUSA — Antibes » (essentiel pour le référencement local).
+1. Dans hPanel Hostinger : **Sites web → ausantibes.fr → Gestionnaire de fichiers**.
+2. Ouvrir le dossier **`public_html`**, supprimer la page par défaut de Hostinger (`default.php` / `index.php` s'il y en a une).
+3. Envoyer **tout le contenu du dossier `ausa/`** (pas le dossier lui-même) dans `public_html` :
+   `index.html`, les autres pages `.html`, `envoi.php`, `config.php`, `.htaccess`, les dossiers `assets/` et `actualites/`.
+   Astuce : envoyer le zip puis utiliser « Extraire » dans le gestionnaire de fichiers.
+4. Dans hPanel : **Sécurité → SSL** → activer le certificat gratuit pour ausantibes.fr (le site redirige ensuite automatiquement vers https://ausantibes.fr).
+5. Vérifier que la boîte **contact@ausantibes.fr** existe (hPanel → E-mails). Les formulaires envoient leurs messages à cette adresse (réglage dans `config.php`).
+6. **Tester** chaque formulaire (contact, bénévolat, bulletin d'adhésion) et regarder aussi dans les courriers indésirables.
+   Si les messages n'arrivent pas, vérifier dans hPanel → E-mails que l'envoi par PHP (`mail()`) est autorisé.
+7. Déclarer le site dans **Google Search Console** (propriété « Domaine » ausantibes.fr, validation par DNS dans hPanel), puis envoyer `https://ausantibes.fr/sitemap.xml`.
+8. Créer une fiche **Google Business Profile** « AUSA — Union & Solidarité Antibes » (référencement local).
+
+Passages encore à compléter : rechercher `class="todo"` dans les fichiers `.html` (il n'en reste quasiment plus).
 
 ## 2. Publier une actualité (sans développeur)
 

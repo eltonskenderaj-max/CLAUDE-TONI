@@ -393,3 +393,11 @@ ul.check li .badge { margin-left: 6px; vertical-align: 1px; }
 .tier-note { font-size: .86rem; color: var(--muted); margin: 6px 0 0; font-style: italic; }
 [hidden] { display: none !important; }
 .form input[type=date] { width: 100%; padding: 12px 14px; border: 1.5px solid #cfd7df; border-radius: 12px; font: inherit; font-size: 1rem; background: #fff; color: var(--ink); }
+
+/* ---------- Photos d'illustration ---------- */
+.photo-fig { margin: 0; }
+.photo-fig .photo-slot { border: 0; }
+.photo-fig figcaption { font-size: .85rem; color: var(--muted); padding-top: 8px; }
+.action-photo { margin-top: 18px; border-radius: 16px; overflow: hidden; position: relative; aspect-ratio: 3 / 2; max-width: 100%; }
+.action-photo img { width: 100%; height: 100%; object-fit: cover; }
+.action-photo span { position: absolute; right: 8px; bottom: 8px; background: rgba(13, 69, 115, .78); color: #fff; font-size: .72rem; padding: 2px 8px; border-radius: 999px; }

@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bulletin d’adhésion | AUSA — Union & Solidarité Antibes</title>
-<meta name="description" content="Adhérez à l’Association Union & Solidarité Antibes : bulletin d’adhésion en ligne, cotisation annuelle, adhésion individuelle ou familiale.">
+<meta name="description" content="Adhérez à l’Association Union & Solidarité Antibes : bulletin d’adhésion en ligne, adhérent cotisant, non cotisant ou membre bienfaiteur.">
 <link rel="canonical" href="https://www.ausa-antibes.fr/adhesion.html">
 <meta name="theme-color" content="#0d4573">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="AUSA — Association Union &amp; Solidarité Antibes">
 <meta property="og:title" content="Bulletin d’adhésion | AUSA — Union & Solidarité Antibes">
-<meta property="og:description" content="Adhérez à l’Association Union & Solidarité Antibes : bulletin d’adhésion en ligne, cotisation annuelle, adhésion individuelle ou familiale.">
+<meta property="og:description" content="Adhérez à l’Association Union & Solidarité Antibes : bulletin d’adhésion en ligne, adhérent cotisant, non cotisant ou membre bienfaiteur.">
 <meta property="og:url" content="https://www.ausa-antibes.fr/adhesion.html">
 <meta property="og:image" content="https://www.ausa-antibes.fr/assets/img/og-ausa.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -44,16 +44,15 @@
         <ol style="padding-left:1.2em;margin:0 0 1em">
           <li>Vous remplissez ce bulletin en ligne.</li>
           <li>L’association le reçoit par e-mail et vous recontacte.</li>
-          <li>Vous réglez votre cotisation ; votre adhésion est alors validée pour l’année.</li>
+          <li>Le bureau valide votre adhésion ; s’il y a lieu, vous réglez votre cotisation.</li>
         </ol>
-        <p><strong>Cotisation annuelle</strong></p>
+        <p><strong>Catégories de membres</strong></p>
         <ul class="check">
-          <li>Membre adhérent : <span class="todo">… €</span></li>
-          <li>Adhésion famille : <span class="todo">… €</span></li>
-          <li>Étudiant / demandeur d’emploi : <span class="todo">… €</span></li>
-          <li>Membre bienfaiteur : à partir de <span class="todo">… €</span></li>
+          <li><strong>Adhérent cotisant (membre actif)</strong> : verse une cotisation annuelle, bénéficie d’un tarif préférentiel sur certaines activités et d’un accès prioritaire à certains événements, vote en assemblée générale.</li>
+          <li><strong>Adhérent non cotisant</strong> : participe ponctuellement aux activités ou apporte une aide occasionnelle.</li>
+          <li><strong>Membre bienfaiteur</strong> : apporte un soutien financier ou matériel significatif.</li>
         </ul>
-        <p class="note blue" style="margin-top:8px">L’adhésion est valable pour l’année <span class="todo">civile / scolaire</span> en cours.</p>
+        <p class="note blue" style="margin-top:8px">Le montant de la cotisation est fixé chaque année par l’assemblée générale. Elle est due pour l’année associative en cours et n’est pas remboursable. Chaque adhésion est validée par le bureau.</p>
       </div>
     </aside>
     <div class="card reveal">
@@ -62,7 +61,7 @@
 
       <fieldset>
         <legend>1. Type d’adhésion</legend>
-        <div class="choices"><label><input type="radio" name="formule" value="Membre adhérent" required checked> Membre adhérent</label><label><input type="radio" name="formule" value="Adhésion famille" required> Adhésion famille</label><label><input type="radio" name="formule" value="Tarif réduit" required> Étudiant / demandeur d’emploi</label><label><input type="radio" name="formule" value="Membre bienfaiteur" required> Membre bienfaiteur</label></div>
+        <div class="choices"><label><input type="radio" name="formule" value="Adhérent cotisant" required checked> Adhérent cotisant (membre actif)</label><label><input type="radio" name="formule" value="Adhérent non cotisant" required> Adhérent non cotisant</label><label><input type="radio" name="formule" value="Membre bienfaiteur" required> Membre bienfaiteur</label></div>
         <div style="margin-top:12px"><label>Il s’agit d’une… <span class="req">*</span></label>
         <div class="choices"><label><input type="radio" name="statut_adhesion" value="Première adhésion" required checked> Première adhésion</label><label><input type="radio" name="statut_adhesion" value="Renouvellement" required> Renouvellement</label></div></div>
       </fieldset>
@@ -107,11 +106,6 @@
         </div>
       </fieldset>
 
-      <fieldset id="a-bloc-famille" hidden disabled>
-        <legend>Adhésion famille : membres du foyer</legend>
-        <label for="a-famille">Prénom, nom et année de naissance de chaque membre <span class="req">*</span></label>
-        <textarea id="a-famille" name="membres_foyer" required placeholder="Ex. :&#10;Sara Benali — 1985&#10;Yanis Benali — 2012"></textarea>
-      </fieldset>
 
       <fieldset>
         <legend>3. Votre engagement (facultatif)</legend>
@@ -128,8 +122,8 @@
 
       <fieldset>
         <legend>4. Règlement de la cotisation</legend>
-        <label>Mode de règlement envisagé <span class="req">*</span></label>
-        <div class="choices"><label><input type="radio" name="reglement" value="Espèces" required> Espèces (contre reçu)</label><label><input type="radio" name="reglement" value="Chèque" required checked> Chèque à l’ordre de l’AUSA</label><label><input type="radio" name="reglement" value="Virement" required> Virement bancaire</label></div>
+        <label>Mode de règlement envisagé (adhérents cotisants et bienfaiteurs) <span class="req">*</span></label>
+        <div class="choices"><label><input type="radio" name="reglement" value="Espèces" required> Espèces (contre reçu numéroté)</label><label><input type="radio" name="reglement" value="Chèque" required checked> Chèque à l’ordre de l’AUSA</label><label><input type="radio" name="reglement" value="Virement" required> Virement bancaire</label><label><input type="radio" name="reglement" value="Sans objet" required> Sans objet (adhérent non cotisant)</label></div>
         <p class="consent" style="margin:10px 0 0">Aucun paiement n’est demandé en ligne. L’association vous indiquera les modalités après réception du bulletin.</p>
       </fieldset>
 
@@ -145,7 +139,7 @@
       <fieldset>
         <legend>6. Engagement et signature</legend>
         <div class="form" style="gap:14px">
-          <div class="consent"><label><input type="checkbox" name="statuts" value="Oui" required> <span>Je déclare adhérer aux valeurs de l’AUSA (solidarité, respect, dignité, ouverture et dialogue), avoir pris connaissance de ses statuts <span class="todo">et de son règlement intérieur</span> et m’engager à les respecter. <span class="req">*</span></span></label></div>
+          <div class="consent"><label><input type="checkbox" name="statuts" value="Oui" required> <span>Je déclare adhérer aux valeurs de l’AUSA (solidarité, respect, dignité, ouverture et dialogue), avoir pris connaissance de ses statuts et de son règlement intérieur (disponibles sur simple demande) et m’engager à les respecter, à adopter un comportement respectueux et bienveillant et à préserver la confidentialité des informations internes. <span class="req">*</span></span></label></div>
           <div class="consent"><label><input type="checkbox" name="exactitude" value="Oui" required> <span>Je certifie l’exactitude des informations fournies. <span class="req">*</span></span></label></div>
           <div class="consent"><label><input type="checkbox" name="consentement" value="1" required> <span>J’accepte que ces informations soient utilisées par l’AUSA pour la gestion des adhésions. Elles ne sont ni cédées ni vendues. <a href="confidentialite.html">Politique de confidentialité</a>. <span class="req">*</span></span></label></div>
           <div class="row">

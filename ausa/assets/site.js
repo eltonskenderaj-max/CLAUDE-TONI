@@ -164,7 +164,7 @@
     var blocMineur = document.getElementById('a-bloc-mineur');
     var blocFamille = document.getElementById('a-bloc-famille');
     var naissance = document.getElementById('a-naissance');
-    var setBloc = function (bloc, on) { bloc.hidden = !on; bloc.disabled = !on; };
+    var setBloc = function (bloc, on) { if (!bloc) return; bloc.hidden = !on; bloc.disabled = !on; };
     var majAdh = function () {
       var mineur = false;
       if (naissance.value) {

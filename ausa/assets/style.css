@@ -370,3 +370,14 @@ ul.check li .badge { margin-left: 6px; vertical-align: 1px; }
   .reveal.visible { opacity: 1; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+/* ---------- Bulletin d'adhésion ---------- */
+.adh-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 40px; align-items: start; }
+.adh-aside { position: sticky; top: calc(96px + env(safe-area-inset-top, 0px)); }
+.adh-layout ol li { padding: 3px 0; }
+#form-adhesion fieldset { display: grid; gap: 10px; }
+#form-adhesion .choices { flex-direction: column; gap: 8px; }
+@media (max-width: 900px) {
+  .adh-layout { grid-template-columns: 1fr; gap: 24px; }
+  .adh-aside { position: static; }
+}

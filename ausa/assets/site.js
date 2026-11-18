@@ -157,6 +157,31 @@
     });
   });
 
+
+  /* ---- Bulletin d'adhésion : blocs conditionnels ---- */
+  var adh = document.getElementById('form-adhesion');
+  if (adh) {
+    var blocMineur = document.getElementById('a-bloc-mineur');
+    var blocFamille = document.getElementById('a-bloc-famille');
+    var naissance = document.getElementById('a-naissance');
+    var setBloc = function (bloc, on) { bloc.hidden = !on; bloc.disabled = !on; };
+    var majAdh = function () {
+      var mineur = false;
+      if (naissance.value) {
+        var d = new Date(naissance.value + 'T12:00:00'), now = new Date();
+        var age = now.getFullYear() - d.getFullYear();
+        if (now.getMonth() < d.getMonth() || (now.getMonth() === d.getMonth() && now.getDate() < d.getDate())) age--;
+        mineur = age < 18;
+      }
+      setBloc(blocMineur, mineur);
+      var f = adh.querySelector('input[name=formule]:checked');
+      setBloc(blocFamille, !!f && f.value === 'Adhésion famille');
+    };
+    adh.addEventListener('change', majAdh);
+    adh.addEventListener('reset', function () { setTimeout(majAdh, 0); });
+    majAdh();
+  }
+
   /* Pré-sélection du type de demande via l’URL (?type=benevolat) */
   var typeSel = document.getElementById('type');
   if (typeSel) {

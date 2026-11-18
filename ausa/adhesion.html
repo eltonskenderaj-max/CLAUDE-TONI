@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bulletin d’adhésion | AUSA — Union & Solidarité Antibes</title>
+<meta name="description" content="Adhérez à l’Association Union & Solidarité Antibes : bulletin d’adhésion en ligne, cotisation annuelle, adhésion individuelle ou familiale.">
+<link rel="canonical" href="https://www.ausa-antibes.fr/adhesion.html">
+<meta name="theme-color" content="#0d4573">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="AUSA — Association Union &amp; Solidarité Antibes">
+<meta property="og:title" content="Bulletin d’adhésion | AUSA — Union & Solidarité Antibes">
+<meta property="og:description" content="Adhérez à l’Association Union & Solidarité Antibes : bulletin d’adhésion en ligne, cotisation annuelle, adhésion individuelle ou familiale.">
+<meta property="og:url" content="https://www.ausa-antibes.fr/adhesion.html">
+<meta property="og:image" content="https://www.ausa-antibes.fr/assets/img/og-ausa.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-root="">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="AUSA — retour à l’accueil">
+      <img src="assets/img/embleme.webp" width="58" height="52" alt="">
+      <span class="brand-text"><strong>UNION &amp; SOLIDARITÉ</strong><span>Antibes</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu"><span class="bars"></span>Menu</button>
+    <nav class="main-nav" id="menu" aria-label="Navigation principale">
+      <ul><li><a href="index.html">Accueil</a></li><li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li><li><a href="nos-actions.html">Nos actions</a></li><li><a href="nos-projets.html">Nos projets</a></li><li><a href="actualites.html">Actualités</a></li><li><a href="partenaires.html">Partenaires</a></li><li><a href="contact.html">Contact</a></li><li class="nav-cta"><a href="nous-rejoindre.html">Nous rejoindre</a></li></ul>
+    </nav>
+  </div>
+</header>
+<main id="contenu">
+<section class="page-hero"><div class="container"><nav class="breadcrumb" aria-label="Fil d’Ariane"><a href="index.html">Accueil</a> › <a href="nous-rejoindre.html">Nous rejoindre</a> › Bulletin d’adhésion</nav><h1>Bulletin d’adhésion</h1><p class="lead">Devenez membre de l’AUSA : soutenez notre projet associatif et prenez part à la vie de l’association.</p></div></section>
+
+<section>
+  <div class="container adh-layout">
+    <aside class="reveal adh-aside">
+      <div class="card">
+        <h3>Comment ça marche ?</h3>
+        <ol style="padding-left:1.2em;margin:0 0 1em">
+          <li>Vous remplissez ce bulletin en ligne.</li>
+          <li>L’association le reçoit par e-mail et vous recontacte.</li>
+          <li>Vous réglez votre cotisation ; votre adhésion est alors validée pour l’année.</li>
+        </ol>
+        <p><strong>Cotisation annuelle</strong></p>
+        <ul class="check">
+          <li>Membre adhérent : <span class="todo">… €</span></li>
+          <li>Adhésion famille : <span class="todo">… €</span></li>
+          <li>Étudiant / demandeur d’emploi : <span class="todo">… €</span></li>
+          <li>Membre bienfaiteur : à partir de <span class="todo">… €</span></li>
+        </ul>
+        <p class="note blue" style="margin-top:8px">L’adhésion est valable pour l’année <span class="todo">civile / scolaire</span> en cours.</p>
+      </div>
+    </aside>
+    <div class="card reveal">
+    <form class="form" id="form-adhesion" action="envoi.php" method="post" data-ajax novalidate>
+      <input type="hidden" name="type" value="adhesion">
+
+      <fieldset>
+        <legend>1. Type d’adhésion</legend>
+        <div class="choices"><label><input type="radio" name="formule" value="Membre adhérent" required checked> Membre adhérent</label><label><input type="radio" name="formule" value="Adhésion famille" required> Adhésion famille</label><label><input type="radio" name="formule" value="Tarif réduit" required> Étudiant / demandeur d’emploi</label><label><input type="radio" name="formule" value="Membre bienfaiteur" required> Membre bienfaiteur</label></div>
+        <div style="margin-top:12px"><label>Il s’agit d’une… <span class="req">*</span></label>
+        <div class="choices"><label><input type="radio" name="statut_adhesion" value="Première adhésion" required checked> Première adhésion</label><label><input type="radio" name="statut_adhesion" value="Renouvellement" required> Renouvellement</label></div></div>
+      </fieldset>
+
+      <fieldset>
+        <legend>2. Vos coordonnées</legend>
+        <div class="form" style="gap:14px">
+          <div><label>Civilité</label><div class="choices"><label><input type="radio" name="civilite" value="Madame"> Madame</label><label><input type="radio" name="civilite" value="Monsieur"> Monsieur</label><label><input type="radio" name="civilite" value="Non précisé"> Je préfère ne pas préciser</label></div></div>
+          <div class="row">
+            <div><label for="a-prenom">Prénom <span class="req">*</span></label><input type="text" id="a-prenom" name="prenom" autocomplete="given-name" required></div>
+            <div><label for="a-nom">Nom <span class="req">*</span></label><input type="text" id="a-nom" name="nom" autocomplete="family-name" required></div>
+          </div>
+          <div class="row">
+            <div><label for="a-naissance">Date de naissance <span class="req">*</span></label><input type="date" id="a-naissance" name="date_naissance" required></div>
+            <div><label for="a-profession">Profession / situation (facultatif)</label><input type="text" id="a-profession" name="profession" placeholder="Ex. : lycéen, enseignante, retraité…"></div>
+          </div>
+          <div><label for="a-adresse">Adresse <span class="req">*</span></label><input type="text" id="a-adresse" name="adresse" autocomplete="street-address" required></div>
+          <div class="row">
+            <div><label for="a-cp">Code postal <span class="req">*</span></label><input type="text" id="a-cp" name="code_postal" inputmode="numeric" pattern="[0-9]{5}" autocomplete="postal-code" required placeholder="06600"></div>
+            <div><label for="a-ville">Ville <span class="req">*</span></label><input type="text" id="a-ville" name="ville" autocomplete="address-level2" required placeholder="Antibes"></div>
+          </div>
+          <div class="row">
+            <div><label for="a-tel">Téléphone <span class="req">*</span></label><input type="tel" id="a-tel" name="tel" autocomplete="tel" required></div>
+            <div><label for="a-email">E-mail <span class="req">*</span></label><input type="email" id="a-email" name="email" autocomplete="email" required></div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset id="a-bloc-mineur" hidden disabled>
+        <legend>Adhérent mineur : représentant légal</legend>
+        <p class="consent" style="margin:0 0 10px">L’adhérent a moins de 18 ans : l’accord d’un parent ou représentant légal est nécessaire.</p>
+        <div class="form" style="gap:14px">
+          <div class="row">
+            <div><label for="a-rl-nom">Nom et prénom du représentant légal <span class="req">*</span></label><input type="text" id="a-rl-nom" name="rl_nom" required></div>
+            <div><label for="a-rl-lien">Lien avec l’adhérent <span class="req">*</span></label><input type="text" id="a-rl-lien" name="rl_lien" placeholder="Mère, père, tuteur…" required></div>
+          </div>
+          <div class="row">
+            <div><label for="a-rl-tel">Téléphone <span class="req">*</span></label><input type="tel" id="a-rl-tel" name="rl_tel" required></div>
+            <div><label for="a-rl-email">E-mail (facultatif)</label><input type="email" id="a-rl-email" name="rl_email"></div>
+          </div>
+          <div class="consent"><label><input type="checkbox" name="rl_autorisation" value="Oui" required> <span>Je soussigné(e), représentant légal, autorise l’adhésion de l’enfant à l’AUSA et sa participation aux activités de l’association. <span class="req">*</span></span></label></div>
+        </div>
+      </fieldset>
+
+      <fieldset id="a-bloc-famille" hidden disabled>
+        <legend>Adhésion famille : membres du foyer</legend>
+        <label for="a-famille">Prénom, nom et année de naissance de chaque membre <span class="req">*</span></label>
+        <textarea id="a-famille" name="membres_foyer" required placeholder="Ex. :&#10;Sara Benali — 1985&#10;Yanis Benali — 2012"></textarea>
+      </fieldset>
+
+      <fieldset>
+        <legend>3. Votre engagement (facultatif)</legend>
+        <div class="form" style="gap:14px">
+          <div><label>Souhaitez-vous participer aux actions en tant que bénévole ?</label>
+          <div class="choices"><label><input type="radio" name="benevole" value="Oui"> Oui</label><label><input type="radio" name="benevole" value="Peut-être plus tard"> Peut-être plus tard</label><label><input type="radio" name="benevole" value="Non"> Non, je soutiens simplement</label></div></div>
+          <div><label>Domaines qui vous intéressent</label>
+          <div class="choices"><label><input type="checkbox" name="interets[]" value="Éducation & aide aux devoirs"> Éducation & aide aux devoirs</label><label><input type="checkbox" name="interets[]" value="Solidarité & collectes"> Solidarité & collectes</label><label><input type="checkbox" name="interets[]" value="Insertion professionnelle"> Insertion professionnelle</label><label><input type="checkbox" name="interets[]" value="Événements & vie locale"> Événements & vie locale</label><label><input type="checkbox" name="interets[]" value="Communication"> Communication</label><label><input type="checkbox" name="interets[]" value="Logistique"> Logistique</label></div></div>
+          <div><label for="a-competences">Compétences que vous aimeriez partager</label><input type="text" id="a-competences" name="competences" placeholder="Ex. : soutien en maths, rédaction de CV, photo, informatique…"></div>
+          <div><label for="a-connu">Comment avez-vous connu l’AUSA ?</label>
+            <select id="a-connu" name="connu"><option value="">— Choisir —</option><option>Bouche-à-oreille</option><option>Un membre de l’association</option><option>Un événement</option><option>Réseaux sociaux</option><option>Site Internet</option><option>Une association partenaire</option><option>Autre</option></select></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>4. Règlement de la cotisation</legend>
+        <label>Mode de règlement envisagé <span class="req">*</span></label>
+        <div class="choices"><label><input type="radio" name="reglement" value="Espèces" required> Espèces (contre reçu)</label><label><input type="radio" name="reglement" value="Chèque" required checked> Chèque à l’ordre de l’AUSA</label><label><input type="radio" name="reglement" value="Virement" required> Virement bancaire</label></div>
+        <p class="consent" style="margin:10px 0 0">Aucun paiement n’est demandé en ligne. L’association vous indiquera les modalités après réception du bulletin.</p>
+      </fieldset>
+
+      <fieldset>
+        <legend>5. Autorisations</legend>
+        <div class="form" style="gap:14px">
+          <div><label>Droit à l’image <span class="req">*</span></label>
+          <div class="choices"><label><input type="radio" name="droit_image" value="Accepte" required> J’accepte d’apparaître sur les photos et vidéos de l’association (site, réseaux sociaux, supports d’information)</label><label><input type="radio" name="droit_image" value="Refuse" required> Je refuse d’apparaître sur les photos et vidéos de l’association</label></div></div>
+          <div class="consent"><label><input type="checkbox" name="infos_email" value="Oui"> <span>J’accepte de recevoir par e-mail les informations de l’association (événements, assemblées générales). Désinscription possible à tout moment.</span></label></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>6. Engagement et signature</legend>
+        <div class="form" style="gap:14px">
+          <div class="consent"><label><input type="checkbox" name="statuts" value="Oui" required> <span>Je déclare adhérer aux valeurs de l’AUSA (solidarité, respect, dignité, ouverture et dialogue), avoir pris connaissance de ses statuts <span class="todo">et de son règlement intérieur</span> et m’engager à les respecter. <span class="req">*</span></span></label></div>
+          <div class="consent"><label><input type="checkbox" name="exactitude" value="Oui" required> <span>Je certifie l’exactitude des informations fournies. <span class="req">*</span></span></label></div>
+          <div class="consent"><label><input type="checkbox" name="consentement" value="1" required> <span>J’accepte que ces informations soient utilisées par l’AUSA pour la gestion des adhésions. Elles ne sont ni cédées ni vendues. <a href="confidentialite.html">Politique de confidentialité</a>. <span class="req">*</span></span></label></div>
+          <div class="row">
+            <div><label for="a-signature">Signature : saisissez vos prénom et nom <span class="req">*</span></label><input type="text" id="a-signature" name="signature" required></div>
+            <div><label for="a-lieu">Fait à <span class="req">*</span></label><input type="text" id="a-lieu" name="fait_a" required placeholder="Antibes"></div>
+          </div>
+        </div>
+      </fieldset>
+
+      <div class="hp" aria-hidden="true"><label for="a-site_web">Ne pas remplir</label><input type="text" id="a-site_web" name="site_web" tabindex="-1" autocomplete="off"></div>
+      <input type="hidden" name="t" value="" data-ts>
+      <div class="form-status" role="status" tabindex="-1"></div>
+      <div><button class="btn btn-primary" type="submit">Envoyer mon bulletin d’adhésion</button></div>
+      <p class="consent" style="margin:0">Les champs marqués <span class="req">*</span> sont obligatoires. Une copie de votre bulletin vous sera envoyée par e-mail.</p>
+    </form>
+    <script>document.querySelectorAll('[data-ts]').forEach(function(i){i.value=Math.floor(Date.now()/1000)});</script>
+    </div>
+  </div>
+</section>
+
+</main>
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/logo-ausa.webp" width="110" height="110" alt="Logo de l’Association Union &amp; Solidarité Antibes" loading="lazy">
+        <p>Association loi 1901 indépendante, ouverte à tous, engagée pour l’éducation, la solidarité, l’entraide et le lien social à Antibes et ses environs.</p>
+      </div>
+      <div>
+        <h4>L’association</h4>
+        <ul>
+          <li><a href="qui-sommes-nous.html">Qui sommes-nous ?</a></li>
+          <li><a href="nos-actions.html">Nos actions</a></li>
+          <li><a href="nos-projets.html">Nos projets</a></li>
+          <li><a href="partenaires.html">Nos partenaires</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Participer</h4>
+        <ul>
+          <li><a href="nous-rejoindre.html#benevole">Devenir bénévole</a></li>
+          <li><a href="adhesion.html">Adhérer (formulaire)</a></li>
+          <li><a href="nous-rejoindre.html#soutenir">Soutenir l’AUSA</a></li>
+          <li><a href="actualites.html">Actualités</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="contact.html">Nous écrire</a></li>
+          <li>Antibes (06) et environs</li>
+          <!-- Réseaux sociaux : décommenter et renseigner les liens une fois les comptes actifs
+          <li><a href="https://www.facebook.com/..." rel="noopener">Facebook</a></li>
+          <li><a href="https://www.instagram.com/..." rel="noopener">Instagram</a></li>
+          -->
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> AUSA — Association Union &amp; Solidarité Antibes</span>
+      <span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité &amp; cookies</a></span>
+    </div>
+  </div>
+</footer>
+<script src="assets/site.js" defer></script>
+</body>
+</html>

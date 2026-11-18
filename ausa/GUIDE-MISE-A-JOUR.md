@@ -11,7 +11,12 @@ Aucune base de données, aucun cookie, aucun traceur. Fonctionne sur tout héber
 2. **Nom de domaine** : remplacer `https://www.ausa-antibes.fr` (domaine provisoire) par le vrai domaine
    dans tous les `.html`, `sitemap.xml` et `robots.txt` (rechercher/remplacer).
 3. **Formulaires** : sur le serveur, copier `config.exemple.php` en `config.php` et indiquer
-   l'adresse qui reçoit les messages et une adresse d'expédition du domaine. `config.php` n'est jamais versionné.
+   l'adresse qui reçoit les messages, éventuellement une adresse dédiée aux adhésions, et une adresse
+   d'expédition du domaine. `config.php` n'est jamais versionné.
+   - Le **bulletin d'adhésion** (`adhesion.html`) arrive par e-mail sous forme de fiche complète
+     (identité, adresse, représentant légal si mineur, membres du foyer, règlement, droit à l'image, signature).
+     L'adhérent reçoit automatiquement une copie (désactivable : `'copie_adherent' => false`).
+   - Après la mise en ligne, faire un essai de chaque formulaire et vérifier les courriers indésirables.
 4. **Réseaux sociaux** : dans le pied de page de chaque page, décommenter les liens Facebook/Instagram et mettre les bonnes adresses.
 5. Envoyer **tout le contenu du dossier `ausa/`** à la racine de l'hébergement (FTP ou gestionnaire de fichiers).
 6. Déclarer le site dans **Google Search Console** et créer une fiche **Google Business Profile** « AUSA — Antibes » (essentiel pour le référencement local).

@@ -62,8 +62,10 @@ $body  = "$label reçu(e) via le site de l'AUSA le " . date('d/m/Y à H:i') . "\
 
 if ($type === 'adhesion') {
     // Champs obligatoires du bulletin
+    $gratuit = stripos(f1('formule'), 'gratuit') !== false;
     $oblig = ['date_naissance', 'adresse', 'code_postal', 'ville', 'tel', 'formule', 'statut_adhesion',
-              'reglement', 'droit_image', 'statuts', 'exactitude', 'signature', 'fait_a'];
+              'droit_image', 'statuts', 'exactitude', 'signature', 'fait_a'];
+    if (!$gratuit) { $oblig[] = 'reglement'; $oblig[] = 'periodicite'; }
     foreach ($oblig as $k) { if (f1($k) === '') reponse(false, 'champs', 400); }
 
     $naissance = f1('date_naissance', 10);
@@ -108,7 +110,13 @@ if ($type === 'adhesion') {
     $body .= ligne('A connu l\'AUSA par', f1('connu'));
 
     $body .= "\n4. COTISATION\n";
-    $body .= ligne('Mode de règlement', f1('reglement'));
+    if ($gratuit) {
+        $body .= "Adhésion gratuite : aucune cotisation.\n";
+    } else {
+        $body .= ligne('Montant', '5 € par mois, soit 60 € par an');
+        $body .= ligne('Périodicité choisie', f1('periodicite'));
+        $body .= ligne('Mode de règlement', f1('reglement'));
+    }
 
     $body .= "\n5. AUTORISATIONS\n";
     $body .= ligne('Droit à l\'image', f1('droit_image'));
@@ -119,7 +127,7 @@ if ($type === 'adhesion') {
     $body .= ligne('Certifie l\'exactitude', f1('exactitude'));
     $body .= ligne('Signature', f1('signature'));
     $body .= ligne('Fait à / le', f1('fait_a') . ', le ' . date('d/m/Y'));
-    $body .= "\n" . $sep . "Statut : EN ATTENTE DE RÈGLEMENT DE LA COTISATION\n";
+    $body .= "\n" . $sep . ($gratuit ? "Statut : EN ATTENTE DE VALIDATION PAR LE BUREAU (adhésion gratuite)\n" : "Statut : EN ATTENTE DE VALIDATION ET DE RÈGLEMENT DE LA COTISATION\n");
 } else {
     $body .= ligne('Prénom / Nom', "$prenom $nom");
     $body .= ligne('E-mail', $email);
@@ -151,7 +159,7 @@ if ($ok && $type === 'adhesion' && !empty($cfg['copie_adherent'])) {
     $copie  = "Bonjour $prenom,\n\n";
     $copie .= "Merci pour votre demande d'adhésion à l'Association Union & Solidarité Antibes (AUSA).\n";
     $copie .= "Nous l'avons bien reçue. Un membre du bureau vous contactera prochainement pour finaliser\n";
-    $copie .= "votre adhésion et le règlement de la cotisation.\n\n";
+    $copie .= "votre adhésion" . ($gratuit ? '' : ' et le règlement de la cotisation') . ".\n\n";
     $copie .= "Voici le récapitulatif de votre bulletin :\n\n" . $body;
     $copie .= "\nPour toute correction, répondez simplement à cet e-mail.\n\nL'équipe de l'AUSA\n";
     envoyer($email, "Votre bulletin d'adhésion à l'AUSA", $copie, $from, $dest);

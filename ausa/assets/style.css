@@ -373,7 +373,7 @@ ul.check li .badge { margin-left: 6px; vertical-align: 1px; }
 
 /* ---------- Bulletin d'adhésion ---------- */
 .adh-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 40px; align-items: start; }
-.adh-aside { position: sticky; top: calc(96px + env(safe-area-inset-top, 0px)); }
+.adh-aside { position: static; }
 .adh-layout ol li { padding: 3px 0; }
 #form-adhesion fieldset { display: grid; gap: 10px; }
 #form-adhesion .choices { flex-direction: column; gap: 8px; }
@@ -381,3 +381,15 @@ ul.check li .badge { margin-left: 6px; vertical-align: 1px; }
   .adh-layout { grid-template-columns: 1fr; gap: 24px; }
   .adh-aside { position: static; }
 }
+
+.tier { border: 1.5px solid var(--blue); border-radius: 14px; padding: 18px; margin: 10px 0 14px; background: var(--sea-light); }
+.tier-free { border-color: var(--line); background: var(--stone); }
+.tier h4 { margin: 0 0 4px; font-size: 1.05rem; }
+.tier .price { font-family: var(--font-title); font-size: 2rem; font-weight: 700; color: var(--blue-dark); margin: 0; line-height: 1.1; }
+.tier .price span { font-size: 1rem; font-weight: 600; color: var(--muted); }
+.tier .price-sub { margin: 0 0 8px; color: var(--muted); font-size: .92rem; }
+.tier ul.check li { font-size: .93rem; padding: 7px 0 7px 32px; }
+.tier ul.check li::before { top: 9px; }
+.tier-note { font-size: .86rem; color: var(--muted); margin: 6px 0 0; font-style: italic; }
+[hidden] { display: none !important; }
+.form input[type=date] { width: 100%; padding: 12px 14px; border: 1.5px solid #cfd7df; border-radius: 12px; font: inherit; font-size: 1rem; background: #fff; color: var(--ink); }

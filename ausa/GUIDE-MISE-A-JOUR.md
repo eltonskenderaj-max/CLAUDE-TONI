@@ -30,12 +30,12 @@ Copier ce bloc au début de la liste `"articles"` (garder la virgule entre deux 
 ```json
 {
   "date": "2027-03-20",
-  "titre": "Distribution solidaire du Ramadan : merci aux bénévoles",
+  "titre": "Collecte de fournitures scolaires : merci aux bénévoles",
   "resume": "Une phrase ou deux qui résument l'actualité.",
   "texte": "Premier paragraphe.\n\nDeuxième paragraphe.",
   "categorie": "Solidarité",
   "portage": "soutien",
-  "image": "assets/img/actus/ramadan-2027.jpg",
+  "image": "assets/img/actus/collecte-2027.jpg",
   "image_alt": "Bénévoles préparant des colis",
   "publie": true
 },

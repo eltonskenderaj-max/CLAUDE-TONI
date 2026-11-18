@@ -176,6 +176,11 @@
       setBloc(blocMineur, mineur);
       var f = adh.querySelector('input[name=formule]:checked');
       setBloc(blocFamille, !!f && f.value === 'Adhésion famille');
+      var gratuit = !!f && f.value.indexOf('gratuit') >= 0;
+      var champs = document.getElementById('a-cotisation-champs');
+      var info = document.getElementById('a-gratuit-info');
+      if (champs) { champs.hidden = gratuit; champs.querySelectorAll('input').forEach(function (i) { i.disabled = gratuit; }); }
+      if (info) info.hidden = !gratuit;
     };
     adh.addEventListener('change', majAdh);
     adh.addEventListener('reset', function () { setTimeout(majAdh, 0); });

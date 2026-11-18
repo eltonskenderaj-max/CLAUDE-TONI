@@ -401,3 +401,76 @@ ul.check li .badge { margin-left: 6px; vertical-align: 1px; }
 .action-photo { margin-top: 18px; border-radius: 16px; overflow: hidden; position: relative; aspect-ratio: 3 / 2; max-width: 100%; }
 .action-photo img { width: 100%; height: 100%; object-fit: cover; }
 .action-photo span { position: absolute; right: 8px; bottom: 8px; background: rgba(13, 69, 115, .78); color: #fff; font-size: .72rem; padding: 2px 8px; border-radius: 999px; }
+
+/* ==========================================================================
+   Boutons — hiérarchie unifiée
+   bleu (btn-primary)  : action principale (adhérer, proposer son aide, contacter)
+   doré (btn-gold)     : engagement (nous rejoindre, proposer un partenariat)
+   contour (btn-ghost) : découvrir, consulter, accéder à une rubrique
+   ========================================================================== */
+.btn {
+  min-height: 50px; padding: 13px 26px; border-radius: 999px; border-width: 2px;
+  font-size: 1rem; line-height: 1.2; text-align: center; letter-spacing: .01em;
+  box-shadow: 0 1px 2px rgba(13, 69, 115, .12);
+  transition: transform .15s ease, background-color .15s ease, color .15s ease, box-shadow .15s ease, border-color .15s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:hover { transform: translateY(-2px); box-shadow: 0 8px 18px -8px rgba(13, 69, 115, .45); }
+.btn:active { transform: translateY(0) scale(.98); box-shadow: 0 1px 2px rgba(13, 69, 115, .2); }
+.btn:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.btn[disabled] { opacity: .65; cursor: wait; transform: none; }
+
+.btn-primary { background: var(--blue); border-color: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-dark); border-color: var(--blue-dark); color: #fff; }
+
+/* Or légèrement assombri pour un contraste lisible du texte blanc */
+.btn-gold { background: #946a1c; border-color: #946a1c; color: #fff; }
+.btn-gold:hover { background: #7d5914; border-color: #7d5914; color: #fff; }
+
+.btn-ghost { background: #fff; border-color: var(--blue); color: var(--blue); box-shadow: none; }
+.btn-ghost:hover { background: var(--sea-light); color: var(--blue-dark); border-color: var(--blue-dark); }
+
+.btn-sm { min-height: 42px; padding: 9px 18px; font-size: .92rem; }
+.btn-row { gap: 12px; align-items: center; }
+
+/* Cartes d'accueil : bouton calé en bas */
+.three .card { display: flex; flex-direction: column; }
+.three .card .btn { margin-top: auto; align-self: flex-start; }
+.three .card p { margin-bottom: 18px; }
+
+/* Cartes des domaines : « En savoir plus » en pastille (la carte entière reste le lien) */
+.axis-card .more {
+  align-self: flex-start; margin-top: auto; padding: 8px 16px; border-radius: 999px;
+  border: 2px solid var(--blue); color: var(--blue); font-weight: 700; font-size: .92rem;
+  transition: background-color .15s ease, color .15s ease;
+}
+.axis-card:hover .more, .axis-card:focus-visible .more { background: var(--blue); color: #fff; }
+.axis-card p { margin-bottom: 16px; }
+
+/* Accès rapide (Nos actions) */
+.quick-nav { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; padding: 18px 0 8px; }
+.quick-nav > span { font-weight: 700; color: var(--blue-dark); }
+
+.note-btn { margin-top: 12px; }
+
+/* « Lire la suite » des actualités */
+.news-card summary.btn { list-style: none; display: inline-flex; width: auto; margin-top: 4px; }
+.news-card summary.btn::-webkit-details-marker { display: none; }
+.news-card details[open] summary.btn { margin-bottom: 12px; }
+
+/* Menu : cible tactile confortable sur mobile, « Nous rejoindre » seul bouton */
+.main-nav .nav-cta a { border-radius: 999px; padding: 9px 18px; }
+@media (max-width: 1180px) {
+  .main-nav a { min-height: 48px; display: flex; align-items: center; }
+  .main-nav .nav-cta a { justify-content: center; min-height: 50px; }
+}
+
+/* Mobile : boutons empilés en pleine largeur */
+@media (max-width: 560px) {
+  .btn-row { flex-direction: column; align-items: stretch; }
+  .btn-row .btn { width: 100%; }
+  .cta-band { padding: 28px 22px; }
+  .cta-band .btn-row { width: 100%; }
+  .form [type=submit] { width: 100%; }
+  .quick-nav .btn-row .btn { width: 100%; }
+}

@@ -50,7 +50,7 @@
       : '<div class="photo-slot"><div class="ph">' + PHOTO_ICON + esc(a.categorie || 'Actualité') + '</div></div>';
     var body = '';
     if (a.texte) {
-      body = '<details><summary>Lire la suite</summary>' +
+      body = '<details><summary class="btn btn-ghost btn-sm">Lire la suite</summary>' +
         String(a.texte).split(/\n\s*\n/).map(function (para) { return '<p>' + esc(para) + '</p>'; }).join('') +
         '</details>';
     }

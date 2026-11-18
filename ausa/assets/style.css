@@ -366,8 +366,8 @@ ul.check li .badge { margin-left: 6px; vertical-align: 1px; }
 
 /* ---------- Apparition douce ---------- */
 @media (prefers-reduced-motion: no-preference) {
-  .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
-  .reveal.visible { opacity: 1; transform: none; }
+  .js .reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+  .js .reveal.visible { opacity: 1; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
 
@@ -473,4 +473,43 @@ ul.check li .badge { margin-left: 6px; vertical-align: 1px; }
   .cta-band .btn-row { width: 100%; }
   .form [type=submit] { width: 100%; }
   .quick-nav .btn-row .btn { width: 100%; }
+}
+
+/* Menu mobile sans JavaScript (case à cocher) */
+.nav-check { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.nav-toggle { cursor: pointer; user-select: none; -webkit-tap-highlight-color: transparent; min-height: 44px; }
+.nav-check:focus-visible + .nav-toggle { outline: 3px solid var(--gold); outline-offset: 3px; }
+@media (max-width: 1180px) {
+  .nav-check:checked ~ .main-nav { display: block; }
+  .main-nav { max-height: calc(100vh - 80px); overflow-y: auto; -webkit-overflow-scrolling: touch; }
+}
+/* Écrans tactiles : pas d'effet de survol (évite le double appui sur iPhone) */
+@media (hover: none) {
+  .btn:hover, .axis-card:hover { transform: none; }
+  .btn:hover { box-shadow: 0 1px 2px rgba(13, 69, 115, .12); }
+  .axis-card:hover { box-shadow: none; }
+}
+/* En-tête mobile : logo et bouton Menu toujours sur la même ligne */
+@media (max-width: 1180px) {
+  .brand { flex: 1 1 0; min-width: 0; }
+  .nav-toggle { flex: 0 0 auto; }
+}
+@media (max-width: 420px) {
+  .brand img { width: 48px; }
+  .brand-text strong { font-size: .92rem; }
+  .brand-text span { font-size: .7rem; letter-spacing: .18em; }
+  .nav-toggle { padding: 9px 12px; }
+}
+
+/* Bouton Menu / Fermer */
+.nav-toggle .lbl-close { display: none; }
+.nav-check:checked + .nav-toggle .lbl-open { display: none; }
+.nav-check:checked + .nav-toggle .lbl-close { display: inline; }
+.nav-check:checked + .nav-toggle { background: var(--blue); color: #fff; border-color: var(--blue); }
+.nav-check:checked + .nav-toggle .bars { background: transparent; }
+.nav-check:checked + .nav-toggle .bars::before { top: 0; transform: rotate(45deg); }
+.nav-check:checked + .nav-toggle .bars::after { top: 0; transform: rotate(-45deg); }
+.nav-toggle .bars::before, .nav-toggle .bars::after { transition: transform .2s ease, top .2s ease; }
+@media (max-width: 1180px) {
+  .main-nav { max-height: calc(100vh - 74px - env(safe-area-inset-top, 0px)); max-height: calc(100dvh - 74px - env(safe-area-inset-top, 0px)); overflow-y: auto; overscroll-behavior: contain; }
 }

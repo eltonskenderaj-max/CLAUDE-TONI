@@ -4,12 +4,16 @@
 
   /* ---- Menu mobile ---- */
   var toggle = document.querySelector('.nav-toggle');
+  var check = document.getElementById('nav-check');
   var nav = document.getElementById('menu');
-  if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  if (toggle && check && nav) {
+    var sync = function () { toggle.setAttribute('aria-expanded', check.checked ? 'true' : 'false'); };
+    check.addEventListener('change', sync);
+    toggle.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); check.checked = !check.checked; sync(); }
     });
+    nav.addEventListener('click', function (e) { if (e.target.closest('a')) { check.checked = false; sync(); } });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && check.checked) { check.checked = false; sync(); } });
   }
 
   /* ---- Année du pied de page ---- */

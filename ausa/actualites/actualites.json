@@ -1,0 +1,17 @@
+{
+  "_mode_emploi": "Pour publier une actualite : copiez un bloc { ... } dans 'articles', modifiez-le, enregistrez. Champs : date (AAAA-MM-JJ), titre, resume (1-2 phrases), texte (paragraphes separes par une ligne vide, facultatif), categorie (Education, Solidarite, Insertion, Vie locale, Vie de l'association), portage (ausa | collectif | soutien), image (chemin, ex. ../assets/img/actus/photo.jpg, facultatif), image_alt, publie (true/false). Voir GUIDE-MISE-A-JOUR.md.",
+  "articles": [
+    {
+      "date": "2026-11-18",
+      "titre": "Bienvenue sur le site de l’AUSA",
+      "resume": "Notre association se dote d’un site pour présenter ses actions, partager ses actualités et faciliter le contact avec les habitants d’Antibes.",
+      "texte": "Ce site est la vitrine de l’Association Union & Solidarité Antibes. Vous y trouverez nos domaines d’action, nos projets et les moyens de nous rejoindre.\n\nIl s’enrichira au fil de nos activités : comptes rendus, photographies et annonces d’événements. N’hésitez pas à nous écrire pour toute question ou proposition.",
+      "categorie": "Vie de l’association",
+      "portage": "ausa",
+      "image": "",
+      "image_alt": "",
+      "publie": true
+    }
+  ],
+  "galerie": []
+}

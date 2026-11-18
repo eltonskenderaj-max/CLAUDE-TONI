@@ -1,0 +1,24 @@
+# Protection du fichier de configuration
+<Files "config.php">
+  Require all denied
+</Files>
+<Files "config.exemple.php">
+  Require all denied
+</Files>
+<FilesMatch "\.md$">
+  Require all denied
+</FilesMatch>
+
+# Page 404 : décommenter et adapter le chemin selon l’emplacement du site sur le serveur
+# ErrorDocument 404 /404.html
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 1 hour"
+  ExpiresByType application/json "access plus 5 minutes"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+</IfModule>
